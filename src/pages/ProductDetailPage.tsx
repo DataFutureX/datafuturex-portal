@@ -1,36 +1,28 @@
-import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { ShotGallery } from '../components/ShotGallery'
 import { getWork } from '../data/works'
 
 export function ProductDetailPage() {
   const { slug = '' } = useParams()
   const work = getWork(slug)
-  const [activeShot, setActiveShot] = useState(0)
-
-  useEffect(() => {
-    setActiveShot(0)
-  }, [slug])
 
   if (!work) {
     return (
       <div className="page">
-        <h1>未找到成果</h1>
+        <h1>未找到作品</h1>
         <p>
-          <Link to="/products">返回成果列表</Link>
+          <Link to="/products">返回作品列表</Link>
         </p>
       </div>
     )
   }
-
-  const shots = work.screenshots
-  const current = shots[activeShot] ?? shots[0]
 
   return (
     <div className="page page--wide">
       <nav className="breadcrumb" aria-label="面包屑">
         <Link to="/">首页</Link>
         <span aria-hidden="true">/</span>
-        <Link to="/products">成果</Link>
+        <Link to="/products">作品</Link>
         <span aria-hidden="true">/</span>
         <span>{work.name}</span>
       </nav>
@@ -96,28 +88,8 @@ export function ProductDetailPage() {
 
       <section className="prose-block" id="screenshots">
         <h2>系统截图</h2>
-        {shots.length > 0 && current ? (
-          <div className="shot-viewer">
-            <figure className="shot shot--featured">
-              <img src={current.src} alt={current.alt} />
-              <figcaption>{current.alt}</figcaption>
-            </figure>
-            <div className="shot-thumbs" role="list">
-              {shots.map((shot, index) => (
-                <button
-                  key={shot.src}
-                  type="button"
-                  role="listitem"
-                  className={`shot-thumb${index === activeShot ? ' is-active' : ''}`}
-                  aria-label={`查看：${shot.alt}`}
-                  aria-pressed={index === activeShot}
-                  onClick={() => setActiveShot(index)}
-                >
-                  <img src={shot.src} alt="" loading="lazy" />
-                </button>
-              ))}
-            </div>
-          </div>
+        {work.screenshots.length > 0 ? (
+          <ShotGallery shots={work.screenshots} />
         ) : (
           <p className="shot-placeholder">截图采集中，请先通过演示站预览界面。</p>
         )}

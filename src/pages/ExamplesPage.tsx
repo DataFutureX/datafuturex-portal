@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 const examples = [
   {
     title: '云起在线演示',
-    stack: 'yunqi.datafuturex.cn',
-    summary: '完全开源工程的在线演示，可全面浏览后台能力。',
-    href: 'https://yunqi.datafuturex.cn',
+    stack: 'yunqi.datafuturex.cn/portal',
+    summary: '完全开源工程的在线演示，先进入 portal 再浏览后台能力。',
+    href: 'https://yunqi.datafuturex.cn/portal',
     external: true,
   },
   {

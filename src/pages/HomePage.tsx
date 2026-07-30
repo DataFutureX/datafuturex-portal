@@ -16,7 +16,7 @@ export function HomePage() {
           <p className="hero__lede">{site.tagline}</p>
           <div className="hero__cta">
             <Link className="btn btn--primary" to="/products">
-              查看成果
+              查看作品
             </Link>
             <a
               className="btn btn--ghost"
@@ -50,7 +50,7 @@ export function HomePage() {
 
       <section className="section" aria-labelledby="works-heading">
         <div className="section__head">
-          <h2 id="works-heading">成果作品</h2>
+          <h2 id="works-heading">作品</h2>
           <p>
             云起完全开源、可开发复用；万象开源正在筹备中，当前提供演示站。点击进入详情与系统截图。
           </p>
@@ -96,7 +96,7 @@ export function HomePage() {
               rel="noopener noreferrer"
             >
               <strong>云起：源码与演示</strong>
-              <span>GitHub 获取源码，或打开 yunqi.datafuturex.cn 在线体验。</span>
+              <span>GitHub 获取源码，或打开 yunqi.datafuturex.cn/portal 在线体验。</span>
             </a>
           </li>
           <li>

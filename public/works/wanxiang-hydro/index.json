@@ -1,0 +1,165 @@
+{
+  "generatedAt": "2026-07-30T06:48:19.620Z",
+  "baseUrl": "http://localhost:3000",
+  "total": 26,
+  "success": 26,
+  "failed": [],
+  "files": [
+    {
+      "title": "仪表盘",
+      "path": "/home/dashboard",
+      "file": "01_仪表盘__home-dashboard.png",
+      "ok": true
+    },
+    {
+      "title": "智能问答",
+      "path": "/ai/chat",
+      "file": "02_智能问答__ai-chat.png",
+      "ok": true
+    },
+    {
+      "title": "知识管理",
+      "path": "/ai/documents",
+      "file": "03_知识管理__ai-documents.png",
+      "ok": true
+    },
+    {
+      "title": "知识问答",
+      "path": "/ai/document-qa",
+      "file": "04_知识问答__ai-document-qa.png",
+      "ok": true
+    },
+    {
+      "title": "二维地图",
+      "path": "/map-overview/2d",
+      "file": "05_二维地图__map-overview-2d.png",
+      "ok": true
+    },
+    {
+      "title": "三维地图",
+      "path": "/map-overview/3d",
+      "file": "06_三维地图__map-overview-3d.png",
+      "ok": true
+    },
+    {
+      "title": "实时数据",
+      "path": "/data/realtime",
+      "file": "07_实时数据__data-realtime.png",
+      "ok": true
+    },
+    {
+      "title": "阈值告警",
+      "path": "/data/alerts",
+      "file": "08_阈值告警__data-alerts.png",
+      "ok": true
+    },
+    {
+      "title": "视频监控",
+      "path": "/data/video-monitor",
+      "file": "09_视频监控__data-video-monitor.png",
+      "ok": true
+    },
+    {
+      "title": "遥测站管理",
+      "path": "/terminal/list",
+      "file": "10_遥测站管理__terminal-list.png",
+      "ok": true
+    },
+    {
+      "title": "视频站管理",
+      "path": "/terminal/video-station",
+      "file": "11_视频站管理__terminal-video-station.png",
+      "ok": true
+    },
+    {
+      "title": "物模型管理",
+      "path": "/terminal/element-config",
+      "file": "12_物模型管理__terminal-element-config.png",
+      "ok": true
+    },
+    {
+      "title": "工程管理",
+      "path": "/project-ledger/manage",
+      "file": "13_工程管理__project-ledger-manage.png",
+      "ok": true
+    },
+    {
+      "title": "工程查看",
+      "path": "/project-ledger/view",
+      "file": "14_工程查看__project-ledger-view.png",
+      "ok": true
+    },
+    {
+      "title": "用户管理",
+      "path": "/system/user",
+      "file": "15_用户管理__system-user.png",
+      "ok": true
+    },
+    {
+      "title": "角色管理",
+      "path": "/system/role",
+      "file": "16_角色管理__system-role.png",
+      "ok": true
+    },
+    {
+      "title": "菜单管理",
+      "path": "/system/menu",
+      "file": "17_菜单管理__system-menu.png",
+      "ok": true
+    },
+    {
+      "title": "单位管理",
+      "path": "/system/unit",
+      "file": "18_单位管理__system-unit.png",
+      "ok": true
+    },
+    {
+      "title": "系统设置",
+      "path": "/system/config",
+      "file": "19_系统设置__system-config.png",
+      "ok": true
+    },
+    {
+      "title": "系统监控",
+      "path": "/system/monitor",
+      "file": "20_系统监控__system-monitor.png",
+      "ok": true
+    },
+    {
+      "title": "操作日志",
+      "path": "/system/operation-log",
+      "file": "21_操作日志__system-operation-log.png",
+      "ok": true
+    },
+    {
+      "title": "公告管理",
+      "path": "/system/announcement",
+      "file": "22_公告管理__system-announcement.png",
+      "ok": true
+    },
+    {
+      "title": "个人信息",
+      "path": "/profile/info",
+      "file": "23_个人信息__profile-info.png",
+      "ok": true
+    },
+    {
+      "title": "修改密码",
+      "path": "/profile/password",
+      "file": "24_修改密码__profile-password.png",
+      "ok": true
+    },
+    {
+      "title": "监控专题",
+      "path": "/video-monitor/live",
+      "file": "25_监控专题__video-monitor-live.png",
+      "ok": true
+    },
+    {
+      "title": "后端接口",
+      "path": "/devtools/backend-api",
+      "file": "26_后端接口__devtools-backend-api.png",
+      "ok": true
+    }
+  ]
+}

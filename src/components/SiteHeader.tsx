@@ -4,7 +4,7 @@ import { site } from '../data/site'
 
 const navItems = [
   { to: '/', label: '主页', end: true },
-  { to: '/products', label: '成果' },
+  { to: '/products', label: '作品' },
   { to: '/docs', label: '文档' },
   { to: '/support', label: '支持' },
 ]

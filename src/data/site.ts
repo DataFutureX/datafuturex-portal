@@ -5,11 +5,18 @@ export const site = {
   domain: 'www.datafuturex.cn',
   origin: 'https://www.datafuturex.cn',
   /** 首屏主标题旁的一句定位 */
-  tagline: '展示工坊成果：物联网、数字孪生、行业应用与 AI 智能体。',
+  tagline: '展示工坊作品：物联网、数字孪生、行业应用与 AI 智能体。',
   description:
-    '数智未来AI工坊（DataFutureX）— 物联网、数字孪生、行业应用与 AI 智能体成果展示 · www.datafuturex.cn',
+    '数智未来AI工坊（DataFutureX）— 物联网、数字孪生、行业应用与 AI 智能体作品展示 · www.datafuturex.cn',
   focus:
-    '本站用于展示工坊交付成果，帮助访客了解方向、浏览作品并体验演示。',
+    '本站用于展示工坊交付作品，帮助访客了解方向、浏览作品并体验演示。',
+  contact: {
+    wechatName: 'DataFutureX',
+    wechatQr: '/contact/wechat-qrcode.png',
+    wechatQrOnly: '/contact/wechat-qrcode-only.png',
+    wechatHint: '扫二维码，添加我为朋友。',
+    email: 'datafuturex@163.com',
+  },
 } as const
 
 /** 工坊主要方向（首页展示） */

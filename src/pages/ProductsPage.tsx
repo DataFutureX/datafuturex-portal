@@ -5,7 +5,7 @@ export function ProductsPage() {
   return (
     <div className="page">
       <header className="page-hero">
-        <h1>成果作品</h1>
+        <h1>作品</h1>
         <p>
           云起：完全开源，可演示与二次开发。万象：开源正在筹备中，当前以演示站展示。均提供系统截图。
         </p>

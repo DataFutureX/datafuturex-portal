@@ -2,19 +2,19 @@
 
 官网：[www.datafuturex.cn](https://www.datafuturex.cn)
 
-展示工坊成果，主要方向：
+展示工坊作品，主要方向：
 
 - 物联网 IoT
 - 数字孪生
 - 行业应用（水利、灌区、农业、水库、地灾）
 - AI 智能体开发
 
-当前成果作品：
+当前作品：
 
 - **云起管理后台**：完全开源（MIT），可演示与二次开发
 - **万象物联监测平台**：开源正在筹备中，演示站 [wanxiang.datafuturex.cn/portal](https://wanxiang.datafuturex.cn/portal)
 
-两作品成果页均含系统截图图集。
+两个作品页均含系统截图图集。
 
 ## 本地运行
 
@@ -30,7 +30,7 @@ npm run dev
 | 路径 | 说明 |
 |---|---|
 | `/` | 首页 |
-| `/products` | 成果列表 |
+| `/products` | 作品列表 |
 | `/products/yunqi-admin` | 云起管理后台 |
 | `/products/wanxiang-hydro` | 万象物联监测平台 |
 | `/docs` | 快速开始文档 |

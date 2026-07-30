@@ -66,16 +66,16 @@ export function DocsPage() {
             </a>
             。在线演示：
             <a
-              href="https://yunqi.datafuturex.cn"
+              href="https://yunqi.datafuturex.cn/portal"
               target="_blank"
               rel="noopener noreferrer"
             >
-              yunqi.datafuturex.cn
+              yunqi.datafuturex.cn/portal
             </a>
             （demo / demo123）。
           </p>
           <p>
-            成果页（含系统截图）：
+            作品页（含系统截图）：
             <Link to="/products/yunqi-admin">云起管理后台</Link>
           </p>
         </section>
@@ -133,7 +133,7 @@ npm install && npm run dev`}</code>
             </a>
           </p>
           <p>
-            成果页（含系统截图）：
+            作品页（含系统截图）：
             <Link to="/products/wanxiang-hydro">万象物联监测平台</Link>
           </p>
         </section>
@@ -152,7 +152,7 @@ npm install && npm run dev`}</code>
 
         <p className="section__more">
           下一步：<Link to="/examples">浏览示例入口</Link> ·{' '}
-          <Link to="/products">返回成果</Link>
+          <Link to="/products">返回作品</Link>
         </p>
       </article>
     </div>

@@ -18,7 +18,7 @@ export function SiteFooter() {
           <div>
             <h2>探索</h2>
             <Link to="/">主页</Link>
-            <Link to="/products">成果</Link>
+            <Link to="/products">作品</Link>
             <Link to="/docs">文档</Link>
             <Link to="/support">支持</Link>
           </div>
@@ -38,6 +38,20 @@ export function SiteFooter() {
             >
               Gitee ↗
             </a>
+          </div>
+          <div className="site-footer__contact">
+            <h2>联系</h2>
+            <p className="site-footer__wechat-name">微信 · {site.contact.wechatName}</p>
+            <img
+              className="site-footer__qr"
+              src={site.contact.wechatQrOnly}
+              alt={`微信二维码 · ${site.contact.wechatName}`}
+              width={120}
+              height={120}
+              loading="lazy"
+            />
+            <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+            <Link to="/support#contact">查看联系方式</Link>
           </div>
         </div>
       </div>
