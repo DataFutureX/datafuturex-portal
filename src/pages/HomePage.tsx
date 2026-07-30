@@ -20,11 +20,11 @@ export function HomePage() {
             </Link>
             <a
               className="btn btn--ghost"
-              href="https://github.com/DataFutureX"
+              href="https://gitee.com/DataFutureX"
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub 源码
+              Gitee 源码
               <span className="ext" aria-hidden="true">
                 ↗
               </span>
@@ -101,12 +101,12 @@ export function HomePage() {
         <ol className="start-steps start-steps--compact">
           <li>
             <a
-              href="https://github.com/DataFutureX/yunqi-admin"
+              href="https://gitee.com/DataFutureX/yunqi-admin"
               target="_blank"
               rel="noopener noreferrer"
             >
               <strong>云起：源码与演示</strong>
-              <span>GitHub 获取源码，或打开 yunqi.datafuturex.cn/portal 在线体验。</span>
+              <span>Gitee 获取源码，或打开 yunqi.datafuturex.cn/portal 在线体验。</span>
             </a>
           </li>
           <li>
