@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -p tsconfig.app.json --noEmit && vite build",
     "preview": "vite preview",
-    "capture:wanxiang": "node scripts/capture-wanxiang.mjs"
+    "capture:wanxiang": "node scripts/capture-wanxiang.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -19,6 +20,7 @@
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
     "playwright": "^1.62.0",
+    "sharp": "^0.35.3",
     "typescript": "~5.8.3",
     "vite": "^7.0.4"
   }

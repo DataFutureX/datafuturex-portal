@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
+import { shotThumb } from '../data/works'
 
-type Shot = { src: string; alt: string }
+type Shot = { src: string; thumb?: string; alt: string }
 
 const INTERVAL_MS = 3500
 
@@ -10,6 +11,7 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
   const [pausedByHover, setPausedByHover] = useState(false)
 
   const current = shots[active] ?? shots[0]
+  const next = shots[(active + 1) % shots.length]
   const autoplay = playing && !pausedByHover && shots.length > 1
 
   useEffect(() => {
@@ -29,6 +31,23 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
     }, INTERVAL_MS)
     return () => window.clearInterval(id)
   }, [autoplay, shots.length])
+
+  // Preload current + next full-size images for smoother playback
+  useEffect(() => {
+    if (!current) return
+    const urls = [current.src, next?.src].filter(Boolean) as string[]
+    const imgs = urls.map((url) => {
+      const img = new Image()
+      img.decoding = 'async'
+      img.src = url
+      return img
+    })
+    return () => {
+      imgs.forEach((img) => {
+        img.src = ''
+      })
+    }
+  }, [current, next])
 
   if (!current) {
     return <p className="shot-placeholder">截图采集中，请先通过演示站预览界面。</p>
@@ -58,7 +77,16 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
       </div>
 
       <figure className="shot shot--featured">
-        <img key={current.src} src={current.src} alt={current.alt} className="shot--featured-img" />
+        <img
+          key={current.src}
+          src={current.src}
+          alt={current.alt}
+          className="shot--featured-img"
+          width={1440}
+          height={900}
+          decoding="async"
+          fetchPriority="high"
+        />
         <figcaption>{current.alt}</figcaption>
         {autoplay ? (
           <span
@@ -84,7 +112,14 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
               setPlaying(false)
             }}
           >
-            <img src={shot.src} alt="" loading="lazy" />
+            <img
+              src={shotThumb(shot.src, shot.thumb)}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width={320}
+              height={200}
+            />
           </button>
         ))}
       </div>

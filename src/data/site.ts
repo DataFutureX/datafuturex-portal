@@ -12,8 +12,8 @@ export const site = {
     '本站用于展示工坊交付作品，帮助访客了解方向、浏览作品并体验演示。',
   contact: {
     wechatName: 'DataFutureX',
-    wechatQr: '/contact/wechat-qrcode.png',
-    wechatQrOnly: '/contact/wechat-qrcode-only.png',
+    wechatQr: '/contact/wechat-qrcode.webp',
+    wechatQrOnly: '/contact/wechat-qrcode-only.webp',
     wechatHint: '扫二维码，添加我为朋友。',
     email: 'datafuturex@163.com',
   },

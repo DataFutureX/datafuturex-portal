@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { HeroVisual } from '../components/HeroVisual'
 import { directions, site } from '../data/site'
-import { works } from '../data/works'
+import { shotThumb, works } from '../data/works'
 
 export function HomePage() {
   return (
@@ -56,14 +56,22 @@ export function HomePage() {
           </p>
         </div>
         <ul className="work-cards">
-          {works.map((work) => {
+          {works.map((work, index) => {
             const cover = work.screenshots[0]
             return (
               <li key={work.slug}>
                 <Link to={`/products/${work.slug}`} className="work-card">
                   <div className="work-card__media">
                     {cover ? (
-                      <img src={cover.src} alt="" loading="lazy" />
+                      <img
+                        src={shotThumb(cover.src, cover.thumb)}
+                        alt=""
+                        width={320}
+                        height={200}
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        decoding="async"
+                        fetchPriority={index === 0 ? 'high' : 'auto'}
+                      />
                     ) : (
                       <div className="work-card__placeholder" />
                     )}

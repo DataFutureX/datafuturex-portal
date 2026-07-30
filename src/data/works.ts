@@ -19,9 +19,17 @@ export type Work = {
   scenarios: string[]
   quickStart: string[]
   links: WorkLinks
-  screenshots: { src: string; alt: string }[]
+  screenshots: { src: string; thumb?: string; alt: string }[]
   logo?: string
   accounts: { label: string; value: string }[]
+}
+
+/** Derive thumbnail path: /works/x/foo.webp -> /works/x/thumbs/foo.webp */
+export function shotThumb(src: string, thumb?: string) {
+  if (thumb) return thumb
+  const i = src.lastIndexOf('/')
+  if (i < 0) return src
+  return `${src.slice(0, i)}/thumbs/${src.slice(i + 1)}`
 }
 
 export const works: Work[] = [
@@ -67,17 +75,17 @@ export const works: Work[] = [
       docsAnchor: '/docs#yunqi',
     },
     screenshots: [
-      { src: '/works/yunqi-admin/02-login.png', alt: '登录页' },
-      { src: '/works/yunqi-admin/03-dashboard.png', alt: '工作台仪表盘' },
-      { src: '/works/yunqi-admin/04-user.png', alt: '用户管理' },
-      { src: '/works/yunqi-admin/05-unit.png', alt: '单位管理' },
-      { src: '/works/yunqi-admin/06-role.png', alt: '角色授权' },
-      { src: '/works/yunqi-admin/07-menu.png', alt: '菜单配置' },
-      { src: '/works/yunqi-admin/08-system-config.png', alt: '系统设置' },
-      { src: '/works/yunqi-admin/09-announcement.png', alt: '公告管理' },
-      { src: '/works/yunqi-admin/10-operation-log.png', alt: '操作日志' },
-      { src: '/works/yunqi-admin/11-monitor.png', alt: '系统监控' },
-      { src: '/works/yunqi-admin/12-api-docs.png', alt: '接口文档' },
+      { src: '/works/yunqi-admin/02-login.webp', alt: '登录页' },
+      { src: '/works/yunqi-admin/03-dashboard.webp', alt: '工作台仪表盘' },
+      { src: '/works/yunqi-admin/04-user.webp', alt: '用户管理' },
+      { src: '/works/yunqi-admin/05-unit.webp', alt: '单位管理' },
+      { src: '/works/yunqi-admin/06-role.webp', alt: '角色授权' },
+      { src: '/works/yunqi-admin/07-menu.webp', alt: '菜单配置' },
+      { src: '/works/yunqi-admin/08-system-config.webp', alt: '系统设置' },
+      { src: '/works/yunqi-admin/09-announcement.webp', alt: '公告管理' },
+      { src: '/works/yunqi-admin/10-operation-log.webp', alt: '操作日志' },
+      { src: '/works/yunqi-admin/11-monitor.webp', alt: '系统监控' },
+      { src: '/works/yunqi-admin/12-api-docs.webp', alt: '接口文档' },
     ],
     logo: '/works/yunqi-admin/logo.svg',
     accounts: [
@@ -129,33 +137,33 @@ export const works: Work[] = [
       docsAnchor: '/docs#wanxiang',
     },
     screenshots: [
-      { src: '/works/wanxiang-hydro/login.png', alt: '登录页' },
-      { src: '/works/wanxiang-hydro/home-dashboard.png', alt: '仪表盘' },
-      { src: '/works/wanxiang-hydro/ai-chat.png', alt: '智能问答' },
-      { src: '/works/wanxiang-hydro/ai-documents.png', alt: '知识管理' },
-      { src: '/works/wanxiang-hydro/ai-document-qa.png', alt: '知识问答' },
-      { src: '/works/wanxiang-hydro/map-overview-2d.png', alt: '二维地图' },
-      { src: '/works/wanxiang-hydro/map-overview-3d.png', alt: '三维地图' },
-      { src: '/works/wanxiang-hydro/data-realtime.png', alt: '实时数据' },
-      { src: '/works/wanxiang-hydro/data-alerts.png', alt: '阈值告警' },
-      { src: '/works/wanxiang-hydro/data-video-monitor.png', alt: '视频监控' },
-      { src: '/works/wanxiang-hydro/terminal-list.png', alt: '遥测站管理' },
-      { src: '/works/wanxiang-hydro/terminal-video-station.png', alt: '视频站管理' },
-      { src: '/works/wanxiang-hydro/terminal-element-config.png', alt: '物模型管理' },
-      { src: '/works/wanxiang-hydro/project-ledger-manage.png', alt: '工程管理' },
-      { src: '/works/wanxiang-hydro/project-ledger-view.png', alt: '工程查看' },
-      { src: '/works/wanxiang-hydro/system-user.png', alt: '用户管理' },
-      { src: '/works/wanxiang-hydro/system-role.png', alt: '角色管理' },
-      { src: '/works/wanxiang-hydro/system-menu.png', alt: '菜单管理' },
-      { src: '/works/wanxiang-hydro/system-unit.png', alt: '单位管理' },
-      { src: '/works/wanxiang-hydro/system-config.png', alt: '系统设置' },
-      { src: '/works/wanxiang-hydro/system-monitor.png', alt: '系统监控' },
-      { src: '/works/wanxiang-hydro/system-operation-log.png', alt: '操作日志' },
-      { src: '/works/wanxiang-hydro/system-announcement.png', alt: '公告管理' },
-      { src: '/works/wanxiang-hydro/profile-info.png', alt: '个人信息' },
-      { src: '/works/wanxiang-hydro/profile-password.png', alt: '修改密码' },
-      { src: '/works/wanxiang-hydro/video-monitor-live.png', alt: '监控专题' },
-      { src: '/works/wanxiang-hydro/devtools-backend-api.png', alt: '后端接口' },
+      { src: '/works/wanxiang-hydro/login.webp', alt: '登录页' },
+      { src: '/works/wanxiang-hydro/home-dashboard.webp', alt: '仪表盘' },
+      { src: '/works/wanxiang-hydro/ai-chat.webp', alt: '智能问答' },
+      { src: '/works/wanxiang-hydro/ai-documents.webp', alt: '知识管理' },
+      { src: '/works/wanxiang-hydro/ai-document-qa.webp', alt: '知识问答' },
+      { src: '/works/wanxiang-hydro/map-overview-2d.webp', alt: '二维地图' },
+      { src: '/works/wanxiang-hydro/map-overview-3d.webp', alt: '三维地图' },
+      { src: '/works/wanxiang-hydro/data-realtime.webp', alt: '实时数据' },
+      { src: '/works/wanxiang-hydro/data-alerts.webp', alt: '阈值告警' },
+      { src: '/works/wanxiang-hydro/data-video-monitor.webp', alt: '视频监控' },
+      { src: '/works/wanxiang-hydro/terminal-list.webp', alt: '遥测站管理' },
+      { src: '/works/wanxiang-hydro/terminal-video-station.webp', alt: '视频站管理' },
+      { src: '/works/wanxiang-hydro/terminal-element-config.webp', alt: '物模型管理' },
+      { src: '/works/wanxiang-hydro/project-ledger-manage.webp', alt: '工程管理' },
+      { src: '/works/wanxiang-hydro/project-ledger-view.webp', alt: '工程查看' },
+      { src: '/works/wanxiang-hydro/system-user.webp', alt: '用户管理' },
+      { src: '/works/wanxiang-hydro/system-role.webp', alt: '角色管理' },
+      { src: '/works/wanxiang-hydro/system-menu.webp', alt: '菜单管理' },
+      { src: '/works/wanxiang-hydro/system-unit.webp', alt: '单位管理' },
+      { src: '/works/wanxiang-hydro/system-config.webp', alt: '系统设置' },
+      { src: '/works/wanxiang-hydro/system-monitor.webp', alt: '系统监控' },
+      { src: '/works/wanxiang-hydro/system-operation-log.webp', alt: '操作日志' },
+      { src: '/works/wanxiang-hydro/system-announcement.webp', alt: '公告管理' },
+      { src: '/works/wanxiang-hydro/profile-info.webp', alt: '个人信息' },
+      { src: '/works/wanxiang-hydro/profile-password.webp', alt: '修改密码' },
+      { src: '/works/wanxiang-hydro/video-monitor-live.webp', alt: '监控专题' },
+      { src: '/works/wanxiang-hydro/devtools-backend-api.webp', alt: '后端接口' },
     ],
     logo: '/works/wanxiang-hydro/logo.svg',
     accounts: [{ label: '演示站', value: '以 https://wanxiang.datafuturex.cn 页面说明为准' }],

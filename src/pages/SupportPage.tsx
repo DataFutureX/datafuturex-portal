@@ -26,6 +26,8 @@ export function SupportPage() {
             alt={`微信二维码 · ${site.contact.wechatName}`}
             width={280}
             height={360}
+            loading="lazy"
+            decoding="async"
           />
           <figcaption>{site.contact.wechatHint}</figcaption>
         </figure>

@@ -49,6 +49,7 @@ export function SiteFooter() {
               width={120}
               height={120}
               loading="lazy"
+              decoding="async"
             />
             <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
             <Link to="/support#contact">查看联系方式</Link>
