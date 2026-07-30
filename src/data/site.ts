@@ -10,12 +10,19 @@ export const site = {
     '数智未来AI工坊（DataFutureX）— 物联网、数字孪生、行业应用与 AI 智能体作品展示 · www.datafuturex.cn',
   focus:
     '本站用于展示工坊交付作品，帮助访客了解方向、浏览作品并体验演示。',
+  license: {
+    name: 'MIT',
+    spdx: 'MIT',
+    url: 'https://gitee.com/DataFutureX/datafuturex-portal/blob/main/LICENSE',
+  },
   contact: {
     wechatName: 'DataFutureX',
     wechatQr: '/contact/wechat-qrcode.webp',
     wechatQrOnly: '/contact/wechat-qrcode-only.webp',
     wechatHint: '扫二维码，添加我为朋友。',
     email: 'datafuturex@163.com',
+    /** 门户 Issues：提问、建议与问题反馈 */
+    issues: 'https://gitee.com/DataFutureX/datafuturex-portal/issues',
   },
 } as const
 

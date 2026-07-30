@@ -8,7 +8,51 @@ export function SupportPage() {
         <p className="eyebrow mono">Support</p>
         <h1>支持</h1>
         <p>开源仓库、演示站、账号说明与联系方式。</p>
+        <p className="page-hero__actions">
+          <a
+            className="btn btn--primary"
+            href={site.contact.issues}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            我要提问
+            <span className="ext" aria-hidden="true">
+              ↗
+            </span>
+          </a>
+        </p>
       </header>
+
+      <section className="prose-block" id="ask">
+        <h2>我要提问</h2>
+        <p>
+          门户相关问题、建议或缺陷反馈，请在 Gitee Issues 提交，便于跟踪与回复。
+        </p>
+        <p>
+          <a
+            className="btn btn--ghost"
+            href={site.contact.issues}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            前往 Issues 提问
+            <span className="ext" aria-hidden="true">
+              ↗
+            </span>
+          </a>
+        </p>
+      </section>
+
+      <section className="prose-block" id="license">
+        <h2>许可证</h2>
+        <p>
+          本门户站点源码采用 <strong>{site.license.name}</strong> 授权开源，详见{' '}
+          <a href={site.license.url} target="_blank" rel="noopener noreferrer">
+            LICENSE ↗
+          </a>
+          。
+        </p>
+      </section>
 
       <section className="prose-block" id="contact">
         <h2>联系方式</h2>
@@ -19,6 +63,12 @@ export function SupportPage() {
         <p>
           邮箱：
           <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+        </p>
+        <p>
+          在线提问：
+          <a href={site.contact.issues} target="_blank" rel="noopener noreferrer">
+            Gitee Issues ↗
+          </a>
         </p>
         <figure className="contact-qr">
           <img
@@ -107,6 +157,13 @@ export function SupportPage() {
           <li>
             <strong>云起演示打不开</strong> — 确认可访问 yunqi.datafuturex.cn/portal，或本地{' '}
             <code>npm run dev:demo</code>。
+          </li>
+          <li>
+            <strong>还有其他问题？</strong> — 前往{' '}
+            <a href={site.contact.issues} target="_blank" rel="noopener noreferrer">
+              我要提问（Gitee Issues）↗
+            </a>
+            。
           </li>
         </ul>
       </section>

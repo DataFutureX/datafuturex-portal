@@ -52,6 +52,9 @@ export function SiteFooter() {
               decoding="async"
             />
             <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+            <a href={site.contact.issues} target="_blank" rel="noopener noreferrer">
+              我要提问 ↗
+            </a>
             <Link to="/support#contact">查看联系方式</Link>
           </div>
         </div>
@@ -60,6 +63,14 @@ export function SiteFooter() {
         <span>
           © {new Date().getFullYear()} {site.name} · {site.englishName}
         </span>
+        <a
+          className="mono"
+          href={site.license.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {site.license.name} License
+        </a>
         <a className="mono" href={site.origin}>
           {site.domain}
         </a>

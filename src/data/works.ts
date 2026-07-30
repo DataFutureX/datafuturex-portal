@@ -19,17 +19,26 @@ export type Work = {
   scenarios: string[]
   quickStart: string[]
   links: WorkLinks
-  screenshots: { src: string; thumb?: string; alt: string }[]
+  screenshots: { src: string; medium?: string; thumb?: string; alt: string }[]
   logo?: string
   accounts: { label: string; value: string }[]
 }
 
-/** Derive thumbnail path: /works/x/foo.webp -> /works/x/thumbs/foo.webp */
-export function shotThumb(src: string, thumb?: string) {
-  if (thumb) return thumb
+/** Derive variant path: /works/x/foo.webp -> /works/x/{dir}/foo.webp */
+function shotVariant(src: string, dir: string) {
   const i = src.lastIndexOf('/')
   if (i < 0) return src
-  return `${src.slice(0, i)}/thumbs/${src.slice(i + 1)}`
+  return `${src.slice(0, i)}/${dir}/${src.slice(i + 1)}`
+}
+
+/** Thumbnail for gallery strip */
+export function shotThumb(src: string, thumb?: string) {
+  return thumb ?? shotVariant(src, 'thumbs')
+}
+
+/** Medium for list covers (~960w) */
+export function shotMedium(src: string, medium?: string) {
+  return medium ?? shotVariant(src, 'medium')
 }
 
 export const works: Work[] = [

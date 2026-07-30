@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { HeroVisual } from '../components/HeroVisual'
 import { directions, site } from '../data/site'
-import { shotThumb, works } from '../data/works'
+import { shotMedium, works } from '../data/works'
 
 export function HomePage() {
   return (
@@ -64,10 +64,12 @@ export function HomePage() {
                   <div className="work-card__media">
                     {cover ? (
                       <img
-                        src={shotThumb(cover.src, cover.thumb)}
+                        src={shotMedium(cover.src, cover.medium)}
+                        srcSet={`${shotMedium(cover.src, cover.medium)} 960w, ${cover.src} 1440w`}
+                        sizes="(max-width: 720px) 92vw, 520px"
                         alt=""
-                        width={320}
-                        height={200}
+                        width={960}
+                        height={600}
                         loading={index === 0 ? 'eager' : 'lazy'}
                         decoding="async"
                         fetchPriority={index === 0 ? 'high' : 'auto'}

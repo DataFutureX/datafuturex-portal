@@ -2,13 +2,15 @@
   "name": "datafuturex-portal",
   "private": true,
   "version": "0.1.0",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.app.json --noEmit && vite build",
     "preview": "vite preview",
     "capture:wanxiang": "node scripts/capture-wanxiang.mjs",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "reimport:screenshots": "node scripts/reimport-screenshots.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { shotThumb } from '../data/works'
+import { shotMedium, shotThumb } from '../data/works'
 
-type Shot = { src: string; thumb?: string; alt: string }
+type Shot = { src: string; medium?: string; thumb?: string; alt: string }
 
 const INTERVAL_MS = 3500
 
@@ -80,6 +80,8 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
         <img
           key={current.src}
           src={current.src}
+          srcSet={`${shotMedium(current.src, current.medium)} 960w, ${current.src} 1440w`}
+          sizes="(max-width: 720px) 94vw, min(1120px, 92vw)"
           alt={current.alt}
           className="shot--featured-img"
           width={1440}
@@ -117,8 +119,8 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
               alt=""
               loading="lazy"
               decoding="async"
-              width={320}
-              height={200}
+              width={480}
+              height={300}
             />
           </button>
         ))}
