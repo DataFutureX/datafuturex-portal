@@ -12,7 +12,7 @@
 当前成果作品：
 
 - **云起管理后台**：完全开源（MIT），可演示与二次开发
-- **万象物联监测平台**：未开源，仅演示站 [wanxiang.datafuturex.cn/portal](https://wanxiang.datafuturex.cn/portal)
+- **万象物联监测平台**：开源正在筹备中，演示站 [wanxiang.datafuturex.cn/portal](https://wanxiang.datafuturex.cn/portal)
 
 两作品成果页均含系统截图图集。
 

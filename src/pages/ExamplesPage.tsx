@@ -23,7 +23,7 @@ const examples = [
   {
     title: '万象演示站',
     stack: 'wanxiang.datafuturex.cn',
-    summary: '未开源，仅演示展示：/portal 入口。',
+    summary: '开源正在筹备中，当前演示展示：/portal 入口。',
     href: 'https://wanxiang.datafuturex.cn/portal',
     external: true,
   },
@@ -41,7 +41,7 @@ export function ExamplesPage() {
       <header className="page-hero">
         <p className="eyebrow mono">Examples</p>
         <h1>示例</h1>
-        <p>开源工程可演示与开发；未开源工程请走演示站与截图图集。</p>
+        <p>开源工程可演示与开发；筹备中的工程请走演示站与截图图集。</p>
       </header>
       <ul className="capability-list">
         {examples.map((example, index) => (

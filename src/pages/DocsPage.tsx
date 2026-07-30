@@ -41,7 +41,7 @@ export function DocsPage() {
         <header className="page-hero">
           <p className="eyebrow mono">Getting started</p>
           <h1>快速开始</h1>
-          <p>云起：开源展示与开发；万象：演示站展示（未开源）。</p>
+          <p>云起：开源展示与开发；万象：演示站展示（开源正在筹备中）。</p>
         </header>
 
         <section id="yunqi" className="prose-block">
@@ -119,7 +119,8 @@ npm install && npm run dev`}</code>
           <p>
             水文水资源物联监测平台，覆盖协议接入、监测告警、地图视频与 AI
             问答等能力。
-            <strong>未开源</strong>，本站不提供源码下载与本地联调指引，仅通过演示站展示。
+            <strong>开源正在筹备中</strong>
+            ，暂不提供源码下载；当前仅通过演示站展示能力与界面。
           </p>
           <p>
             演示门户：

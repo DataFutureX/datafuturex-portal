@@ -6,7 +6,7 @@ export function SupportPage() {
       <header className="page-hero">
         <p className="eyebrow mono">Support</p>
         <h1>支持</h1>
-        <p>开源仓库、演示站与账号说明。万象未开源，请以演示站为准。</p>
+        <p>开源仓库、演示站与账号说明。万象开源正在筹备中，请以演示站为准。</p>
       </header>
 
       <section className="prose-block">
@@ -51,7 +51,7 @@ export function SupportPage() {
       </section>
 
       <section className="prose-block">
-        <h2>万象物联监测平台（未开源 · 仅演示）</h2>
+        <h2>万象物联监测平台（开源正在筹备中）</h2>
         <ul>
           <li>
             成果页：<Link to="/products/wanxiang-hydro">万象物联监测平台</Link>
@@ -66,7 +66,7 @@ export function SupportPage() {
               wanxiang.datafuturex.cn/portal ↗
             </a>
           </li>
-          <li>不提供源码下载与本地联调公开指引</li>
+          <li>开源正在筹备中，暂不提供源码下载</li>
           <li>演示账号以演示站页面说明为准</li>
         </ul>
       </section>
@@ -78,7 +78,7 @@ export function SupportPage() {
             <strong>想二次开发哪个项目？</strong> — 请使用完全开源的云起管理后台。
           </li>
           <li>
-            <strong>万象能否拿到源码？</strong> — 当前未开源，仅可通过演示站与门户截图了解能力。
+            <strong>万象能否拿到源码？</strong> — 开源正在筹备中，当前可通过演示站与门户截图了解能力。
           </li>
           <li>
             <strong>云起演示打不开</strong> — 确认可访问 yunqi.datafuturex.cn，或本地{' '}

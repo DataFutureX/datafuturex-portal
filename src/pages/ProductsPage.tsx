@@ -8,7 +8,7 @@ export function ProductsPage() {
         <p className="eyebrow mono">Works</p>
         <h1>成果作品</h1>
         <p>
-          云起：完全开源，可演示与二次开发。万象：未开源，仅演示站展示。均提供系统截图。
+          云起：完全开源，可演示与二次开发。万象：开源正在筹备中，当前以演示站展示。均提供系统截图。
         </p>
       </header>
       <ul className="capability-list">

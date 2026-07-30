@@ -11,7 +11,7 @@ export type Work = {
   englishName: string
   tag: string
   summary: string
-  /** 开源可二次开发；未开源仅演示展示 */
+  /** 已开源可二次开发；筹备中则仅演示展示 */
   openSource: boolean
   accessNote: string
   stack: string[]
@@ -90,11 +90,11 @@ export const works: Work[] = [
     slug: 'wanxiang-hydro',
     name: '万象物联监测平台',
     englishName: 'Wanxiang Hydro Monitor',
-    tag: '未开源 · 仅演示',
-    summary: '水文水资源物联监测平台。未开源，仅通过演示站展示能力与界面。',
+    tag: '开源正在筹备中',
+    summary: '水文水资源物联监测平台。开源正在筹备中，当前可通过演示站体验能力与界面。',
     openSource: false,
     accessNote:
-      '未开源，不提供源码下载与本地二次开发指引。请通过演示站体验：https://wanxiang.datafuturex.cn/portal',
+      '开源正在筹备中，暂不提供源码下载。请通过演示站体验：https://wanxiang.datafuturex.cn/portal',
     stack: [
       'Vue 3',
       'TypeScript',

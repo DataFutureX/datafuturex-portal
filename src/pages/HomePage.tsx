@@ -57,7 +57,7 @@ export function HomePage() {
           <p className="eyebrow mono">02 / Works</p>
           <h2 id="works-heading">成果作品</h2>
           <p>
-            云起完全开源、可开发复用；万象未开源，仅提供演示站展示。均配系统截图。
+            云起完全开源、可开发复用；万象开源正在筹备中，当前提供演示站展示。均配系统截图。
           </p>
         </div>
         <ul className="capability-list">
@@ -88,7 +88,7 @@ export function HomePage() {
         <div className="section__head">
           <p className="eyebrow mono">03 / Start</p>
           <h2 id="start-heading">快速体验</h2>
-          <p>开源工程可本地开发；未开源工程请使用演示站。</p>
+          <p>开源工程可本地开发；筹备中的工程请先使用演示站。</p>
         </div>
         <ol className="start-steps">
           <li>
@@ -117,7 +117,7 @@ export function HomePage() {
             >
               <span className="mono">Step 03</span>
               <strong>打开万象演示站</strong>
-              <span>未开源，仅展示演示：wanxiang.datafuturex.cn/portal。</span>
+              <span>开源正在筹备中，先体验演示：wanxiang.datafuturex.cn/portal。</span>
             </a>
           </li>
         </ol>
