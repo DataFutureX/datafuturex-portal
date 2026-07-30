@@ -17,19 +17,26 @@ export function SiteFooter() {
         <div className="site-footer__cols">
           <div>
             <h2>探索</h2>
+            <Link to="/">主页</Link>
             <Link to="/products">成果</Link>
             <Link to="/docs">文档</Link>
-            <Link to="/examples">示例</Link>
+            <Link to="/support">支持</Link>
           </div>
           <div>
-            <h2>支持</h2>
-            <Link to="/support">账号与仓库</Link>
+            <h2>源码</h2>
             <a
-              href="https://yunqi.datafuturex.cn"
+              href="https://github.com/DataFutureX"
               target="_blank"
               rel="noopener noreferrer"
             >
-              云起演示 ↗
+              GitHub ↗
+            </a>
+            <a
+              href="https://gitee.com/datafuturex"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Gitee ↗
             </a>
           </div>
         </div>

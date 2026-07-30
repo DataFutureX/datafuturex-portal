@@ -41,7 +41,7 @@ export function DocsPage() {
         <header className="page-hero">
           <p className="eyebrow mono">Getting started</p>
           <h1>快速开始</h1>
-          <p>云起：开源展示与开发；万象：演示站展示（开源正在筹备中）。</p>
+          <p>云起：开源展示与开发；万象：演示站展示（开源正在筹备中）。也可查看 <Link to="/examples">示例入口</Link>。</p>
         </header>
 
         <section id="yunqi" className="prose-block">

@@ -2,7 +2,7 @@
 
 官网：[www.datafuturex.cn](https://www.datafuturex.cn)
 
-宣传展示工坊成果，主要方向：
+展示工坊成果，主要方向：
 
 - 物联网 IoT
 - 数字孪生
@@ -34,7 +34,7 @@ npm run dev
 | `/products/yunqi-admin` | 云起管理后台 |
 | `/products/wanxiang-hydro` | 万象物联监测平台 |
 | `/docs` | 快速开始文档 |
-| `/examples` | 示例入口 |
+| `/examples` | 示例入口（文档内链，不在主导航） |
 | `/support` | 账号与仓库 |
 
 ## 脚本

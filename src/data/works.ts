@@ -67,7 +67,6 @@ export const works: Work[] = [
       docsAnchor: '/docs#yunqi',
     },
     screenshots: [
-      { src: '/works/yunqi-admin/01-portal.png', alt: '产品门户' },
       { src: '/works/yunqi-admin/02-login.png', alt: '登录页' },
       { src: '/works/yunqi-admin/03-dashboard.png', alt: '工作台仪表盘' },
       { src: '/works/yunqi-admin/04-user.png', alt: '用户管理' },

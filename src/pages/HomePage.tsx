@@ -20,11 +20,11 @@ export function HomePage() {
             </Link>
             <a
               className="btn btn--ghost"
-              href="https://yunqi.datafuturex.cn"
+              href="https://github.com/DataFutureX"
               target="_blank"
               rel="noopener noreferrer"
             >
-              云起开源演示
+              GitHub 源码
               <span className="ext" aria-hidden="true">
                 ↗
               </span>
@@ -35,79 +35,69 @@ export function HomePage() {
 
       <section className="section" aria-labelledby="focus-heading">
         <div className="section__head">
-          <p className="eyebrow mono">01 / Focus</p>
           <h2 id="focus-heading">工坊方向</h2>
           <p>{site.focus}</p>
         </div>
-        <ul className="capability-list">
-          {directions.map((item, index) => (
-            <li key={item.id} className="capability-row capability-row--static">
-              <span className="capability-row__index mono">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <span className="capability-row__name">{item.name}</span>
-              <span className="capability-row__summary">{item.summary}</span>
+        <ul className="direction-list">
+          {directions.map((item) => (
+            <li key={item.id} className="direction-item">
+              <strong>{item.name}</strong>
+              <span>{item.summary}</span>
             </li>
           ))}
         </ul>
       </section>
 
-      <section className="section capabilities" aria-labelledby="works-heading">
+      <section className="section" aria-labelledby="works-heading">
         <div className="section__head">
-          <p className="eyebrow mono">02 / Works</p>
           <h2 id="works-heading">成果作品</h2>
           <p>
-            云起完全开源、可开发复用；万象开源正在筹备中，当前提供演示站展示。均配系统截图。
+            云起完全开源、可开发复用；万象开源正在筹备中，当前提供演示站。点击进入详情与系统截图。
           </p>
         </div>
-        <ul className="capability-list">
-          {works.map((work, index) => (
-            <li key={work.slug}>
-              <Link to={`/products/${work.slug}`} className="capability-row">
-                <span className="capability-row__index mono">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="capability-row__name">
-                  {work.name}
-                  <span className="work-tag">{work.tag}</span>
-                </span>
-                <span className="capability-row__summary">{work.summary}</span>
-                <span className="capability-row__go" aria-hidden="true">
-                  →
-                </span>
-              </Link>
-            </li>
-          ))}
+        <ul className="work-cards">
+          {works.map((work) => {
+            const cover = work.screenshots[0]
+            return (
+              <li key={work.slug}>
+                <Link to={`/products/${work.slug}`} className="work-card">
+                  <div className="work-card__media">
+                    {cover ? (
+                      <img src={cover.src} alt="" loading="lazy" />
+                    ) : (
+                      <div className="work-card__placeholder" />
+                    )}
+                  </div>
+                  <div className="work-card__body">
+                    <p className="work-card__tag">{work.tag}</p>
+                    <h3>{work.name}</h3>
+                    <p>{work.summary}</p>
+                    <span className="work-card__cta">
+                      {work.openSource ? '查看详情与源码' : '查看详情与演示'} →
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            )
+          })}
         </ul>
-        <p className="section__more">
-          <Link to="/products">查看全部成果</Link>
-        </p>
       </section>
 
-      <section className="section start" aria-labelledby="start-heading">
+      <section className="section section--compact" aria-labelledby="start-heading">
         <div className="section__head">
-          <p className="eyebrow mono">03 / Start</p>
           <h2 id="start-heading">快速体验</h2>
-          <p>开源工程可本地开发；筹备中的工程请先使用演示站。</p>
+          <p>两条最短路径，分别对应开源工程与演示站。</p>
         </div>
-        <ol className="start-steps">
+        <ol className="start-steps start-steps--compact">
           <li>
             <a
-              href="https://yunqi.datafuturex.cn"
+              href="https://github.com/DataFutureX/yunqi-admin"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="mono">Step 01</span>
-              <strong>体验云起演示</strong>
-              <span>完全开源工程在线演示，账号 demo / demo123。</span>
+              <strong>云起：源码与演示</strong>
+              <span>GitHub 获取源码，或打开 yunqi.datafuturex.cn 在线体验。</span>
             </a>
-          </li>
-          <li>
-            <Link to="/docs#yunqi">
-              <span className="mono">Step 02</span>
-              <strong>克隆云起二次开发</strong>
-              <span>GitHub / Gitee 获取源码，npm run dev:demo 本地跑通。</span>
-            </Link>
           </li>
           <li>
             <a
@@ -115,9 +105,8 @@ export function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="mono">Step 03</span>
-              <strong>打开万象演示站</strong>
-              <span>开源正在筹备中，先体验演示：wanxiang.datafuturex.cn/portal。</span>
+              <strong>万象：演示站</strong>
+              <span>开源筹备中，先通过演示门户了解能力。</span>
             </a>
           </li>
         </ol>

@@ -1,9 +1,15 @@
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getWork } from '../data/works'
 
 export function ProductDetailPage() {
   const { slug = '' } = useParams()
   const work = getWork(slug)
+  const [activeShot, setActiveShot] = useState(0)
+
+  useEffect(() => {
+    setActiveShot(0)
+  }, [slug])
 
   if (!work) {
     return (
@@ -16,7 +22,8 @@ export function ProductDetailPage() {
     )
   }
 
-  const existingShots = work.screenshots
+  const shots = work.screenshots
+  const current = shots[activeShot] ?? shots[0]
 
   return (
     <div className="page page--wide">
@@ -32,8 +39,8 @@ export function ProductDetailPage() {
         {work.logo ? (
           <img className="work-hero__logo" src={work.logo} alt="" width={40} height={40} />
         ) : null}
-        <p className="eyebrow mono">
-          {work.englishName}
+        <p className="eyebrow">
+          <span className="mono">{work.englishName}</span>
           <span className="work-tag">{work.tag}</span>
         </p>
         <h1>{work.name}</h1>
@@ -89,14 +96,27 @@ export function ProductDetailPage() {
 
       <section className="prose-block" id="screenshots">
         <h2>系统截图</h2>
-        {existingShots.length > 0 ? (
-          <div className="shot-grid shot-grid--gallery">
-            {existingShots.map((shot) => (
-              <figure key={shot.src} className="shot">
-                <img src={shot.src} alt={shot.alt} loading="lazy" />
-                <figcaption>{shot.alt}</figcaption>
-              </figure>
-            ))}
+        {shots.length > 0 && current ? (
+          <div className="shot-viewer">
+            <figure className="shot shot--featured">
+              <img src={current.src} alt={current.alt} />
+              <figcaption>{current.alt}</figcaption>
+            </figure>
+            <div className="shot-thumbs" role="list">
+              {shots.map((shot, index) => (
+                <button
+                  key={shot.src}
+                  type="button"
+                  role="listitem"
+                  className={`shot-thumb${index === activeShot ? ' is-active' : ''}`}
+                  aria-label={`查看：${shot.alt}`}
+                  aria-pressed={index === activeShot}
+                  onClick={() => setActiveShot(index)}
+                >
+                  <img src={shot.src} alt="" loading="lazy" />
+                </button>
+              ))}
+            </div>
           </div>
         ) : (
           <p className="shot-placeholder">截图采集中，请先通过演示站预览界面。</p>
