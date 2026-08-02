@@ -1,6 +1,6 @@
 /**
  * 雷达拓扑 + 工坊色系：
- * 未来紫核心 · 云起极简白 · 万象科技蓝 · AI IoT 工业青 · 灵枢松柏绿
+ * 未来紫核心 · 云起极简白 · 万象科技蓝 · AI IoT 工业青 · 灵枢石板灰
  */
 export function HeroVisual() {
   const hub = { x: 1080, y: 320 }
@@ -8,7 +8,7 @@ export function HeroVisual() {
     { id: 'yunqi', x: 900, y: 200, color: '#171717', soft: '23, 23, 23' },
     { id: 'wanxiang', x: 1260, y: 200, color: '#2563EB', soft: '37, 99, 235' },
     { id: 'iot', x: 1260, y: 450, color: '#0F766E', soft: '15, 118, 110' },
-    { id: 'lingshu', x: 900, y: 450, color: '#15803D', soft: '21, 128, 61' },
+    { id: 'lingshu', x: 900, y: 450, color: '#475569', soft: '71, 85, 105' },
   ] as const
 
   const ambience = [
@@ -42,14 +42,14 @@ export function HeroVisual() {
             <stop offset="30%" stopColor="#5B21B6" stopOpacity="0.35" />
             <stop offset="50%" stopColor="#2563EB" stopOpacity="0.28" />
             <stop offset="70%" stopColor="#0F766E" stopOpacity="0.22" />
-            <stop offset="100%" stopColor="#15803D" stopOpacity="0" />
+            <stop offset="100%" stopColor="#475569" stopOpacity="0" />
           </linearGradient>
           <linearGradient id="ring-spectrum" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#5B21B6" />
             <stop offset="25%" stopColor="#171717" />
             <stop offset="50%" stopColor="#2563EB" />
             <stop offset="75%" stopColor="#0F766E" />
-            <stop offset="100%" stopColor="#15803D" />
+            <stop offset="100%" stopColor="#475569" />
           </linearGradient>
 
           {/* 云起：云朵标（极简白 → 墨色） */}
@@ -101,7 +101,7 @@ export function HeroVisual() {
             <path d="M20 15.5 L24 17.8 V22.2 L20 24.5 L16 22.2 V17.8 Z" fill="currentColor" />
           </symbol>
 
-          {/* 灵枢：枢纽 + 应用格（松柏绿） */}
+          {/* 灵枢：枢纽 + 应用格（石板灰） */}
           <symbol id="logo-lingshu" viewBox="0 0 40 40">
             <rect x="4" y="4" width="32" height="32" rx="7" fill="currentColor" />
             <circle cx="20" cy="20" r="4.2" fill="#fff" />

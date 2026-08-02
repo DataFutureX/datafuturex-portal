@@ -30,7 +30,7 @@ const examples = [
   {
     title: '数智AI工业物联网系统截图',
     stack: '门户图集',
-    summary: '产品门户、设备管理、数据中心、规则引擎等界面一览。',
+    summary: '登录、工作台、应用市场、设备管理、数据中心、规则引擎等界面一览。',
     href: '/products/smart-iot-ai#screenshots',
   },
   {

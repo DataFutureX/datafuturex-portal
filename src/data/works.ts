@@ -7,7 +7,7 @@ export type WorkLinks = {
 
 /** 作品产品层主色（门户品牌层为未来紫，见 site.designLanguages） */
 export type WorkPalette = {
-  id: 'minimal-white' | 'tech-blue' | 'industrial-cyan' | 'lingshu-pine'
+  id: 'minimal-white' | 'tech-blue' | 'industrial-cyan' | 'lingshu-slate'
   label: string
   hex: string
   rgb: string
@@ -177,7 +177,6 @@ export const works: Work[] = [
     },
     screenshots: [
       { src: '/works/smart-iot-ai/01-login.webp', alt: '登录页' },
-      { src: '/works/smart-iot-ai/00-portal.webp', alt: '产品门户' },
       { src: '/works/smart-iot-ai/02-dashboard.webp', alt: '工作台' },
       { src: '/works/smart-iot-ai/03-app-center.webp', alt: '应用市场' },
       { src: '/works/smart-iot-ai/04-device-product.webp', alt: '产品管理' },
@@ -284,10 +283,10 @@ export const works: Work[] = [
     openSource: false,
     accessNote: '正在开发中，暂未提供演示站与源码。进展与能力说明见作品页与文档入口。',
     palette: {
-      id: 'lingshu-pine',
-      label: '松柏绿',
-      hex: '#15803D',
-      rgb: '21, 128, 61',
+      id: 'lingshu-slate',
+      label: '石板灰',
+      hex: '#475569',
+      rgb: '71, 85, 105',
     },
     stack: [
       'Vue 3',
@@ -317,7 +316,9 @@ export const works: Work[] = [
     links: {
       docsAnchor: '/docs#lingshu',
     },
-    screenshots: [],
+    screenshots: [
+      { src: '/works/lingshu-market/00-cover.webp', alt: '封面预览（开发中）' },
+    ],
     logo: '/works/lingshu-market/logo.svg',
     accounts: [{ label: '状态', value: '正在开发中 · 暂无演示账号' }],
   },

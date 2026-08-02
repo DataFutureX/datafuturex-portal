@@ -54,7 +54,7 @@ export function HomePage() {
         <div className="section__head">
           <h2 id="palette-heading">设计语言</h2>
           <p>
-            门户用未来紫统一品牌；各作品保留独立主色——云起极简白、万象科技蓝、AI IoT 工业青、灵枢松柏绿。
+            门户用未来紫统一品牌；各作品保留独立主色——云起极简白、万象科技蓝、AI IoT 工业青、灵枢石板灰。
           </p>
         </div>
         <ul className="palette-list">

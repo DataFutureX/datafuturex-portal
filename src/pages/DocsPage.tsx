@@ -156,7 +156,7 @@ npm install && npm run dev`}</code>
         <section id="smart-iot-shots" className="prose-block">
           <h2>数智AI工业物联网 · 系统截图</h2>
           <p>
-            门户已收录产品门户、登录、工作台、应用市场、设备管理、数据中心、规则引擎与平台管理等界面截图。完整交互请打开演示站体验。
+            门户已收录登录、工作台、应用市场、设备管理、数据中心、规则引擎与平台管理等界面截图。完整交互请打开演示站体验。
           </p>
           <p>
             <Link className="btn btn--primary" to="/products/smart-iot-ai#screenshots">

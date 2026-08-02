@@ -32,11 +32,8 @@ const yunqiFiles = [
 ]
 
 const smartIotSrc = 'D:/DataFutureX-Code/datafuturex-iot/docs/screenshots'
-const smartIotPortal =
-  'D:/DataFutureX-Code/datafuturex-iot/frontend/public/portal/dashboard.png'
 const smartIotDst = path.resolve('public/works/smart-iot-ai')
 const smartIotFiles = [
-  { src: smartIotPortal, base: '00-portal' },
   { src: path.join(smartIotSrc, '01-login.png'), base: '01-login' },
   { src: path.join(smartIotSrc, '02-dashboard.png'), base: '02-dashboard' },
   { src: path.join(smartIotSrc, '03-app-center.png'), base: '03-app-center' },

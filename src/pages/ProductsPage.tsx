@@ -8,7 +8,7 @@ export function ProductsPage() {
         <h1>作品</h1>
         <p>
           云起：完全开源。数智AI工业物联网：暂未开源；万象：开源筹备中；灵枢：正在开发中。卡片色条对应各作品主色（极简白
-          / 工业青 / 科技蓝 / 松柏绿）。
+          / 工业青 / 科技蓝 / 石板灰）。
         </p>
       </header>
       <ul className="work-cards">

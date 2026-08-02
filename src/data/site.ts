@@ -89,12 +89,12 @@ export const designLanguages = [
     href: '/products/smart-iot-ai',
   },
   {
-    id: 'lingshu-pine',
-    name: '松柏绿',
+    id: 'lingshu-slate',
+    name: '石板灰',
     subject: '灵枢',
-    summary: '行业应用市场：稳重通用绿，偏落地、易识别的产品主色。',
-    hex: '#15803D',
-    rgb: '21, 128, 61',
+    summary: '行业应用市场：中性石板色，偏通用、稳妥的产品主色。',
+    hex: '#475569',
+    rgb: '71, 85, 105',
     href: '/products/lingshu-market',
   },
 ] as const
