@@ -131,13 +131,14 @@ npm install && npm run dev`}</code>
         <section id="smart-iot" className="prose-block">
           <h2>数智AI工业物联网平台 · 概述与演示站</h2>
           <p>
-            从设备接入到行业应用的 AI 物联控制面。控制台四大业务域：设备管理 · 数据中心 · 规则引擎 ·
-            平台管理（另含工作台 / 应用市场）。
+            AI 原生工业物联网控制面：设备接入 → 数据采集/治理 → 规则决策 → 行业应用。控制台四大业务域为
+            <strong>设备管理 · 数据中心 · 规则引擎 · 平台管理</strong>
+            （另含主页工作台 / 应用市场）。MQTT 接入、数据中心双档存储（PostgreSQL / TDengine）、规则引擎与应用市场已落地。
             <strong>暂未开源</strong>
-            ，当前仅通过演示站展示能力与界面。
+            ；基于开源脚手架云起演进。
           </p>
           <p>
-            演示门户：
+            演示门户（纯前端 Mock）：
             <a
               href="https://iot.datafuturex.cn/portal"
               target="_blank"
@@ -145,7 +146,7 @@ npm install && npm run dev`}</code>
             >
               https://iot.datafuturex.cn/portal
             </a>
-            （租户 <code>platform</code>，账号 <code>demo / demo123</code>）。
+            。租户 <code>platform</code>，账号 <code>demo / demo123</code>。
           </p>
           <p>
             作品页（含系统截图）：
@@ -156,7 +157,7 @@ npm install && npm run dev`}</code>
         <section id="smart-iot-shots" className="prose-block">
           <h2>数智AI工业物联网 · 系统截图</h2>
           <p>
-            门户已收录登录、工作台、应用市场、设备管理、数据中心、规则引擎与平台管理等界面截图。完整交互请打开演示站体验。
+            门户已收录正式站模块截图：登录、工作台、应用市场、产品/设备、实时数据、规则管理、用户/菜单/系统设置。完整交互请打开演示站体验。
           </p>
           <p>
             <Link className="btn btn--primary" to="/products/smart-iot-ai#screenshots">

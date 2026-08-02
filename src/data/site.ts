@@ -31,7 +31,8 @@ export const directions = [
   {
     id: 'iot',
     name: '物联网 IoT',
-    summary: '设备管理 · 数据中心 · 规则引擎 · 平台管理；含 MQTT/OTA 与应用市场。',
+    summary:
+      'AI 原生物联控制面：设备接入、数据采集/治理、规则决策与行业应用；MQTT/OTA 与应用市场已落地。',
   },
   {
     id: 'digital-twin',
@@ -83,7 +84,7 @@ export const designLanguages = [
     id: 'industrial-cyan',
     name: '工业青',
     subject: 'AI IoT',
-    summary: '工业物联控制面：设备—数据—规则—应用的现场运维感。',
+    summary: '工业物联控制面：设备—数据—规则—应用，工业澄明浅色控制台。',
     hex: '#0F766E',
     rgb: '15, 118, 110',
     href: '/products/smart-iot-ai',

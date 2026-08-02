@@ -131,10 +131,10 @@ export const works: Work[] = [
     englishName: 'Smart AI Industrial IoT Platform',
     tag: '暂未开源',
     summary:
-      '从设备接入到行业应用的 AI 物联控制面：设备管理 · 数据中心 · 规则引擎 · 平台管理，另含工作台与应用市场。',
+      'AI 原生工业物联网控制面：设备接入 → 数据采集/治理 → 规则决策 → 行业应用；控制台四大业务域为设备管理 · 数据中心 · 规则引擎 · 平台管理。',
     openSource: false,
     accessNote:
-      '暂未开源，当前仅提供在线演示。请通过演示站体验：https://iot.datafuturex.cn/portal',
+      '暂未开源。在线演示为纯前端 Mock：https://iot.datafuturex.cn/portal 。基于开源脚手架云起（yunqi-admin）演进。',
     palette: {
       id: 'industrial-cyan',
       label: '工业青',
@@ -146,8 +146,11 @@ export const works: Work[] = [
       'TypeScript',
       'Element Plus',
       'Vite',
+      'Pinia',
       'Java 21',
       'Spring Boot 3',
+      'Spring Security 6',
+      'MyBatis-Plus',
       'Spring Modulith',
       'PostgreSQL 16',
       'TDengine',
@@ -155,20 +158,21 @@ export const works: Work[] = [
       'EMQX',
     ],
     capabilities: [
-      '设备管理：协议 · 产品 · 物模型 · Topic · 设备 · 影子 · 指令 · Modbus · OTA；MQTT 已落地',
-      '数据中心：历史、事件、实时与时序运维；PostgreSQL / TDengine 可切换',
-      '规则引擎：规则编排、告警中心与数据通道（JDBC/Redis/Kafka/HTTP/MQTT）',
-      '主页 / 应用市场：工作台概览；行业应用孵化与启停',
-      '平台管理：多租户 RBAC、应用配置、公告 SSE、操作日志与系统监控',
+      '设备管理：协议 · 产品 · 物模型 · Topic · 设备 · 影子 · 指令 · Modbus · OTA；MQTT 已落地（TCP/HTTP 等为骨架）',
+      '数据中心：历史 / 事件 / 实时 / 保留策略；默认 PostgreSQL，可切 TDengine',
+      '规则引擎：属性/事件/在离线规则，告警中心，通道转发（JDBC/Redis/Kafka/HTTP/MQTT）',
+      '主页：工作台概览；应用市场孵化行业应用并支持启停',
+      '平台管理：多租户 RBAC（租户编码登录）、应用配置、公告 SSE、操作日志、系统监控',
+      '产品门户 /portal 与设备模拟器（iot-simulator）已落地',
     ],
     scenarios: [
-      '工业现场设备纳管、MQTT 联调、批量启停与 OTA 升级',
-      '时序/事件统一查询、规则告警与数据通道转发',
-      '多租户 SaaS 控制台与行业应用启停',
+      '工业现场设备纳管、MQTT 联调、批量运维与 OTA 升级',
+      '时序/事件统一查询、规则告警与多通道数据转发',
+      '多租户 SaaS 控制台；制造 / 能源等行业应用经应用市场启停',
     ],
     quickStart: [
       '打开演示门户：https://iot.datafuturex.cn/portal',
-      '点击「立即体验」进入登录页',
+      '点击「立即体验」进入登录页（纯前端 Mock）',
       '租户编码 platform，账号 demo / demo123',
     ],
     links: {
@@ -189,7 +193,8 @@ export const works: Work[] = [
     ],
     logo: '/works/smart-iot-ai/logo.svg',
     accounts: [
-      { label: '演示站', value: '租户 platform · demo / demo123' },
+      { label: '演示站（Mock）', value: '租户 platform · demo / demo123' },
+      { label: '本地联调', value: '租户 platform · admin / admin123' },
     ],
   },
   {

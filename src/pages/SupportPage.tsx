@@ -131,7 +131,7 @@ export function SupportPage() {
             作品页：<Link to="/products/smart-iot-ai">数智AI工业物联网平台</Link>
           </li>
           <li>
-            演示站：
+            演示站（纯前端 Mock）：
             <a
               href="https://iot.datafuturex.cn/portal"
               target="_blank"
@@ -140,8 +140,9 @@ export function SupportPage() {
               iot.datafuturex.cn/portal ↗
             </a>
           </li>
-          <li>暂未开源，仅提供在线演示</li>
+          <li>暂未开源；基于云起（yunqi-admin）演进，源码不对外托管</li>
           <li>演示账号：租户 platform · demo / demo123</li>
+          <li>本地联调账号：租户 platform · admin / admin123</li>
         </ul>
       </section>
 
@@ -187,7 +188,7 @@ export function SupportPage() {
           </li>
           <li>
             <strong>工业物联网 / 万象 / 灵枢能否拿到源码？</strong> —
-            工业物联网暂未开源；万象开源筹备中；灵枢正在开发中。前两者可通过演示站了解能力。
+            工业物联网暂未开源（演示为纯前端 Mock）；万象开源筹备中；灵枢正在开发中。前两者可通过演示站了解能力。
           </li>
           <li>
             <strong>云起演示打不开</strong> — 确认可访问 yunqi.datafuturex.cn/portal，或本地{' '}

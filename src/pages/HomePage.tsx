@@ -137,7 +137,7 @@ export function HomePage() {
               rel="noopener noreferrer"
             >
               <strong>数智AI工业物联网：演示站</strong>
-              <span>暂未开源；体验设备管理 · 数据中心 · 规则引擎 · 平台管理。</span>
+              <span>暂未开源 · Mock；设备接入 → 数据中心 → 规则 → 应用市场。</span>
             </a>
           </li>
           <li>
