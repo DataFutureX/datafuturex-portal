@@ -10,6 +10,13 @@ const chapters = [
     ],
   },
   {
+    title: '数智AI工业物联网平台',
+    items: [
+      { id: 'smart-iot', label: '概述与演示站' },
+      { id: 'smart-iot-shots', label: '系统截图' },
+    ],
+  },
+  {
     title: '万象物联监测平台',
     items: [
       { id: 'wanxiang', label: '概述与演示站' },
@@ -41,7 +48,10 @@ export function DocsPage() {
         <header className="page-hero">
           <p className="eyebrow mono">Getting started</p>
           <h1>快速开始</h1>
-          <p>云起：开源展示与开发；万象：演示站展示（开源正在筹备中）。也可查看 <Link to="/examples">示例入口</Link>。</p>
+          <p>
+            云起：开源展示与开发；数智AI工业物联网与万象：演示站展示（开源正在筹备中）。也可查看{' '}
+            <Link to="/examples">示例入口</Link>。
+          </p>
         </header>
 
         <section id="yunqi" className="prose-block">
@@ -111,6 +121,42 @@ npm install && npm run dev`}</code>
           <p>
             后端默认 http://localhost:8080 ，账号 <code>admin / admin123</code>
             。Swagger：<code>/swagger-ui.html</code>。
+          </p>
+        </section>
+
+        <section id="smart-iot" className="prose-block">
+          <h2>数智AI工业物联网平台 · 概述与演示站</h2>
+          <p>
+            从设备接入到行业应用的 AI 物联控制面，贯通协议 / 物模型 / MQTT、数据中心、规则告警、应用市场与多租户运维。
+            <strong>开源正在筹备中</strong>
+            ，暂不提供源码下载；当前仅通过演示站展示能力与界面。
+          </p>
+          <p>
+            演示门户：
+            <a
+              href="https://iot.datafuturex.cn/portal"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://iot.datafuturex.cn/portal
+            </a>
+            （租户 <code>platform</code>，账号 <code>demo / demo123</code>）。
+          </p>
+          <p>
+            作品页（含系统截图）：
+            <Link to="/products/smart-iot-ai">数智AI工业物联网平台</Link>
+          </p>
+        </section>
+
+        <section id="smart-iot-shots" className="prose-block">
+          <h2>数智AI工业物联网 · 系统截图</h2>
+          <p>
+            门户已收录产品门户、登录、工作台、设备管理、数据中心、规则引擎等界面截图。完整交互请直接打开演示站体验。
+          </p>
+          <p>
+            <Link className="btn btn--primary" to="/products/smart-iot-ai#screenshots">
+              查看截图图集
+            </Link>
           </p>
         </section>
 

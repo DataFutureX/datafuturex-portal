@@ -31,6 +31,24 @@ const yunqiFiles = [
   '12-api-docs.png',
 ]
 
+const smartIotSrc = 'D:/DataFutureX-Code/datafuturex-iot/docs/screenshots'
+const smartIotPortal =
+  'D:/DataFutureX-Code/datafuturex-iot/frontend/public/portal/dashboard.png'
+const smartIotDst = path.resolve('public/works/smart-iot-ai')
+const smartIotFiles = [
+  { src: smartIotPortal, base: '00-portal' },
+  { src: path.join(smartIotSrc, '01-login.png'), base: '01-login' },
+  { src: path.join(smartIotSrc, '02-dashboard.png'), base: '02-dashboard' },
+  { src: path.join(smartIotSrc, '03-app-center.png'), base: '03-app-center' },
+  { src: path.join(smartIotSrc, '04-device-product.png'), base: '04-device-product' },
+  { src: path.join(smartIotSrc, '05-device-list.png'), base: '05-device-list' },
+  { src: path.join(smartIotSrc, '09-data-realtime.png'), base: '06-data-realtime' },
+  { src: path.join(smartIotSrc, '10-rule-list.png'), base: '07-rule-list' },
+  { src: path.join(smartIotSrc, '06-platform-user.png'), base: '08-platform-user' },
+  { src: path.join(smartIotSrc, '07-platform-menu.png'), base: '09-platform-menu' },
+  { src: path.join(smartIotSrc, '08-system-config.png'), base: '10-system-config' },
+]
+
 const wanxiangSrc =
   'D:/workspace-qoder/hydro-monitor-platform/hydro-monitor-frontend/screenshots'
 const wanxiangDst = path.resolve('public/works/wanxiang-hydro')
@@ -111,6 +129,10 @@ async function main() {
   for (const name of yunqiFiles) {
     const base = name.replace(/\.png$/i, '')
     await encodePng(path.join(yunqiSrc, name), yunqiDst, base)
+  }
+
+  for (const file of smartIotFiles) {
+    await encodePng(file.src, smartIotDst, file.base)
   }
 
   const entries = await fs.readdir(wanxiangSrc)

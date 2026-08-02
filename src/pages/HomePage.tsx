@@ -52,7 +52,7 @@ export function HomePage() {
         <div className="section__head">
           <h2 id="works-heading">作品</h2>
           <p>
-            云起完全开源、可开发复用；万象开源正在筹备中，当前提供演示站。点击进入详情与系统截图。
+            云起完全开源、可开发复用；数智AI工业物联网与万象开源正在筹备中，当前提供演示站。点击进入详情与系统截图。
           </p>
         </div>
         <ul className="work-cards">
@@ -96,7 +96,7 @@ export function HomePage() {
       <section className="section section--compact" aria-labelledby="start-heading">
         <div className="section__head">
           <h2 id="start-heading">快速体验</h2>
-          <p>两条最短路径，分别对应开源工程与演示站。</p>
+          <p>开源工程与演示站的最短路径。</p>
         </div>
         <ol className="start-steps start-steps--compact">
           <li>
@@ -107,6 +107,16 @@ export function HomePage() {
             >
               <strong>云起：源码与演示</strong>
               <span>Gitee 获取源码，或打开 yunqi.datafuturex.cn/portal 在线体验。</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://iot.datafuturex.cn/portal"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>数智AI工业物联网：演示站</strong>
+              <span>开源筹备中，体验设备接入到应用市场闭环。</span>
             </a>
           </li>
           <li>

@@ -125,6 +125,27 @@ export function SupportPage() {
       </section>
 
       <section className="prose-block">
+        <h2>数智AI工业物联网平台（开源正在筹备中）</h2>
+        <ul>
+          <li>
+            作品页：<Link to="/products/smart-iot-ai">数智AI工业物联网平台</Link>
+          </li>
+          <li>
+            演示站：
+            <a
+              href="https://iot.datafuturex.cn/portal"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              iot.datafuturex.cn/portal ↗
+            </a>
+          </li>
+          <li>开源正在筹备中，暂不提供源码下载</li>
+          <li>演示账号：租户 platform · demo / demo123</li>
+        </ul>
+      </section>
+
+      <section className="prose-block">
         <h2>万象物联监测平台（开源正在筹备中）</h2>
         <ul>
           <li>
@@ -152,7 +173,8 @@ export function SupportPage() {
             <strong>想二次开发哪个项目？</strong> — 请使用完全开源的云起管理后台。
           </li>
           <li>
-            <strong>万象能否拿到源码？</strong> — 开源正在筹备中，当前可通过演示站与门户截图了解能力。
+            <strong>工业物联网 / 万象能否拿到源码？</strong> —
+            开源正在筹备中，当前可通过演示站与门户截图了解能力。
           </li>
           <li>
             <strong>云起演示打不开</strong> — 确认可访问 yunqi.datafuturex.cn/portal，或本地{' '}

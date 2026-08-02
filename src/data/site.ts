@@ -31,7 +31,7 @@ export const directions = [
   {
     id: 'iot',
     name: '物联网 IoT',
-    summary: '设备接入、协议采集、监测告警与多端协同。',
+    summary: '设备接入、物模型、数据中心、规则告警与多租户控制面。',
   },
   {
     id: 'digital-twin',

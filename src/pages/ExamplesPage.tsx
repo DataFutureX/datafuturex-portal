@@ -21,6 +21,19 @@ const examples = [
     href: '/products/yunqi-admin#screenshots',
   },
   {
+    title: '数智AI工业物联网演示站',
+    stack: 'iot.datafuturex.cn',
+    summary: '开源正在筹备中；设备接入 → 数据中心 → 规则 → 应用市场。',
+    href: 'https://iot.datafuturex.cn/portal',
+    external: true,
+  },
+  {
+    title: '数智AI工业物联网系统截图',
+    stack: '门户图集',
+    summary: '产品门户、设备管理、数据中心、规则引擎等界面一览。',
+    href: '/products/smart-iot-ai#screenshots',
+  },
+  {
     title: '万象演示站',
     stack: 'wanxiang.datafuturex.cn',
     summary: '开源正在筹备中，当前演示展示：/portal 入口。',

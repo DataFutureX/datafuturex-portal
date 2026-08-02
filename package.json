@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "capture:wanxiang": "node scripts/capture-wanxiang.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "reimport:screenshots": "node scripts/reimport-screenshots.mjs"
+    "reimport:screenshots": "node scripts/reimport-screenshots.mjs",
+    "import:smart-iot": "node scripts/import-smart-iot.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",
