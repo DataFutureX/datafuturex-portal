@@ -4,18 +4,19 @@
  */
 export function HeroVisual() {
   const hub = { x: 1080, y: 320 }
+  // 不规则星座排布：距离与方位错开，避免四角正方形
   const platforms = [
-    { id: 'yunqi', x: 900, y: 200, color: '#171717', soft: '23, 23, 23' },
-    { id: 'wanxiang', x: 1260, y: 200, color: '#2563EB', soft: '37, 99, 235' },
-    { id: 'iot', x: 1260, y: 450, color: '#0F766E', soft: '15, 118, 110' },
-    { id: 'lingshu', x: 900, y: 450, color: '#475569', soft: '71, 85, 105' },
+    { id: 'yunqi', x: 940, y: 155, color: '#171717', soft: '23, 23, 23' },
+    { id: 'wanxiang', x: 1325, y: 210, color: '#2563EB', soft: '37, 99, 235' },
+    { id: 'iot', x: 1210, y: 530, color: '#0F766E', soft: '15, 118, 110' },
+    { id: 'lingshu', x: 820, y: 390, color: '#475569', soft: '71, 85, 105' },
   ] as const
 
   const ambience = [
-    [980, 280],
-    [1145, 195],
-    [1305, 360],
-    [1040, 455],
+    [990, 255],
+    [1185, 170],
+    [1340, 390],
+    [1005, 480],
   ] as const
 
   return (
@@ -163,7 +164,7 @@ export function HeroVisual() {
           </g>
         </g>
 
-        {/* 拓扑连线：核心 ↔ 作品 */}
+        {/* 拓扑连线：核心 ↔ 作品；作品间仅少量非闭合旁路，避免方形轮廓 */}
         <g fill="none" strokeWidth="1.15" strokeOpacity="0.28">
           {platforms.map((p) => (
             <path
@@ -173,9 +174,14 @@ export function HeroVisual() {
             />
           ))}
           <path
-            d={`M${platforms[0].x} ${platforms[0].y} L${platforms[1].x} ${platforms[1].y} L${platforms[2].x} ${platforms[2].y} L${platforms[3].x} ${platforms[3].y} Z`}
+            d={`M${platforms[0].x} ${platforms[0].y} L${platforms[1].x} ${platforms[1].y}`}
             stroke="#5B21B6"
-            strokeOpacity="0.16"
+            strokeOpacity="0.12"
+          />
+          <path
+            d={`M${platforms[2].x} ${platforms[2].y} L${platforms[3].x} ${platforms[3].y}`}
+            stroke="#5B21B6"
+            strokeOpacity="0.1"
           />
         </g>
 
