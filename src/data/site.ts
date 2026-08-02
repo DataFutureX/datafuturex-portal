@@ -1,13 +1,13 @@
 /** 站点品牌、定位与研究方向 */
 export const site = {
-  name: '数智未来AI工坊',
+  name: '数智未来·AI工坊',
   englishName: 'DataFutureX',
   domain: 'www.datafuturex.cn',
   origin: 'https://www.datafuturex.cn',
   /** 首屏主标题旁的一句定位 */
   tagline: '展示工坊作品：物联网、数字孪生、行业应用与 AI 智能体。',
   description:
-    '数智未来AI工坊（DataFutureX）— 物联网、数字孪生、行业应用与 AI 智能体作品展示 · www.datafuturex.cn',
+    '数智未来·AI工坊（DataFutureX）— 物联网、数字孪生、行业应用与 AI 智能体作品展示 · www.datafuturex.cn',
   focus:
     '本站用于展示工坊交付作品，帮助访客了解方向、浏览作品并体验演示。',
   license: {
@@ -57,7 +57,7 @@ export const designLanguages = [
     id: 'future-purple',
     name: '未来紫',
     subject: '门户',
-    summary: '品牌入口与导航壳层：统一识别数智未来AI工坊。',
+    summary: '品牌入口与导航壳层：统一识别数智未来·AI工坊。',
     hex: '#5B21B6',
     rgb: '91, 33, 182',
     href: '/',

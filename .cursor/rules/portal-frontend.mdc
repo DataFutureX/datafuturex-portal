@@ -40,6 +40,6 @@ globs: "**/*.{tsx,jsx,vue,css,scss}"
 <Dashboard stats={...} schedules={...} promos={...} />
 
 // ✅ 首页当入口
-<Hero title="数智未来AI工坊" subtitle="数据能力一站式入口" />
+<Hero title="数智未来·AI工坊" subtitle="数据能力一站式入口" />
 <ProductGrid products={coreProducts} />
 ```

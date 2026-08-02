@@ -1,4 +1,4 @@
-# 数智未来AI工坊 · DataFutureX Portal
+# 数智未来·AI工坊 · DataFutureX Portal
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF.svg)](https://vitejs.dev/)
@@ -6,7 +6,7 @@
 
 官网：[www.datafuturex.cn](https://www.datafuturex.cn)
 
-数智未来AI工坊（DataFutureX）作品展示门户：介绍工坊方向、浏览作品详情与系统截图，并跳转演示站与开源仓库。
+数智未来·AI工坊（DataFutureX）作品展示门户：介绍工坊方向、浏览作品详情与系统截图，并跳转演示站与开源仓库。
 
 ## 工坊方向
 
