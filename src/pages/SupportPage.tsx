@@ -125,7 +125,7 @@ export function SupportPage() {
       </section>
 
       <section className="prose-block">
-        <h2>数智AI工业物联网平台（开源正在筹备中）</h2>
+        <h2>数智AI工业物联网平台（暂未开源）</h2>
         <ul>
           <li>
             作品页：<Link to="/products/smart-iot-ai">数智AI工业物联网平台</Link>
@@ -140,7 +140,7 @@ export function SupportPage() {
               iot.datafuturex.cn/portal ↗
             </a>
           </li>
-          <li>开源正在筹备中，暂不提供源码下载</li>
+          <li>暂未开源，仅提供在线演示</li>
           <li>演示账号：租户 platform · demo / demo123</li>
         </ul>
       </section>
@@ -167,14 +167,27 @@ export function SupportPage() {
       </section>
 
       <section className="prose-block">
+        <h2>灵枢行业应用市场（正在开发中）</h2>
+        <ul>
+          <li>
+            作品页：<Link to="/products/lingshu-market">灵枢行业应用市场</Link>
+          </li>
+          <li>正在开发中，暂无演示站与源码</li>
+          <li>
+            文档：<Link to="/docs#lingshu">概述与进展</Link>
+          </li>
+        </ul>
+      </section>
+
+      <section className="prose-block">
         <h2>常见问题</h2>
         <ul>
           <li>
             <strong>想二次开发哪个项目？</strong> — 请使用完全开源的云起管理后台。
           </li>
           <li>
-            <strong>工业物联网 / 万象能否拿到源码？</strong> —
-            开源正在筹备中，当前可通过演示站与门户截图了解能力。
+            <strong>工业物联网 / 万象 / 灵枢能否拿到源码？</strong> —
+            工业物联网暂未开源；万象开源筹备中；灵枢正在开发中。前两者可通过演示站了解能力。
           </li>
           <li>
             <strong>云起演示打不开</strong> — 确认可访问 yunqi.datafuturex.cn/portal，或本地{' '}

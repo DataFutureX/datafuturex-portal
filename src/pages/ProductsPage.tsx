@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { shotMedium, works } from '../data/works'
+import { WorkCard } from '../components/WorkCard'
+import { works } from '../data/works'
 
 export function ProductsPage() {
   return (
@@ -7,42 +7,16 @@ export function ProductsPage() {
       <header className="page-hero">
         <h1>作品</h1>
         <p>
-          云起：完全开源，可演示与二次开发。数智AI工业物联网与万象：开源正在筹备中，当前以演示站展示。均提供系统截图。
+          云起：完全开源。数智AI工业物联网：暂未开源；万象：开源筹备中；灵枢：正在开发中。卡片色条对应各作品主色（极简白
+          / 工业青 / 科技蓝 / 松柏绿）。
         </p>
       </header>
       <ul className="work-cards">
-        {works.map((work, index) => {
-          const cover = work.screenshots[0]
-          return (
-            <li key={work.slug}>
-              <Link to={`/products/${work.slug}`} className="work-card">
-                <div className="work-card__media">
-                  {cover ? (
-                    <img
-                      src={shotMedium(cover.src, cover.medium)}
-                      srcSet={`${shotMedium(cover.src, cover.medium)} 960w, ${cover.src} 1440w`}
-                      sizes="(max-width: 720px) 92vw, 520px"
-                      alt=""
-                      width={960}
-                      height={600}
-                      loading={index === 0 ? 'eager' : 'lazy'}
-                      decoding="async"
-                      fetchPriority={index === 0 ? 'high' : 'auto'}
-                    />
-                  ) : (
-                    <div className="work-card__placeholder" />
-                  )}
-                </div>
-                <div className="work-card__body">
-                  <p className="work-card__tag">{work.tag}</p>
-                  <h3>{work.name}</h3>
-                  <p>{work.summary}</p>
-                  <span className="work-card__cta">进入详情 →</span>
-                </div>
-              </Link>
-            </li>
-          )
-        })}
+        {works.map((work, index) => (
+          <li key={work.slug}>
+            <WorkCard work={work} index={index} cta="进入详情 →" />
+          </li>
+        ))}
       </ul>
     </div>
   )

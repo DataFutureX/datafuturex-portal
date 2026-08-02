@@ -1,6 +1,7 @@
+import type { CSSProperties } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ShotGallery } from '../components/ShotGallery'
-import { getWork } from '../data/works'
+import { getWork, workThemeVars } from '../data/works'
 
 export function ProductDetailPage() {
   const { slug = '' } = useParams()
@@ -18,7 +19,11 @@ export function ProductDetailPage() {
   }
 
   return (
-    <div className="page page--wide">
+    <div
+      className="page page--wide work-theme"
+      data-palette={work.palette.id}
+      style={workThemeVars(work.palette) as CSSProperties}
+    >
       <nav className="breadcrumb" aria-label="面包屑">
         <Link to="/">首页</Link>
         <span aria-hidden="true">/</span>
@@ -33,6 +38,7 @@ export function ProductDetailPage() {
         ) : null}
         <p className="eyebrow">
           <span className="mono">{work.englishName}</span>
+          <span className="work-palette-chip mono">{work.palette.label}</span>
           <span className="work-tag">{work.tag}</span>
         </p>
         <h1>{work.name}</h1>
@@ -80,7 +86,7 @@ export function ProductDetailPage() {
             </>
           ) : (
             <Link className="btn btn--ghost" to={work.links.docsAnchor}>
-              演示说明
+              {work.links.demo ? '演示说明' : '产品说明'}
             </Link>
           )}
         </div>

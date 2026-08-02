@@ -23,7 +23,7 @@ const examples = [
   {
     title: '数智AI工业物联网演示站',
     stack: 'iot.datafuturex.cn',
-    summary: '开源正在筹备中；设备接入 → 数据中心 → 规则 → 应用市场。',
+    summary: '暂未开源；设备管理 · 数据中心 · 规则引擎 · 平台管理 / 应用市场。',
     href: 'https://iot.datafuturex.cn/portal',
     external: true,
   },
@@ -46,6 +46,12 @@ const examples = [
     summary: '演示站门户、登录、仪表盘、地图、实时数据截图。',
     href: '/products/wanxiang-hydro#screenshots',
   },
+  {
+    title: '灵枢行业应用市场',
+    stack: '正在开发中',
+    summary: '行业应用枢纽，暂无演示；查看能力规划与进展说明。',
+    href: '/products/lingshu-market',
+  },
 ]
 
 export function ExamplesPage() {
@@ -54,7 +60,7 @@ export function ExamplesPage() {
       <header className="page-hero">
         <p className="eyebrow mono">Examples</p>
         <h1>示例</h1>
-        <p>开源工程可演示与开发；筹备中的工程请走演示站与截图图集。</p>
+        <p>开源工程可演示与开发；演示站与截图图集；开发中作品见作品页进展。</p>
       </header>
       <ul className="capability-list">
         {examples.map((example, index) => (

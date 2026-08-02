@@ -13,12 +13,12 @@ const MEDIUM_QUALITY = 92
 const THUMB_QUALITY = 82
 
 const srcDir = 'D:/DataFutureX-Code/datafuturex-iot/docs/screenshots'
-const portalPreview = 'D:/DataFutureX-Code/datafuturex-iot/frontend/public/portal/dashboard.png'
+const portalPreviewPng = 'D:/DataFutureX-Code/datafuturex-iot/frontend/public/portal/dashboard.png'
 const logoSrc = 'D:/DataFutureX-Code/datafuturex-iot/frontend/src/assets/logo.svg'
 const dst = path.resolve('public/works/smart-iot-ai')
 
 const files = [
-  { src: portalPreview, base: '00-portal' },
+  { src: portalPreviewPng, base: '00-portal' },
   { src: path.join(srcDir, '01-login.png'), base: '01-login' },
   { src: path.join(srcDir, '02-dashboard.png'), base: '02-dashboard' },
   { src: path.join(srcDir, '03-app-center.png'), base: '03-app-center' },

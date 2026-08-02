@@ -23,6 +23,10 @@ const chapters = [
       { id: 'wanxiang-shots', label: '系统截图' },
     ],
   },
+  {
+    title: '灵枢行业应用市场',
+    items: [{ id: 'lingshu', label: '概述与进展' }],
+  },
 ]
 
 export function DocsPage() {
@@ -49,7 +53,7 @@ export function DocsPage() {
           <p className="eyebrow mono">Getting started</p>
           <h1>快速开始</h1>
           <p>
-            云起：开源展示与开发；数智AI工业物联网与万象：演示站展示（开源正在筹备中）。也可查看{' '}
+            云起：开源展示与开发；数智AI工业物联网与万象：演示站；灵枢：正在开发中。也可查看{' '}
             <Link to="/examples">示例入口</Link>。
           </p>
         </header>
@@ -127,9 +131,10 @@ npm install && npm run dev`}</code>
         <section id="smart-iot" className="prose-block">
           <h2>数智AI工业物联网平台 · 概述与演示站</h2>
           <p>
-            从设备接入到行业应用的 AI 物联控制面，贯通协议 / 物模型 / MQTT、数据中心、规则告警、应用市场与多租户运维。
-            <strong>开源正在筹备中</strong>
-            ，暂不提供源码下载；当前仅通过演示站展示能力与界面。
+            从设备接入到行业应用的 AI 物联控制面。控制台四大业务域：设备管理 · 数据中心 · 规则引擎 ·
+            平台管理（另含工作台 / 应用市场）。
+            <strong>暂未开源</strong>
+            ，当前仅通过演示站展示能力与界面。
           </p>
           <p>
             演示门户：
@@ -151,7 +156,7 @@ npm install && npm run dev`}</code>
         <section id="smart-iot-shots" className="prose-block">
           <h2>数智AI工业物联网 · 系统截图</h2>
           <p>
-            门户已收录产品门户、登录、工作台、设备管理、数据中心、规则引擎等界面截图。完整交互请直接打开演示站体验。
+            门户已收录产品门户、登录、工作台、应用市场、设备管理、数据中心、规则引擎与平台管理等界面截图。完整交互请打开演示站体验。
           </p>
           <p>
             <Link className="btn btn--primary" to="/products/smart-iot-ai#screenshots">
@@ -193,6 +198,19 @@ npm install && npm run dev`}</code>
             <Link className="btn btn--primary" to="/products/wanxiang-hydro#screenshots">
               查看截图图集
             </Link>
+          </p>
+        </section>
+
+        <section id="lingshu" className="prose-block">
+          <h2>灵枢行业应用市场 · 概述与进展</h2>
+          <p>
+            行业应用枢纽，面向水利、灌区、农业、地质灾害等场景，规划应用目录、分发启停与场景模板。
+            <strong>正在开发中</strong>
+            ，暂未提供演示站与源码。
+          </p>
+          <p>
+            作品页：
+            <Link to="/products/lingshu-market">灵枢行业应用市场</Link>
           </p>
         </section>
 

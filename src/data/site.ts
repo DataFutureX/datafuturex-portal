@@ -31,7 +31,7 @@ export const directions = [
   {
     id: 'iot',
     name: '物联网 IoT',
-    summary: '设备接入、物模型、数据中心、规则告警与多租户控制面。',
+    summary: '设备管理 · 数据中心 · 规则引擎 · 平台管理；含 MQTT/OTA 与应用市场。',
   },
   {
     id: 'digital-twin',
@@ -47,5 +47,54 @@ export const directions = [
     id: 'ai-agent',
     name: 'AI 智能体开发',
     summary: '面向业务的智能问答、工具调用与 Agent 编排。',
+  },
+] as const
+
+/** 门户与作品色系：品牌层统一，产品层各有主色 */
+export const designLanguages = [
+  {
+    id: 'future-purple',
+    name: '未来紫',
+    subject: '门户',
+    summary: '品牌入口与导航壳层：统一识别数智未来AI工坊。',
+    hex: '#5B21B6',
+    rgb: '91, 33, 182',
+    href: '/',
+  },
+  {
+    id: 'minimal-white',
+    name: '极简白',
+    subject: '云起',
+    summary: '脚手架产品：留白、墨色与清晰层级，突出可开发性。',
+    hex: '#171717',
+    rgb: '23, 23, 23',
+    href: '/products/yunqi-admin',
+  },
+  {
+    id: 'tech-blue',
+    name: '科技蓝',
+    subject: '万象',
+    summary: '监测与一张图：冷静信息密度，服务态势与告警阅读。',
+    hex: '#2563EB',
+    rgb: '37, 99, 235',
+    href: '/products/wanxiang-hydro',
+  },
+  {
+    id: 'industrial-cyan',
+    name: '工业青',
+    subject: 'AI IoT',
+    summary: '工业物联控制面：设备—数据—规则—应用的现场运维感。',
+    hex: '#0F766E',
+    rgb: '15, 118, 110',
+    href: '/products/smart-iot-ai',
+  },
+  {
+    id: 'lingshu-pine',
+    name: '松柏绿',
+    subject: '灵枢',
+    summary: '行业应用市场：稳重通用绿，偏落地、易识别的产品主色。',
+    hex: '#15803D',
+    rgb: '21, 128, 61',
+    href: '/products/lingshu-market',
   },
 ] as const

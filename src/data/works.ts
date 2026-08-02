@@ -5,6 +5,14 @@ export type WorkLinks = {
   docsAnchor: string
 }
 
+/** 作品产品层主色（门户品牌层为未来紫，见 site.designLanguages） */
+export type WorkPalette = {
+  id: 'minimal-white' | 'tech-blue' | 'industrial-cyan' | 'lingshu-pine'
+  label: string
+  hex: string
+  rgb: string
+}
+
 export type Work = {
   slug: string
   name: string
@@ -14,6 +22,7 @@ export type Work = {
   /** 已开源可二次开发；筹备中则仅演示展示 */
   openSource: boolean
   accessNote: string
+  palette: WorkPalette
   stack: string[]
   capabilities: string[]
   scenarios: string[]
@@ -22,6 +31,14 @@ export type Work = {
   screenshots: { src: string; medium?: string; thumb?: string; alt: string }[]
   logo?: string
   accounts: { label: string; value: string }[]
+}
+
+/** 作品主题 CSS 变量，供卡片 / 详情页局部换色 */
+export function workThemeVars(palette: WorkPalette): Record<string, string> {
+  return {
+    '--work-accent': palette.hex,
+    '--work-accent-rgb': palette.rgb,
+  }
 }
 
 /** Derive variant path: /works/x/foo.webp -> /works/x/{dir}/foo.webp */
@@ -50,6 +67,12 @@ export const works: Work[] = [
     summary: '完全开源的中后台脚手架：全面展示能力，并支持克隆源码二次开发。',
     openSource: true,
     accessNote: 'MIT 开源。可在线演示、本地演示模式，或克隆仓库前后端联调开发。',
+    palette: {
+      id: 'minimal-white',
+      label: '极简白',
+      hex: '#171717',
+      rgb: '23, 23, 23',
+    },
     stack: [
       'Vue 3',
       'TypeScript',
@@ -106,12 +129,18 @@ export const works: Work[] = [
     slug: 'smart-iot-ai',
     name: '数智AI工业物联网平台',
     englishName: 'Smart AI Industrial IoT Platform',
-    tag: '开源正在筹备中',
+    tag: '暂未开源',
     summary:
-      '从设备接入到行业应用的 AI 物联控制面：协议 · 物模型 · MQTT 上下行 · 数据中心 · 规则告警 · 应用市场 · 多租户运维。',
+      '从设备接入到行业应用的 AI 物联控制面：设备管理 · 数据中心 · 规则引擎 · 平台管理，另含工作台与应用市场。',
     openSource: false,
     accessNote:
-      '开源正在筹备中，暂不提供源码下载。请通过演示站体验：https://iot.datafuturex.cn/portal',
+      '暂未开源，当前仅提供在线演示。请通过演示站体验：https://iot.datafuturex.cn/portal',
+    palette: {
+      id: 'industrial-cyan',
+      label: '工业青',
+      hex: '#0F766E',
+      rgb: '15, 118, 110',
+    },
     stack: [
       'Vue 3',
       'TypeScript',
@@ -123,17 +152,18 @@ export const works: Work[] = [
       'PostgreSQL 16',
       'TDengine',
       'MQTT',
+      'EMQX',
     ],
     capabilities: [
-      '设备接入：协议 → 产品物模型 → 设备；MQTT 心跳/属性/事件，影子与指令',
-      '数据中心：历史查询、事件流水、实时概览；PostgreSQL / TDengine 可切换',
-      '规则引擎：规则编排、告警中心与数据通道，承接上行后的业务闭环',
-      '应用市场：主页二级入口孵化行业应用，消费治理后的指标与时序',
-      '多租户控制面：租户隔离、RBAC、公告 SSE、操作日志与系统监控',
+      '设备管理：协议 · 产品 · 物模型 · Topic · 设备 · 影子 · 指令 · Modbus · OTA；MQTT 已落地',
+      '数据中心：历史、事件、实时与时序运维；PostgreSQL / TDengine 可切换',
+      '规则引擎：规则编排、告警中心与数据通道（JDBC/Redis/Kafka/HTTP/MQTT）',
+      '主页 / 应用市场：工作台概览；行业应用孵化与启停',
+      '平台管理：多租户 RBAC、应用配置、公告 SSE、操作日志与系统监控',
     ],
     scenarios: [
-      '工业现场设备纳管、联调与在离线运维',
-      '时序/事件统一查询与规则告警处置',
+      '工业现场设备纳管、MQTT 联调、批量启停与 OTA 升级',
+      '时序/事件统一查询、规则告警与数据通道转发',
       '多租户 SaaS 控制台与行业应用启停',
     ],
     quickStart: [
@@ -172,6 +202,12 @@ export const works: Work[] = [
     openSource: false,
     accessNote:
       '开源正在筹备中，暂不提供源码下载。请通过演示站体验：https://wanxiang.datafuturex.cn/portal',
+    palette: {
+      id: 'tech-blue',
+      label: '科技蓝',
+      hex: '#2563EB',
+      rgb: '37, 99, 235',
+    },
     stack: [
       'Vue 3',
       'TypeScript',
@@ -237,6 +273,53 @@ export const works: Work[] = [
     ],
     logo: '/works/wanxiang-hydro/logo.svg',
     accounts: [{ label: '演示站', value: '以 https://wanxiang.datafuturex.cn 页面说明为准' }],
+  },
+  {
+    slug: 'lingshu-market',
+    name: '灵枢行业应用市场',
+    englishName: 'Lingshu Industry App Market',
+    tag: '正在开发中',
+    summary:
+      '行业应用枢纽：汇聚水利、灌区、农业、地质灾害等场景应用，支持发现、分发与启停。正在开发中。',
+    openSource: false,
+    accessNote: '正在开发中，暂未提供演示站与源码。进展与能力说明见作品页与文档入口。',
+    palette: {
+      id: 'lingshu-pine',
+      label: '松柏绿',
+      hex: '#15803D',
+      rgb: '21, 128, 61',
+    },
+    stack: [
+      'Vue 3',
+      'TypeScript',
+      'Element Plus',
+      'Vite',
+      'Java 21',
+      'Spring Boot 3',
+      'PostgreSQL',
+    ],
+    capabilities: [
+      '应用目录：按行业与场景浏览、检索与收藏行业应用',
+      '分发启停：应用安装、版本与启停管理（规划中）',
+      '场景模板：水利、灌区、农业、地灾等行业模板（规划中）',
+      '与物联控制面联动：承接设备与规则能力，形成应用层入口（规划中）',
+    ],
+    scenarios: [
+      '行业客户按场景快速选型与试用应用',
+      '集成商组装多行业应用组合交付',
+      '与数智AI工业物联网等控制面协同运营',
+    ],
+    quickStart: [
+      '作品正在开发中，暂无演示站',
+      '可先浏览本页能力规划与工坊其他作品演示',
+      '进展更新将同步到门户文档与作品页',
+    ],
+    links: {
+      docsAnchor: '/docs#lingshu',
+    },
+    screenshots: [],
+    logo: '/works/lingshu-market/logo.svg',
+    accounts: [{ label: '状态', value: '正在开发中 · 暂无演示账号' }],
   },
 ]
 

@@ -1,7 +1,9 @@
+import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { HeroVisual } from '../components/HeroVisual'
-import { directions, site } from '../data/site'
-import { shotMedium, works } from '../data/works'
+import { WorkCard } from '../components/WorkCard'
+import { designLanguages, directions, site } from '../data/site'
+import { works } from '../data/works'
 
 export function HomePage() {
   return (
@@ -48,48 +50,67 @@ export function HomePage() {
         </ul>
       </section>
 
+      <section className="section" aria-labelledby="palette-heading">
+        <div className="section__head">
+          <h2 id="palette-heading">设计语言</h2>
+          <p>
+            门户用未来紫统一品牌；各作品保留独立主色——云起极简白、万象科技蓝、AI IoT 工业青、灵枢松柏绿。
+          </p>
+        </div>
+        <ul className="palette-list">
+          {designLanguages.map((item) => (
+            <li key={item.id}>
+              <Link
+                to={item.href}
+                className="palette-item"
+                data-palette={item.id}
+                style={
+                  {
+                    '--swatch': item.hex,
+                    '--swatch-rgb': item.rgb,
+                  } as CSSProperties
+                }
+              >
+                <span className="palette-item__swatch" aria-hidden="true" />
+                <span className="palette-item__body">
+                  <span className="palette-item__name">
+                    <strong>{item.name}</strong>
+                    <span className="mono">{item.subject}</span>
+                  </span>
+                  <span className="palette-item__summary">{item.summary}</span>
+                </span>
+                <span className="palette-item__go" aria-hidden="true">
+                  →
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="section" aria-labelledby="works-heading">
         <div className="section__head">
           <h2 id="works-heading">作品</h2>
           <p>
-            云起完全开源、可开发复用；数智AI工业物联网与万象开源正在筹备中，当前提供演示站。点击进入详情与系统截图。
+            云起完全开源；数智AI工业物联网与万象提供演示站；灵枢行业应用市场正在开发中。点击进入详情。
           </p>
         </div>
         <ul className="work-cards">
-          {works.map((work, index) => {
-            const cover = work.screenshots[0]
-            return (
-              <li key={work.slug}>
-                <Link to={`/products/${work.slug}`} className="work-card">
-                  <div className="work-card__media">
-                    {cover ? (
-                      <img
-                        src={shotMedium(cover.src, cover.medium)}
-                        srcSet={`${shotMedium(cover.src, cover.medium)} 960w, ${cover.src} 1440w`}
-                        sizes="(max-width: 720px) 92vw, 520px"
-                        alt=""
-                        width={960}
-                        height={600}
-                        loading={index === 0 ? 'eager' : 'lazy'}
-                        decoding="async"
-                        fetchPriority={index === 0 ? 'high' : 'auto'}
-                      />
-                    ) : (
-                      <div className="work-card__placeholder" />
-                    )}
-                  </div>
-                  <div className="work-card__body">
-                    <p className="work-card__tag">{work.tag}</p>
-                    <h3>{work.name}</h3>
-                    <p>{work.summary}</p>
-                    <span className="work-card__cta">
-                      {work.openSource ? '查看详情与源码' : '查看详情与演示'} →
-                    </span>
-                  </div>
-                </Link>
-              </li>
-            )
-          })}
+          {works.map((work, index) => (
+            <li key={work.slug}>
+              <WorkCard
+                work={work}
+                index={index}
+                cta={
+                  work.openSource
+                    ? '查看详情与源码 →'
+                    : work.links.demo
+                      ? '查看详情与演示 →'
+                      : '查看详情 →'
+                }
+              />
+            </li>
+          ))}
         </ul>
       </section>
 
@@ -116,7 +137,7 @@ export function HomePage() {
               rel="noopener noreferrer"
             >
               <strong>数智AI工业物联网：演示站</strong>
-              <span>开源筹备中，体验设备接入到应用市场闭环。</span>
+              <span>暂未开源；体验设备管理 · 数据中心 · 规则引擎 · 平台管理。</span>
             </a>
           </li>
           <li>
@@ -128,6 +149,12 @@ export function HomePage() {
               <strong>万象：演示站</strong>
               <span>开源筹备中，先通过演示门户了解能力。</span>
             </a>
+          </li>
+          <li>
+            <Link to="/products/lingshu-market">
+              <strong>灵枢：正在开发中</strong>
+              <span>行业应用市场枢纽，进展见作品页。</span>
+            </Link>
           </li>
         </ol>
       </section>
