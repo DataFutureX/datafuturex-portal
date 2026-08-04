@@ -84,10 +84,10 @@ export function SupportPage() {
       </section>
 
       <section className="prose-block">
-        <h2>云起管理后台（完全开源）</h2>
+        <h2>云起应用平台（完全开源）</h2>
         <ul>
           <li>
-            作品页：<Link to="/products/yunqi-admin">云起管理后台</Link>
+            作品页：<Link to="/products/yunqi-admin">云起应用平台</Link>
           </li>
           <li>
             GitHub：
@@ -140,7 +140,7 @@ export function SupportPage() {
               iot.datafuturex.cn/portal ↗
             </a>
           </li>
-          <li>暂未开源；基于云起（yunqi-admin）演进，源码不对外托管</li>
+          <li>暂未开源；基于云起应用平台（yunqi-admin / YQAP）演进，源码不对外托管</li>
           <li>演示账号：租户 platform · demo / demo123</li>
           <li>本地联调账号：租户 platform · admin / admin123</li>
         </ul>
@@ -184,7 +184,7 @@ export function SupportPage() {
         <h2>常见问题</h2>
         <ul>
           <li>
-            <strong>想二次开发哪个项目？</strong> — 请使用完全开源的云起管理后台。
+            <strong>想二次开发哪个项目？</strong> — 请使用完全开源的云起应用平台（YQAP）。
           </li>
           <li>
             <strong>工业物联网 / 万象 / 灵枢能否拿到源码？</strong> —

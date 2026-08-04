@@ -66,7 +66,7 @@ export const designLanguages = [
     id: 'minimal-white',
     name: '极简白',
     subject: '云起',
-    summary: '脚手架产品：留白、墨色与清晰层级，突出可开发性。',
+    summary: '应用开发底座：留白、墨色与清晰层级，突出可扩展与可开发性。',
     hex: '#171717',
     rgb: '23, 23, 23',
     href: '/products/yunqi-admin',

@@ -61,12 +61,14 @@ export function shotMedium(src: string, medium?: string) {
 export const works: Work[] = [
   {
     slug: 'yunqi-admin',
-    name: '云起管理后台',
-    englishName: 'Yunqi Admin',
-    tag: '完全开源 · MIT',
-    summary: '完全开源的中后台脚手架：全面展示能力，并支持克隆源码二次开发。',
+    name: '云起应用平台',
+    englishName: 'YunQi Application Platform',
+    tag: '完全开源 · MIT · YQAP',
+    summary:
+      '面向企业数字化应用建设的模块化开发基础平台（YQAP）：统一技术架构、业务组件与权限体系，MIT 开源，可演示与二次开发。',
     openSource: true,
-    accessNote: 'MIT 开源。可在线演示、本地演示模式，或克隆仓库前后端联调开发。',
+    accessNote:
+      'MIT 开源。可在线演示、本地纯前端演示（dev:demo），或克隆 monorepo 前后端联调（根目录一键启动）。',
     palette: {
       id: 'minimal-white',
       label: '极简白',
@@ -79,19 +81,22 @@ export const works: Work[] = [
       'Vite',
       'Element Plus',
       'Spring Boot 3',
+      'Spring Security 6',
+      'Spring Modulith',
       'Java 21',
       'MyBatis-Plus',
       'MySQL 8',
+      'JWT / RSA',
     ],
     capabilities: [
-      '动态 RBAC：菜单驱动路由，按钮与页面权限双重兜底',
-      '安全登录：滑动验证码 + RSA + JWT 黑名单',
-      '组织与权限：用户、单位树、角色授权、菜单配置',
-      '运维闭环：公告 SSE、操作日志月分表、系统监控',
-      '开箱可开发：源码、文档、演示模式与联调路径齐全',
+      '统一技术架构：Vue 3 + Spring Boot 3 前后端一体，yqap-api / security / biz / core 分层',
+      '业务组件开箱：用户、角色、菜单、单位、系统配置、公告与操作日志',
+      '权限安全体系：RBAC + JWT，菜单驱动路由；滑动验证码、RSA 传输与登录锁定',
+      '运维观测闭环：公告 SSE、操作日志月分表、系统监控（JVM / DB / Web）',
+      '开箱可开发：MIT 可商用、纯前端演示模式与根目录一键联调',
     ],
     scenarios: [
-      '团队以脚手架快速搭建企业内部管理系统',
+      '以模块化底座快速搭建企业数字化应用或内部管理系统',
       '无后端环境下做产品演示与 UI/权限联调预览',
       '学习中后台权限、审计与运维监控实现',
     ],
@@ -118,6 +123,8 @@ export const works: Work[] = [
       { src: '/works/yunqi-admin/10-operation-log.webp', alt: '操作日志' },
       { src: '/works/yunqi-admin/11-monitor.webp', alt: '系统监控' },
       { src: '/works/yunqi-admin/12-api-docs.webp', alt: '接口文档' },
+      { src: '/works/yunqi-admin/13-profile.webp', alt: '个人信息' },
+      { src: '/works/yunqi-admin/14-change-password.webp', alt: '修改密码' },
     ],
     logo: '/works/yunqi-admin/logo.svg',
     accounts: [
@@ -134,7 +141,7 @@ export const works: Work[] = [
       'AI 原生工业物联网控制面：设备接入 → 数据采集/治理 → 规则决策 → 行业应用；控制台四大业务域为设备管理 · 数据中心 · 规则引擎 · 平台管理。',
     openSource: false,
     accessNote:
-      '暂未开源。在线演示为纯前端 Mock：https://iot.datafuturex.cn/portal 。基于开源脚手架云起（yunqi-admin）演进。',
+      '暂未开源。在线演示为纯前端 Mock：https://iot.datafuturex.cn/portal 。基于开源底座云起应用平台（yunqi-admin / YQAP）演进。',
     palette: {
       id: 'industrial-cyan',
       label: '工业青',

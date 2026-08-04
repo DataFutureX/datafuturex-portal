@@ -126,7 +126,7 @@ export function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <strong>云起：源码与演示</strong>
+              <strong>云起应用平台：源码与演示</strong>
               <span>Gitee 获取源码，或打开 yunqi.datafuturex.cn/portal 在线体验。</span>
             </a>
           </li>

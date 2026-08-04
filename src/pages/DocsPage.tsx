@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const chapters = [
   {
-    title: '云起管理后台',
+    title: '云起应用平台',
     items: [
       { id: 'yunqi', label: '概述与开源' },
       { id: 'yunqi-demo', label: '本地演示模式' },
@@ -59,10 +59,12 @@ export function DocsPage() {
         </header>
 
         <section id="yunqi" className="prose-block">
-          <h2>云起管理后台 · 概述与开源</h2>
+          <h2>云起应用平台 · 概述与开源</h2>
           <p>
+            <strong>YunQi Application Platform（YQAP）</strong>
+            ，面向企业数字化应用建设的模块化开发基础平台。
             <strong>完全开源（MIT）</strong>
-            。可在线演示、全面查看系统截图，并克隆源码二次开发。仓库：
+            。可在线演示、查看系统截图，并克隆 monorepo 二次开发。仓库：
             <a
               href="https://github.com/DataFutureX/yunqi-admin"
               target="_blank"
@@ -90,7 +92,7 @@ export function DocsPage() {
           </p>
           <p>
             作品页（含系统截图）：
-            <Link to="/products/yunqi-admin">云起管理后台</Link>
+            <Link to="/products/yunqi-admin">云起应用平台</Link>
           </p>
         </section>
 
@@ -104,26 +106,33 @@ npm install
 npm run dev:demo`}</code>
           </pre>
           <p>
-            打开 http://localhost:3000 。演示账号：<code>demo / demo123</code>。
+            打开 http://localhost:3000 （可先看 <code>/portal</code>
+            ）。演示账号：<code>demo / demo123</code>
+            （演示态任意账号密码均可登录）。
           </p>
         </section>
 
         <section id="yunqi-fullstack" className="prose-block">
           <h2>云起 · 前后端联调开发</h2>
-          <p>需要 JDK 21+、Maven 3.9+、MySQL 8+。</p>
+          <p>需要 JDK 21+、Maven 3.9+、MySQL 8+。推荐仓库根目录一键启动。</p>
           <pre className="code-block">
-            <code>{`# 后端
+            <code>{`# 初始化数据库
 cd yunqi-admin/backend
-mysql -u root -p < yunqi-admin-core/src/main/resources/db/init.sql
-# 配置 application-dev.yml 中 yunqi.datasource.*
-start-dev.bat
+mysql -u root -p < yqap-core/src/main/resources/db/init.sql
+# 配置 yqap-core/.../application-dev.yml 中 yunqi.datasource.*
 
-# 前端
-cd yunqi-admin/frontend
-npm install && npm run dev`}</code>
+# 根目录一键启动（推荐）
+cd yunqi-admin
+# Windows: start.bat  或  .\\start.ps1
+# Linux / macOS: ./start.sh
+
+# 或分别启动
+cd backend && start-dev.bat   # http://localhost:8080
+cd frontend && npm install && npm run dev`}</code>
           </pre>
           <p>
-            后端默认 http://localhost:8080 ，账号 <code>admin / admin123</code>
+            前端 http://localhost:3000 ，后端 http://localhost:8080 ，账号{' '}
+            <code>admin / admin123</code>
             。Swagger：<code>/swagger-ui.html</code>。
           </p>
         </section>
@@ -135,7 +144,7 @@ npm install && npm run dev`}</code>
             <strong>设备管理 · 数据中心 · 规则引擎 · 平台管理</strong>
             （另含主页工作台 / 应用市场）。MQTT 接入、数据中心双档存储（PostgreSQL / TDengine）、规则引擎与应用市场已落地。
             <strong>暂未开源</strong>
-            ；基于开源脚手架云起演进。
+            ；基于开源底座云起应用平台演进。
           </p>
           <p>
             演示门户（纯前端 Mock）：

@@ -15,7 +15,7 @@ const FULL_QUALITY = 95
 const MEDIUM_QUALITY = 92
 const THUMB_QUALITY = 82
 
-const yunqiSrc = 'D:/workspace-qoder/yunqi-admin/screenshot'
+const yunqiSrc = 'E:/workspace-qoder/yunqi-admin/screenshot'
 const yunqiDst = path.resolve('public/works/yunqi-admin')
 const yunqiFiles = [
   '02-login.png',
@@ -29,6 +29,8 @@ const yunqiFiles = [
   '10-operation-log.png',
   '11-monitor.png',
   '12-api-docs.png',
+  '13-profile.png',
+  '14-change-password.png',
 ]
 
 const smartIotSrc = 'D:/DataFutureX-Code/datafuturex-iot/docs/screenshots'

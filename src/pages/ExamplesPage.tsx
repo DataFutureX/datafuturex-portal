@@ -4,20 +4,20 @@ const examples = [
   {
     title: '云起在线演示',
     stack: 'yunqi.datafuturex.cn/portal',
-    summary: '完全开源工程的在线演示，先进入 portal 再浏览后台能力。',
+    summary: '云起应用平台（YQAP）在线演示：先进入 portal，再体验权限与运维能力。',
     href: 'https://yunqi.datafuturex.cn/portal',
     external: true,
   },
   {
     title: '云起本地演示 / 开发',
-    stack: 'yunqi-admin',
-    summary: '克隆源码：npm run dev:demo 或前后端联调二次开发。',
+    stack: 'yunqi-admin · YQAP',
+    summary: '克隆 monorepo：npm run dev:demo，或根目录一键前后端联调。',
     href: '/docs#yunqi-demo',
   },
   {
     title: '云起系统截图',
     stack: '门户图集',
-    summary: '门户、登录、权限、公告、监控等界面一览。',
+    summary: '登录、工作台、权限、公告、监控、个人中心等界面一览。',
     href: '/products/yunqi-admin#screenshots',
   },
   {
