@@ -49,10 +49,11 @@ const smartIotFiles = [
 ]
 
 const wanxiangSrc =
-  'D:/workspace-qoder/hydro-monitor-platform/hydro-monitor-frontend/screenshots'
+  'E:/workspace-qoder/wanxiang-monitor-platform/frontend/screenshots'
 const wanxiangDst = path.resolve('public/works/wanxiang-hydro')
 const wanxiangAscii = [
   'login',
+  'portal',
   'home-dashboard',
   'ai-chat',
   'ai-documents',
@@ -124,16 +125,20 @@ async function encodePng(pngPath, outDir, base) {
   )
 }
 
-async function main() {
+async function importYunqi() {
   for (const name of yunqiFiles) {
     const base = name.replace(/\.png$/i, '')
     await encodePng(path.join(yunqiSrc, name), yunqiDst, base)
   }
+}
 
+async function importSmartIot() {
   for (const file of smartIotFiles) {
     await encodePng(file.src, smartIotDst, file.base)
   }
+}
 
+async function importWanxiang() {
   const entries = await fs.readdir(wanxiangSrc)
   for (const ascii of wanxiangAscii) {
     const match = entries.find((f) => f.endsWith(`__${ascii}.png`) || f === `${ascii}.png`)
@@ -142,6 +147,24 @@ async function main() {
       continue
     }
     await encodePng(path.join(wanxiangSrc, match), wanxiangDst, ascii)
+  }
+}
+
+async function main() {
+  const only = process.argv[2]
+  if (!only || only === 'all') {
+    await importYunqi()
+    await importSmartIot()
+    await importWanxiang()
+  } else if (only === 'wanxiang') {
+    await importWanxiang()
+  } else if (only === 'yunqi') {
+    await importYunqi()
+  } else if (only === 'smart-iot') {
+    await importSmartIot()
+  } else {
+    console.error(`unknown target: ${only} (use wanxiang|yunqi|smart-iot|all)`)
+    process.exit(1)
   }
 
   console.log('done')

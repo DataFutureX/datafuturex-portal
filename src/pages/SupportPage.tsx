@@ -147,10 +147,10 @@ export function SupportPage() {
       </section>
 
       <section className="prose-block">
-        <h2>万象物联监测平台（开源正在筹备中）</h2>
+        <h2>万象监测平台（开源正在筹备中）</h2>
         <ul>
           <li>
-            作品页：<Link to="/products/wanxiang-hydro">万象物联监测平台</Link>
+            作品页：<Link to="/products/wanxiang-hydro">万象监测平台</Link>
           </li>
           <li>
             演示站：
@@ -187,8 +187,8 @@ export function SupportPage() {
             <strong>想二次开发哪个项目？</strong> — 请使用完全开源的云起应用平台（YQAP）。
           </li>
           <li>
-            <strong>工业物联网 / 万象 / 灵枢能否拿到源码？</strong> —
-            工业物联网暂未开源（演示为纯前端 Mock）；万象开源筹备中；灵枢正在开发中。前两者可通过演示站了解能力。
+            <strong>工业物联网 / 万象监测平台 / 灵枢能否拿到源码？</strong> —
+            工业物联网暂未开源（演示为纯前端 Mock）；万象监测平台开源筹备中；灵枢正在开发中。前两者可通过演示站了解能力。
           </li>
           <li>
             <strong>云起演示打不开</strong> — 确认可访问 yunqi.datafuturex.cn/portal，或本地{' '}

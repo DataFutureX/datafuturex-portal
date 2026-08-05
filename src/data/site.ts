@@ -74,7 +74,7 @@ export const designLanguages = [
   {
     id: 'tech-blue',
     name: '科技蓝',
-    subject: '万象',
+    subject: '万象监测平台',
     summary: '监测与一张图：冷静信息密度，服务态势与告警阅读。',
     hex: '#2563EB',
     rgb: '37, 99, 235',

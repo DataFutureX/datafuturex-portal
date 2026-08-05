@@ -92,7 +92,7 @@ export function HomePage() {
         <div className="section__head">
           <h2 id="works-heading">作品</h2>
           <p>
-            云起完全开源；数智AI工业物联网与万象提供演示站；灵枢行业应用市场正在开发中。点击进入详情。
+            云起完全开源；数智AI工业物联网与万象监测平台提供演示站；灵枢行业应用市场正在开发中。点击进入详情。
           </p>
         </div>
         <ul className="work-cards">
@@ -146,7 +146,7 @@ export function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <strong>万象：演示站</strong>
+              <strong>万象监测平台：演示站</strong>
               <span>开源筹备中，先通过演示门户了解能力。</span>
             </a>
           </li>

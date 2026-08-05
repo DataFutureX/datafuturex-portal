@@ -17,7 +17,7 @@ const chapters = [
     ],
   },
   {
-    title: '万象物联监测平台',
+    title: '万象监测平台',
     items: [
       { id: 'wanxiang', label: '概述与演示站' },
       { id: 'wanxiang-shots', label: '系统截图' },
@@ -53,7 +53,7 @@ export function DocsPage() {
           <p className="eyebrow mono">Getting started</p>
           <h1>快速开始</h1>
           <p>
-            云起：开源展示与开发；数智AI工业物联网与万象：演示站；灵枢：正在开发中。也可查看{' '}
+            云起：开源展示与开发；数智AI工业物联网与万象监测平台：演示站；灵枢：正在开发中。也可查看{' '}
             <Link to="/examples">示例入口</Link>。
           </p>
         </header>
@@ -176,7 +176,7 @@ cd frontend && npm install && npm run dev`}</code>
         </section>
 
         <section id="wanxiang" className="prose-block">
-          <h2>万象物联监测平台 · 概述与演示站</h2>
+          <h2>万象监测平台 · 概述与演示站</h2>
           <p>
             水文水资源物联监测平台，覆盖协议接入、监测告警、地图视频与 AI
             问答等能力。
@@ -195,12 +195,12 @@ cd frontend && npm install && npm run dev`}</code>
           </p>
           <p>
             作品页（含系统截图）：
-            <Link to="/products/wanxiang-hydro">万象物联监测平台</Link>
+            <Link to="/products/wanxiang-hydro">万象监测平台</Link>
           </p>
         </section>
 
         <section id="wanxiang-shots" className="prose-block">
-          <h2>万象 · 系统截图</h2>
+          <h2>万象监测平台 · 系统截图</h2>
           <p>
             门户已收录演示站关键界面截图（门户、登录、仪表盘、地图、实时数据等）。完整交互请直接打开演示站体验。
           </p>

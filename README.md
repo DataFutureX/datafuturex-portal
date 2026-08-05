@@ -21,7 +21,7 @@
 |---|---|---|---|
 | [云起应用平台](https://www.datafuturex.cn/products/yunqi-admin) | 完全开源 · MIT · YQAP | [yunqi.datafuturex.cn/portal](https://yunqi.datafuturex.cn/portal) | [GitHub](https://github.com/DataFutureX/yunqi-admin) / [Gitee](https://gitee.com/DataFutureX/yunqi-admin) |
 | [数智AI工业物联网平台](https://www.datafuturex.cn/products/smart-iot-ai) | 暂未开源 | [iot.datafuturex.cn/portal](https://iot.datafuturex.cn/portal) | — |
-| [万象物联监测平台](https://www.datafuturex.cn/products/wanxiang-hydro) | 开源正在筹备中 | [wanxiang.datafuturex.cn/portal](https://wanxiang.datafuturex.cn/portal) | — |
+| [万象监测平台](https://www.datafuturex.cn/products/wanxiang-hydro) | 开源正在筹备中 | [wanxiang.datafuturex.cn/portal](https://wanxiang.datafuturex.cn/portal) | — |
 | [灵枢行业应用市场](https://www.datafuturex.cn/products/lingshu-market) | 正在开发中 | — | — |
 
 ## 技术栈
@@ -70,7 +70,7 @@ npm run preview
 | `npm run optimize:images` | 将 `public` 下 PNG/JPEG 转为 WebP（全图 / medium / thumbs） |
 | `npm run reimport:screenshots` | 从源项目截图目录重新导入并压缩 |
 | `npm run import:smart-iot` | 从 datafuturex-iot 导入工业物联网截图并压缩 |
-| `npm run capture:wanxiang` | 用 Playwright 抓取万象演示站截图（需本机浏览器依赖） |
+| `npm run capture:wanxiang` | 用 Playwright 抓取万象监测平台演示站截图（需本机浏览器依赖） |
 
 ## 目录结构
 
@@ -111,4 +111,4 @@ scripts/          # 截图采集与图片优化
 
 本仓库源码采用 [MIT License](./LICENSE) 开源。
 
-作品本身的开源状态以各作品仓库为准：云起应用平台为 MIT；数智AI工业物联网暂未开源；万象开源正在筹备中；灵枢正在开发中。
+作品本身的开源状态以各作品仓库为准：云起应用平台为 MIT；数智AI工业物联网暂未开源；万象监测平台开源正在筹备中；灵枢正在开发中。
