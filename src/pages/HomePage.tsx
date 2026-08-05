@@ -50,6 +50,32 @@ export function HomePage() {
         </ul>
       </section>
 
+      <section className="section" aria-labelledby="works-heading">
+        <div className="section__head">
+          <h2 id="works-heading">作品</h2>
+          <p>
+            云起完全开源；数智AI工业物联网与万象监测平台提供演示站；灵枢行业应用市场正在开发中。点击进入详情。
+          </p>
+        </div>
+        <ul className="work-cards">
+          {works.map((work, index) => (
+            <li key={work.slug}>
+              <WorkCard
+                work={work}
+                index={index}
+                cta={
+                  work.openSource
+                    ? '查看详情与源码 →'
+                    : work.links.demo
+                      ? '查看详情与演示 →'
+                      : '查看详情 →'
+                }
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="section" aria-labelledby="palette-heading">
         <div className="section__head">
           <h2 id="palette-heading">设计语言</h2>
@@ -83,32 +109,6 @@ export function HomePage() {
                   →
                 </span>
               </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="section" aria-labelledby="works-heading">
-        <div className="section__head">
-          <h2 id="works-heading">作品</h2>
-          <p>
-            云起完全开源；数智AI工业物联网与万象监测平台提供演示站；灵枢行业应用市场正在开发中。点击进入详情。
-          </p>
-        </div>
-        <ul className="work-cards">
-          {works.map((work, index) => (
-            <li key={work.slug}>
-              <WorkCard
-                work={work}
-                index={index}
-                cta={
-                  work.openSource
-                    ? '查看详情与源码 →'
-                    : work.links.demo
-                      ? '查看详情与演示 →'
-                      : '查看详情 →'
-                }
-              />
             </li>
           ))}
         </ul>
