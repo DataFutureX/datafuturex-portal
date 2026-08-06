@@ -55,11 +55,11 @@ export const directions = [
 export const designLanguages = [
   {
     id: 'future-purple',
-    name: '未来紫',
+    name: '科技蓝 · 孪生青',
     subject: '门户',
-    summary: '品牌入口与导航壳层：统一识别数智未来·AI工坊。',
-    hex: '#5B21B6',
-    rgb: '91, 33, 182',
+    summary: 'Future Intelligence Digital Lab：蓝青渐变主识别，未来紫作强调。',
+    hex: '#7B61FF',
+    rgb: '123, 97, 255',
     href: '/',
   },
   {

@@ -1,15 +1,20 @@
-import type { CSSProperties } from 'react'
+import { lazy, Suspense, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
-import { HeroVisual } from '../components/HeroVisual'
 import { WorkCard } from '../components/WorkCard'
 import { designLanguages, directions, site } from '../data/site'
 import { works } from '../data/works'
+
+const HeroVisual = lazy(() =>
+  import('../components/HeroVisual').then((m) => ({ default: m.HeroVisual })),
+)
 
 export function HomePage() {
   return (
     <>
       <section className="hero">
-        <HeroVisual />
+        <Suspense fallback={<div className="hero-visual" aria-hidden="true" />}>
+          <HeroVisual />
+        </Suspense>
         <div className="hero__content">
           <div className="hero__brand-block">
             <h1 className="hero__title">{site.name}</h1>
@@ -80,7 +85,8 @@ export function HomePage() {
         <div className="section__head">
           <h2 id="palette-heading">设计语言</h2>
           <p>
-            门户用未来紫统一品牌；各作品保留独立主色——云起极简白、万象科技蓝、AI IoT 工业青、灵枢石板灰。
+            门户采用科技蓝→孪生青渐变与未来紫强调；各作品保留独立主色——云起极简白、万象科技蓝、AI
+            IoT 工业青、灵枢石板灰。
           </p>
         </div>
         <ul className="palette-list">
