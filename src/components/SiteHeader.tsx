@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { site } from '../data/site'
+import { SiteSearch } from './SiteSearch'
 
 const navItems = [
   { to: '/', label: '主页', end: true },
@@ -38,7 +39,7 @@ const sourceLinks = [
     Icon: GitHubIcon,
   },
   {
-    href: 'https://gitee.com/datafuturex',
+    href: 'https://gitee.com/DataFutureX',
     label: 'Gitee',
     Icon: GiteeIcon,
   },
@@ -83,6 +84,7 @@ export function SiteHeader() {
               {item.label}
             </NavLink>
           ))}
+          <SiteSearch onNavigate={() => setOpen(false)} />
           <div className="site-nav__sources">
             {sourceLinks.map(({ href, label, Icon }) => (
               <a

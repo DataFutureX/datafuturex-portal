@@ -26,28 +26,32 @@ export const site = {
   },
 } as const
 
-/** 工坊主要方向（首页展示） */
+/** 工坊主要方向（主页展示） */
 export const directions = [
   {
     id: 'iot',
     name: '物联网 IoT',
     summary:
       'AI 原生物联控制面：设备接入、数据采集/治理、规则决策与行业应用；MQTT/OTA 与应用市场已落地。',
+    href: '/products/smart-iot-ai',
   },
   {
     id: 'digital-twin',
     name: '数字孪生',
     summary: '二维/三维一张图、站网态势与场景可视化。',
+    href: '/products/wanxiang-hydro',
   },
   {
     id: 'industry',
     name: '行业应用',
     summary: '水利、灌区、农业、水库、地质灾害等场景落地。',
+    href: '/products/lingshu-market',
   },
   {
     id: 'ai-agent',
     name: 'AI 智能体开发',
     summary: '面向业务的智能问答、工具调用与 Agent 编排。',
+    href: '/products/wanxiang-hydro',
   },
 ] as const
 
@@ -83,7 +87,7 @@ export const designLanguages = [
   {
     id: 'industrial-cyan',
     name: '工业青',
-    subject: 'AI IoT',
+    subject: '数智AI工业物联网平台',
     summary: '工业物联控制面：设备—数据—规则—应用，工业澄明浅色控制台。',
     hex: '#0F766E',
     rgb: '15, 118, 110',

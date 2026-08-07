@@ -25,7 +25,7 @@ export function ProductDetailPage() {
       style={workThemeVars(work.palette) as CSSProperties}
     >
       <nav className="breadcrumb" aria-label="面包屑">
-        <Link to="/">首页</Link>
+        <Link to="/">主页</Link>
         <span aria-hidden="true">/</span>
         <Link to="/products">作品</Link>
         <span aria-hidden="true">/</span>

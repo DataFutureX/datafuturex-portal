@@ -20,6 +20,7 @@ export function SiteFooter() {
             <Link to="/">主页</Link>
             <Link to="/products">作品</Link>
             <Link to="/docs">文档</Link>
+            <Link to="/examples">示例</Link>
             <Link to="/support">支持</Link>
           </div>
           <div>
@@ -32,7 +33,7 @@ export function SiteFooter() {
               GitHub ↗
             </a>
             <a
-              href="https://gitee.com/datafuturex"
+              href="https://gitee.com/DataFutureX"
               target="_blank"
               rel="noopener noreferrer"
             >

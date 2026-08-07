@@ -6,6 +6,7 @@ import { ProductDetailPage } from './pages/ProductDetailPage'
 import { DocsPage } from './pages/DocsPage'
 import { ExamplesPage } from './pages/ExamplesPage'
 import { SupportPage } from './pages/SupportPage'
+import { NotFoundPage } from './pages/NotFoundPage'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="docs" element={<DocsPage />} />
         <Route path="examples" element={<ExamplesPage />} />
         <Route path="support" element={<SupportPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   )

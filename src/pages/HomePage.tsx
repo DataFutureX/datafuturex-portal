@@ -5,6 +5,49 @@ import { WorkCard } from '../components/WorkCard'
 import { designLanguages, directions, site } from '../data/site'
 import { works } from '../data/works'
 
+const quickStarts = [
+  {
+    name: '云起应用平台',
+    action: '源码',
+    hint: 'Gitee 获取源码，或打开演示站试用。',
+    href: 'https://gitee.com/DataFutureX/yunqi-admin',
+    external: true,
+    palette: 'minimal-white',
+    hex: '#171717',
+    rgb: '23, 23, 23',
+  },
+  {
+    name: '数智AI工业物联网平台',
+    action: '演示',
+    hint: 'Mock 演示：设备 → 数据 → 规则 → 应用。',
+    href: 'https://iot.datafuturex.cn/portal',
+    external: true,
+    palette: 'industrial-cyan',
+    hex: '#0F766E',
+    rgb: '15, 118, 110',
+  },
+  {
+    name: '万象监测平台',
+    action: '演示',
+    hint: '开源正在筹备中，先通过演示门户了解能力。',
+    href: 'https://wanxiang.datafuturex.cn/portal',
+    external: true,
+    palette: 'tech-blue',
+    hex: '#2563EB',
+    rgb: '37, 99, 235',
+  },
+  {
+    name: '灵枢行业应用市场',
+    action: '进展',
+    hint: '正在开发中，进展见作品页。',
+    href: '/products/lingshu-market',
+    external: false,
+    palette: 'lingshu-slate',
+    hex: '#475569',
+    rgb: '71, 85, 105',
+  },
+] as const
+
 export function HomePage() {
   return (
     <>
@@ -42,9 +85,11 @@ export function HomePage() {
         </div>
         <ul className="direction-list">
           {directions.map((item) => (
-            <li key={item.id} className="direction-item">
-              <strong>{item.name}</strong>
-              <span>{item.summary}</span>
+            <li key={item.id}>
+              <Link to={item.href} className="direction-item">
+                <strong>{item.name}</strong>
+                <span>{item.summary}</span>
+              </Link>
             </li>
           ))}
         </ul>
@@ -54,7 +99,7 @@ export function HomePage() {
         <div className="section__head">
           <h2 id="works-heading">作品</h2>
           <p>
-            云起完全开源；数智AI工业物联网与万象监测平台提供演示站；灵枢行业应用市场正在开发中。点击进入详情。
+            云起：完全开源；数智AI工业物联网平台与万象监测平台提供演示站；灵枢行业应用市场正在开发中。点击进入详情。
           </p>
         </div>
         <ul className="work-cards">
@@ -80,7 +125,7 @@ export function HomePage() {
         <div className="section__head">
           <h2 id="palette-heading">设计语言</h2>
           <p>
-            门户用未来紫统一品牌；各作品保留独立主色——云起极简白、万象科技蓝、AI IoT 工业青、灵枢石板灰。
+            门户用未来紫统一品牌；各作品保留独立主色——云起极简白、万象科技蓝、数智AI工业物联网平台工业青、灵枢石板灰。
           </p>
         </div>
         <ul className="palette-list">
@@ -119,43 +164,62 @@ export function HomePage() {
           <h2 id="start-heading">快速体验</h2>
           <p>开源工程与演示站的最短路径。</p>
         </div>
-        <ol className="start-steps start-steps--compact">
-          <li>
-            <a
-              href="https://gitee.com/DataFutureX/yunqi-admin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>云起应用平台：源码与演示</strong>
-              <span>Gitee 获取源码，或打开 yunqi.datafuturex.cn/portal 在线体验。</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://iot.datafuturex.cn/portal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>数智AI工业物联网：演示站</strong>
-              <span>暂未开源 · Mock；设备接入 → 数据中心 → 规则 → 应用市场。</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://wanxiang.datafuturex.cn/portal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>万象监测平台：演示站</strong>
-              <span>开源筹备中，先通过演示门户了解能力。</span>
-            </a>
-          </li>
-          <li>
-            <Link to="/products/lingshu-market">
-              <strong>灵枢：正在开发中</strong>
-              <span>行业应用市场枢纽，进展见作品页。</span>
-            </Link>
-          </li>
+        <ol className="start-steps">
+          {quickStarts.map((item, index) => {
+            const body = (
+              <>
+                <span className="start-step__index mono" aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className="start-step__body">
+                  <span className="start-step__title">
+                    <strong>{item.name}</strong>
+                    <span className="start-step__action">{item.action}</span>
+                  </span>
+                  <span className="start-step__hint">{item.hint}</span>
+                </span>
+                <span className="start-step__go" aria-hidden="true">
+                  →
+                </span>
+              </>
+            )
+
+            return (
+              <li key={item.name}>
+                {item.external ? (
+                  <a
+                    className="start-step"
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-palette={item.palette}
+                    style={
+                      {
+                        '--swatch': item.hex,
+                        '--swatch-rgb': item.rgb,
+                      } as CSSProperties
+                    }
+                  >
+                    {body}
+                  </a>
+                ) : (
+                  <Link
+                    className="start-step"
+                    to={item.href}
+                    data-palette={item.palette}
+                    style={
+                      {
+                        '--swatch': item.hex,
+                        '--swatch-rgb': item.rgb,
+                      } as CSSProperties
+                    }
+                  >
+                    {body}
+                  </Link>
+                )}
+              </li>
+            )
+          })}
         </ol>
       </section>
     </>

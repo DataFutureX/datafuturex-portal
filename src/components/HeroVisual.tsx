@@ -52,6 +52,11 @@ export function HeroVisual() {
             <stop offset="75%" stopColor="#0F766E" />
             <stop offset="100%" stopColor="#475569" />
           </linearGradient>
+          <linearGradient id="sweep-fan" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#E8B923" stopOpacity="0.35" />
+            <stop offset="55%" stopColor="#5B21B6" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#5B21B6" stopOpacity="0" />
+          </linearGradient>
 
           {/* 各系统主题色光晕：叠在图标节点背后 */}
           <radialGradient id="glow-hub" cx="50%" cy="50%" r="50%">
@@ -152,7 +157,7 @@ export function HeroVisual() {
         </defs>
 
         <rect width="1440" height="900" fill="url(#field)" />
-        <rect width="1440" height="900" fill="url(#radar)" />
+        <rect className="hero-visual__radar-glow" width="1440" height="900" fill="url(#radar)" />
 
         <g
           className="hero-visual__contours"
@@ -167,7 +172,7 @@ export function HeroVisual() {
           <path d="M-40 820 C260 760, 500 880, 800 800 S1200 740, 1480 830" />
         </g>
 
-        {/* 雷达环：外环用作品主色渐变轻描 */}
+        {/* 雷达环 + 扫掠扇：绕核心持续旋转 */}
         <g transform={`translate(${hub.x} ${hub.y})`}>
           <g
             className="hero-visual__rings"
@@ -185,38 +190,49 @@ export function HeroVisual() {
               stroke="url(#ring-spectrum)"
               strokeOpacity="0.45"
             />
-            <path
-              className="hero-visual__sweep"
-              d="M0 0 L220 -40"
-              stroke="#E8B923"
-              strokeOpacity="0.8"
-              strokeWidth="1.75"
+          </g>
+          <g className="hero-visual__sweep">
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 0 0"
+              to="360 0 0"
+              dur="6s"
+              repeatCount="indefinite"
             />
+            <path
+              d="M0 0 L260 0 A260 260 0 0 1 183.8 183.8 Z"
+              fill="url(#sweep-fan)"
+            />
+            <path d="M0 0 L260 0" stroke="#E8B923" strokeOpacity="0.85" strokeWidth="1.75" />
           </g>
         </g>
 
         {/* 拓扑连线：核心 ↔ 作品；作品间仅少量非闭合旁路，避免方形轮廓 */}
-        <g fill="none" strokeWidth="1.15" strokeOpacity="0.28">
+        <g className="hero-visual__links" fill="none" strokeWidth="1.15" strokeOpacity="0.28">
           {platforms.map((p) => (
             <path
               key={`${p.id}-link`}
+              className="hero-visual__link"
               d={`M${hub.x} ${hub.y} L${p.x} ${p.y}`}
               stroke={p.color}
             />
           ))}
           <path
+            className="hero-visual__link hero-visual__link--soft"
             d={`M${platforms[0].x} ${platforms[0].y} L${platforms[1].x} ${platforms[1].y}`}
             stroke="#5B21B6"
             strokeOpacity="0.12"
           />
           <path
+            className="hero-visual__link hero-visual__link--soft"
             d={`M${platforms[2].x} ${platforms[2].y} L${platforms[3].x} ${platforms[3].y}`}
             stroke="#5B21B6"
             strokeOpacity="0.1"
           />
         </g>
 
-        <rect y="318" width="1440" height="1.5" fill="url(#beam)" opacity="0.7" />
+        <rect className="hero-visual__beam" y="318" width="1440" height="1.5" fill="url(#beam)" />
 
         {/* 氛围小点 */}
         {ambience.map(([x, y], i) => (

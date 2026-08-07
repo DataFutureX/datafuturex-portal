@@ -1,40 +1,13 @@
 import { Link } from 'react-router-dom'
-
-const chapters = [
-  {
-    title: '云起应用平台',
-    items: [
-      { id: 'yunqi', label: '概述与开源' },
-      { id: 'yunqi-demo', label: '本地演示模式' },
-      { id: 'yunqi-fullstack', label: '前后端联调开发' },
-    ],
-  },
-  {
-    title: '数智AI工业物联网平台',
-    items: [
-      { id: 'smart-iot', label: '概述与演示站' },
-      { id: 'smart-iot-shots', label: '系统截图' },
-    ],
-  },
-  {
-    title: '万象监测平台',
-    items: [
-      { id: 'wanxiang', label: '概述与演示站' },
-      { id: 'wanxiang-shots', label: '系统截图' },
-    ],
-  },
-  {
-    title: '灵枢行业应用市场',
-    items: [{ id: 'lingshu', label: '概述与进展' }],
-  },
-]
+import { CodeBlock } from '../components/CodeBlock'
+import { docChapters } from '../data/docs'
 
 export function DocsPage() {
   return (
     <div className="docs">
       <aside className="docs__sidebar" aria-label="文档目录">
         <p className="eyebrow mono">Docs</p>
-        {chapters.map((chapter) => (
+        {docChapters.map((chapter) => (
           <div key={chapter.title} className="docs__group">
             <h2>{chapter.title}</h2>
             <ul>
@@ -50,11 +23,11 @@ export function DocsPage() {
 
       <article className="docs__article">
         <header className="page-hero">
-          <p className="eyebrow mono">Getting started</p>
-          <h1>快速开始</h1>
+          <p className="eyebrow mono">Docs · Getting started</p>
+          <h1>文档</h1>
           <p>
-            云起：开源展示与开发；数智AI工业物联网与万象监测平台：演示站；灵枢：正在开发中。也可查看{' '}
-            <Link to="/examples">示例入口</Link>。
+            快速开始：云起可开源开发；数智AI工业物联网平台与万象监测平台提供演示站；灵枢行业应用市场正在开发中。也可查看{' '}
+            <Link to="/examples">示例</Link>。
           </p>
         </header>
 
@@ -99,12 +72,10 @@ export function DocsPage() {
         <section id="yunqi-demo" className="prose-block">
           <h2>云起 · 本地演示模式</h2>
           <p>无需后端，纯前端 Mock，适合快速体验界面与权限流程。</p>
-          <pre className="code-block">
-            <code>{`git clone https://github.com/DataFutureX/yunqi-admin.git
+          <CodeBlock>{`git clone https://github.com/DataFutureX/yunqi-admin.git
 cd yunqi-admin/frontend
 npm install
-npm run dev:demo`}</code>
-          </pre>
+npm run dev:demo`}</CodeBlock>
           <p>
             打开 http://localhost:3000 （可先看 <code>/portal</code>
             ）。演示账号：<code>demo / demo123</code>
@@ -115,8 +86,7 @@ npm run dev:demo`}</code>
         <section id="yunqi-fullstack" className="prose-block">
           <h2>云起 · 前后端联调开发</h2>
           <p>需要 JDK 21+、Maven 3.9+、MySQL 8+。推荐仓库根目录一键启动。</p>
-          <pre className="code-block">
-            <code>{`# 初始化数据库
+          <CodeBlock>{`# 初始化数据库
 cd yunqi-admin/backend
 mysql -u root -p < yqap-core/src/main/resources/db/init.sql
 # 配置 yqap-core/.../application-dev.yml 中 yunqi.datasource.*
@@ -128,8 +98,7 @@ cd yunqi-admin
 
 # 或分别启动
 cd backend && start-dev.bat   # http://localhost:8080
-cd frontend && npm install && npm run dev`}</code>
-          </pre>
+cd frontend && npm install && npm run dev`}</CodeBlock>
           <p>
             前端 http://localhost:3000 ，后端 http://localhost:8080 ，账号{' '}
             <code>admin / admin123</code>
@@ -164,7 +133,7 @@ cd frontend && npm install && npm run dev`}</code>
         </section>
 
         <section id="smart-iot-shots" className="prose-block">
-          <h2>数智AI工业物联网 · 系统截图</h2>
+          <h2>数智AI工业物联网平台 · 系统截图</h2>
           <p>
             门户已收录正式站模块截图：登录、工作台、应用市场、产品/设备、实时数据、规则管理、用户/菜单/系统设置。完整交互请打开演示站体验。
           </p>
@@ -225,8 +194,7 @@ cd frontend && npm install && npm run dev`}</code>
         </section>
 
         <p className="section__more">
-          下一步：<Link to="/examples">浏览示例入口</Link> ·{' '}
-          <Link to="/products">返回作品</Link>
+          下一步：<Link to="/examples">浏览示例</Link> · <Link to="/products">返回作品</Link>
         </p>
       </article>
     </div>
