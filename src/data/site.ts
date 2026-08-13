@@ -79,7 +79,7 @@ export const designLanguages = [
     id: 'tech-blue',
     name: '科技蓝',
     subject: '万象监测平台',
-    summary: '监测与一张图：冷静信息密度，服务态势与告警阅读。',
+    summary: '监测、一张图与数智中枢：态势告警、巡检应用与 Agent / 简报研判。',
     hex: '#2563EB',
     rgb: '37, 99, 235',
     href: '/products/wanxiang-hydro',

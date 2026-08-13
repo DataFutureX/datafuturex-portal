@@ -1209,11 +1209,12 @@ ol {
 .shot--featured img,
 .shot--featured-img {
   width: 100%;
-  max-height: min(62vh, 560px);
+  max-height: min(72vh, 720px);
   object-fit: contain;
   object-position: top center;
   background: var(--paper-deep);
   animation: shot-fade 0.35s ease;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .shot-progress {

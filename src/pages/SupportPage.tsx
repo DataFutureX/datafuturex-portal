@@ -145,9 +145,25 @@ export function SupportPage() {
             >
               wanxiang.datafuturex.cn/portal ↗
             </a>
+            （Mock）
           </li>
-          <li>开源正在筹备中，暂不提供源码下载</li>
-          <li>演示账号以演示站页面说明为准</li>
+          <li>
+            数智中枢介绍：
+            <a
+              href="https://wanxiang.datafuturex.cn/portal/ai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              /portal/ai ↗
+            </a>
+          </li>
+          <li>开源正在筹备中，暂不提供源码下载；基于云起后台管理系统迭代</li>
+          <li>演示账号：demo / demo123</li>
+          <li>本地联调账号：admin / admin123</li>
+          <li>
+            能力概览：双规约接入、监测告警、地图视频、巡检管理、数智中枢（Agent / 知识库 / AI 简报 /
+            NL2SQL）
+          </li>
         </ul>
       </section>
 

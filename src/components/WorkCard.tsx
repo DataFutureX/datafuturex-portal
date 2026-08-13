@@ -22,11 +22,11 @@ export function WorkCard({ work, index, cta }: WorkCardProps) {
         {cover ? (
           <img
             src={shotMedium(cover.src, cover.medium)}
-            srcSet={`${shotMedium(cover.src, cover.medium)} 960w, ${cover.src} 1440w`}
+            srcSet={`${shotMedium(cover.src, cover.medium)} 1280w, ${cover.src} 1920w`}
             sizes="(max-width: 720px) 92vw, 520px"
             alt=""
-            width={960}
-            height={600}
+            width={1280}
+            height={800}
             loading={index === 0 ? 'eager' : 'lazy'}
             decoding="async"
             fetchPriority={index === 0 ? 'high' : 'auto'}

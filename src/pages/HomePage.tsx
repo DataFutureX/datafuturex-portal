@@ -29,7 +29,7 @@ const quickStarts = [
   {
     name: '万象监测平台',
     action: '演示',
-    hint: '开源正在筹备中，先通过演示门户了解能力。',
+    hint: '开源正在筹备中；演示账号 demo / demo123。',
     href: 'https://wanxiang.datafuturex.cn/portal',
     external: true,
     palette: 'tech-blue',

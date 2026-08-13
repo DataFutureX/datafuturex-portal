@@ -36,14 +36,14 @@ const examples = [
   {
     title: '万象监测平台演示站',
     stack: 'wanxiang.datafuturex.cn',
-    summary: '开源正在筹备中，当前演示展示：/portal 入口。',
+    summary: '开源正在筹备中；门户含数智中枢 / 巡检等演示，账号 demo / demo123。',
     href: 'https://wanxiang.datafuturex.cn/portal',
     external: true,
   },
   {
     title: '万象监测平台系统截图',
     stack: '门户图集',
-    summary: '演示站门户、登录、仪表盘、地图、实时数据截图。',
+    summary: '门户、仪表盘、数智中枢（Agent / 简报 / 知识库）、巡检、地图与系统管理截图。',
     href: '/products/wanxiang-hydro#screenshots',
   },
   {

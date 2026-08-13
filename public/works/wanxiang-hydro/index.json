@@ -1,165 +1,219 @@
 {
-  "generatedAt": "2026-07-30T06:48:19.620Z",
+  "generatedAt": "2026-08-13T16:47:18.688Z",
   "baseUrl": "http://localhost:3000",
-  "total": 26,
-  "success": 26,
+  "total": 34,
+  "success": 34,
   "failed": [],
   "files": [
     {
+      "title": "登录页",
+      "path": "/login",
+      "file": "01_登录页__login.png",
+      "ok": true
+    },
+    {
+      "title": "产品门户",
+      "path": "/portal",
+      "file": "02_产品门户__portal.png",
+      "ok": true
+    },
+    {
+      "title": "数智中枢门户",
+      "path": "/portal/ai",
+      "file": "03_数智中枢门户__portal-ai.png",
+      "ok": true
+    },
+    {
       "title": "仪表盘",
       "path": "/home/dashboard",
-      "file": "01_仪表盘__home-dashboard.png",
+      "file": "04_仪表盘__home-dashboard.png",
       "ok": true
     },
     {
-      "title": "智能问答",
+      "title": "AI 简报",
+      "path": "/home/briefings",
+      "file": "05_AI_简报__home-briefings.png",
+      "ok": true
+    },
+    {
+      "title": "Agent 会话",
       "path": "/ai/chat",
-      "file": "02_智能问答__ai-chat.png",
+      "file": "06_Agent_会话__ai-chat.png",
       "ok": true
     },
     {
-      "title": "知识管理",
-      "path": "/ai/documents",
-      "file": "03_知识管理__ai-documents.png",
+      "title": "知识库",
+      "path": "/ai/knowledges",
+      "file": "07_知识库__ai-knowledges.png",
       "ok": true
     },
     {
-      "title": "知识问答",
+      "title": "知识检索",
       "path": "/ai/document-qa",
-      "file": "04_知识问答__ai-document-qa.png",
+      "file": "08_知识检索__ai-document-qa.png",
+      "ok": true
+    },
+    {
+      "title": "模型设置",
+      "path": "/ai/model-config",
+      "file": "09_模型设置__ai-model-config.png",
+      "ok": true
+    },
+    {
+      "title": "Agent 中心",
+      "path": "/ai/agents",
+      "file": "10_Agent_中心__ai-agents.png",
       "ok": true
     },
     {
       "title": "二维地图",
       "path": "/map-overview/2d",
-      "file": "05_二维地图__map-overview-2d.png",
+      "file": "11_二维地图__map-overview-2d.png",
       "ok": true
     },
     {
       "title": "三维地图",
       "path": "/map-overview/3d",
-      "file": "06_三维地图__map-overview-3d.png",
+      "file": "12_三维地图__map-overview-3d.png",
       "ok": true
     },
     {
       "title": "实时数据",
       "path": "/data/realtime",
-      "file": "07_实时数据__data-realtime.png",
+      "file": "13_实时数据__data-realtime.png",
       "ok": true
     },
     {
       "title": "阈值告警",
       "path": "/data/alerts",
-      "file": "08_阈值告警__data-alerts.png",
+      "file": "14_阈值告警__data-alerts.png",
       "ok": true
     },
     {
       "title": "视频监控",
       "path": "/data/video-monitor",
-      "file": "09_视频监控__data-video-monitor.png",
+      "file": "15_视频监控__data-video-monitor.png",
       "ok": true
     },
     {
       "title": "遥测站管理",
       "path": "/terminal/list",
-      "file": "10_遥测站管理__terminal-list.png",
+      "file": "16_遥测站管理__terminal-list.png",
       "ok": true
     },
     {
       "title": "视频站管理",
       "path": "/terminal/video-station",
-      "file": "11_视频站管理__terminal-video-station.png",
+      "file": "17_视频站管理__terminal-video-station.png",
       "ok": true
     },
     {
       "title": "物模型管理",
       "path": "/terminal/element-config",
-      "file": "12_物模型管理__terminal-element-config.png",
+      "file": "18_物模型管理__terminal-element-config.png",
       "ok": true
     },
     {
-      "title": "工程管理",
-      "path": "/project-ledger/manage",
-      "file": "13_工程管理__project-ledger-manage.png",
-      "ok": true
-    },
-    {
-      "title": "工程查看",
-      "path": "/project-ledger/view",
-      "file": "14_工程查看__project-ledger-view.png",
+      "title": "巡检管理",
+      "path": "/apps/inspection",
+      "file": "19_巡检管理__apps-inspection.png",
       "ok": true
     },
     {
       "title": "用户管理",
-      "path": "/system/user",
-      "file": "15_用户管理__system-user.png",
+      "path": "/system/permission/user",
+      "file": "20_用户管理__system-permission-user.png",
       "ok": true
     },
     {
       "title": "角色管理",
-      "path": "/system/role",
-      "file": "16_角色管理__system-role.png",
+      "path": "/system/permission/role",
+      "file": "21_角色管理__system-permission-role.png",
       "ok": true
     },
     {
       "title": "菜单管理",
-      "path": "/system/menu",
-      "file": "17_菜单管理__system-menu.png",
-      "ok": true
-    },
-    {
-      "title": "单位管理",
-      "path": "/system/unit",
-      "file": "18_单位管理__system-unit.png",
+      "path": "/system/permission/menu",
+      "file": "22_菜单管理__system-permission-menu.png",
       "ok": true
     },
     {
       "title": "系统设置",
-      "path": "/system/config",
-      "file": "19_系统设置__system-config.png",
+      "path": "/system/admin/config",
+      "file": "23_系统设置__system-admin-config.png",
       "ok": true
     },
     {
       "title": "系统监控",
-      "path": "/system/monitor",
-      "file": "20_系统监控__system-monitor.png",
+      "path": "/system/admin/monitor",
+      "file": "24_系统监控__system-admin-monitor.png",
       "ok": true
     },
     {
       "title": "操作日志",
-      "path": "/system/operation-log",
-      "file": "21_操作日志__system-operation-log.png",
+      "path": "/system/admin/operation-log",
+      "file": "25_操作日志__system-admin-operation-log.png",
+      "ok": true
+    },
+    {
+      "title": "单位管理",
+      "path": "/system/archive/unit",
+      "file": "26_单位管理__system-archive-unit.png",
+      "ok": true
+    },
+    {
+      "title": "工程台账",
+      "path": "/system/archive/project-ledger",
+      "file": "27_工程台账__system-archive-project-ledger.png",
       "ok": true
     },
     {
       "title": "公告管理",
-      "path": "/system/announcement",
-      "file": "22_公告管理__system-announcement.png",
+      "path": "/system/archive/announcement",
+      "file": "28_公告管理__system-archive-announcement.png",
+      "ok": true
+    },
+    {
+      "title": "后端接口",
+      "path": "/system/devtools/backend-api",
+      "file": "29_后端接口__system-devtools-backend-api.png",
+      "ok": true
+    },
+    {
+      "title": "AI助手接口",
+      "path": "/system/devtools/ai-api",
+      "file": "30_AI助手接口__system-devtools-ai-api.png",
       "ok": true
     },
     {
       "title": "个人信息",
       "path": "/profile/info",
-      "file": "23_个人信息__profile-info.png",
+      "file": "31_个人信息__profile-info.png",
       "ok": true
     },
     {
       "title": "修改密码",
       "path": "/profile/password",
-      "file": "24_修改密码__profile-password.png",
+      "file": "32_修改密码__profile-password.png",
       "ok": true
     },
     {
       "title": "监控专题",
       "path": "/video-monitor/live",
-      "file": "25_监控专题__video-monitor-live.png",
+      "file": "33_监控专题__video-monitor-live.png",
       "ok": true
     },
     {
-      "title": "后端接口",
-      "path": "/devtools/backend-api",
-      "file": "26_后端接口__devtools-backend-api.png",
+      "title": "工作流编排",
+      "path": "/ai/agents/1/graph",
+      "file": "34_工作流编排__ai-agents-1-graph.png",
       "ok": true
     }
-  ]
+  ],
+  "recapture": {
+    "at": "2026-08-13T16:47:18.688Z",
+    "files": [
+      "30_AI助手接口__system-devtools-ai-api.png"
+    ]
+  }
 }

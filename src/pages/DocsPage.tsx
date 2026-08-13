@@ -147,10 +147,13 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
         <section id="wanxiang" className="prose-block">
           <h2>万象监测平台 · 概述与演示站</h2>
           <p>
-            水文水资源物联监测平台，覆盖协议接入、监测告警、地图视频与 AI
-            问答等能力。
+            <strong>WanXiang Monitor Platform</strong>
+            ，面向遥测站的数据采集、存储、分析与可视化平台。基于云起后台管理系统迭代：双规约接入（SL 651 /
+            SL/T 427）、实时监测与阈值告警、二维 / 三维一张图与视频专题、巡检管理，以及
+            <strong>数智中枢</strong>
+            （Agent 会话 / 中心与 Graph 编排、知识库 RAG、NL2SQL、AI 简报）。
             <strong>开源正在筹备中</strong>
-            ，暂不提供源码下载；当前仅通过演示站展示能力与界面。
+            ，暂不提供源码下载；当前通过演示站（纯前端 Mock）展示能力与界面。
           </p>
           <p>
             演示门户：
@@ -161,6 +164,15 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
             >
               https://wanxiang.datafuturex.cn/portal
             </a>
+            ；数智中枢介绍：
+            <a
+              href="https://wanxiang.datafuturex.cn/portal/ai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              /portal/ai
+            </a>
+            。账号 <code>demo / demo123</code>。
           </p>
           <p>
             作品页（含系统截图）：
@@ -171,7 +183,8 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
         <section id="wanxiang-shots" className="prose-block">
           <h2>万象监测平台 · 系统截图</h2>
           <p>
-            门户已收录演示站关键界面截图（门户、登录、仪表盘、地图、实时数据等）。完整交互请直接打开演示站体验。
+            门户已收录演示站关键界面截图（产品门户、仪表盘、AI 简报、Agent / 知识库、巡检、地图、实时数据、系统管理等，共
+            34 张）。完整交互请直接打开演示站体验。
           </p>
           <p>
             <Link className="btn btn--primary" to="/products/wanxiang-hydro#screenshots">

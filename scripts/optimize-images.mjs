@@ -7,17 +7,17 @@ import path from 'node:path'
 import sharp from 'sharp'
 
 const ROOT = path.resolve('public')
-const FULL_MAX = 1440
-const MEDIUM_MAX = 960
-const THUMB_MAX = 480
-const FULL_QUALITY = 95
-const MEDIUM_QUALITY = 92
-const THUMB_QUALITY = 82
+const FULL_MAX = 1920
+const MEDIUM_MAX = 1280
+const THUMB_MAX = 640
+const FULL_QUALITY = 92
+const MEDIUM_QUALITY = 90
+const THUMB_QUALITY = 86
 
 const webpOpts = (quality) => ({
   quality,
   smartSubsample: false,
-  effort: 5,
+  effort: 6,
 })
 
 async function* walk(dir) {

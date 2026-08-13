@@ -1,19 +1,19 @@
 /**
  * Re-copy source PNGs → WebP (full / medium / thumbs).
- * full: 1440 @ q95（详情大图）
- * medium: 960 @ q92（列表封面，兼顾清晰与体积）
- * thumbs: 480 @ q82（图集小图）
+ * full: 上限 1920 @ q92（详情清晰，控制体积）
+ * medium: 1280 @ q90（列表封面）
+ * thumbs: 640 @ q86（图集小图）
  */
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import sharp from 'sharp'
 
-const FULL_MAX = 1440
-const MEDIUM_MAX = 960
-const THUMB_MAX = 480
-const FULL_QUALITY = 95
-const MEDIUM_QUALITY = 92
-const THUMB_QUALITY = 82
+const FULL_MAX = 1920
+const MEDIUM_MAX = 1280
+const THUMB_MAX = 640
+const FULL_QUALITY = 92
+const MEDIUM_QUALITY = 90
+const THUMB_QUALITY = 86
 
 const yunqiSrc = 'E:/workspace-qoder/yunqi-admin/screenshot'
 const yunqiDst = path.resolve('public/works/yunqi-admin')
@@ -49,15 +49,20 @@ const smartIotFiles = [
 ]
 
 const wanxiangSrc =
-  'E:/workspace-qoder/wanxiang-monitor-platform/frontend/screenshots'
+  'D:/DataFutureX-Code/wanxiang-monitor-platform/frontend/screenshots'
 const wanxiangDst = path.resolve('public/works/wanxiang-hydro')
+/** 与源目录 `*__{slug}.png` / index.json 对齐 */
 const wanxiangAscii = [
   'login',
   'portal',
+  'portal-ai',
   'home-dashboard',
+  'home-briefings',
   'ai-chat',
-  'ai-documents',
+  'ai-knowledges',
   'ai-document-qa',
+  'ai-model-config',
+  'ai-agents',
   'map-overview-2d',
   'map-overview-3d',
   'data-realtime',
@@ -66,6 +71,27 @@ const wanxiangAscii = [
   'terminal-list',
   'terminal-video-station',
   'terminal-element-config',
+  'apps-inspection',
+  'system-permission-user',
+  'system-permission-role',
+  'system-permission-menu',
+  'system-admin-config',
+  'system-admin-monitor',
+  'system-admin-operation-log',
+  'system-archive-unit',
+  'system-archive-project-ledger',
+  'system-archive-announcement',
+  'system-devtools-backend-api',
+  'system-devtools-ai-api',
+  'profile-info',
+  'profile-password',
+  'video-monitor-live',
+  'ai-agents-1-graph',
+]
+
+/** 旧版门户文件名，导入后清理 */
+const wanxiangObsolete = [
+  'ai-documents',
   'project-ledger-manage',
   'project-ledger-view',
   'system-user',
@@ -76,16 +102,13 @@ const wanxiangAscii = [
   'system-monitor',
   'system-operation-log',
   'system-announcement',
-  'profile-info',
-  'profile-password',
-  'video-monitor-live',
   'devtools-backend-api',
 ]
 
 const webpOpts = (quality) => ({
   quality,
   smartSubsample: false,
-  effort: 5,
+  effort: 6,
 })
 
 async function encodePng(pngPath, outDir, base) {
@@ -147,6 +170,26 @@ async function importWanxiang() {
       continue
     }
     await encodePng(path.join(wanxiangSrc, match), wanxiangDst, ascii)
+  }
+
+  // 同步源 index.json
+  try {
+    await fs.copyFile(path.join(wanxiangSrc, 'index.json'), path.join(wanxiangDst, 'index.json'))
+    console.log('ok index.json')
+  } catch (err) {
+    console.warn('skip index.json', err.message)
+  }
+
+  // 清理旧 slug 的 full / medium / thumbs
+  for (const base of wanxiangObsolete) {
+    for (const rel of [`${base}.webp`, path.join('medium', `${base}.webp`), path.join('thumbs', `${base}.webp`)]) {
+      try {
+        await fs.unlink(path.join(wanxiangDst, rel))
+        console.log('removed', rel)
+      } catch {
+        /* ignore missing */
+      }
+    }
   }
 }
 

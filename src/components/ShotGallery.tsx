@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { shotMedium, shotThumb } from '../data/works'
+import { shotThumb } from '../data/works'
 
 type Shot = { src: string; medium?: string; thumb?: string; alt: string }
 
@@ -80,12 +80,10 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
         <img
           key={current.src}
           src={current.src}
-          srcSet={`${shotMedium(current.src, current.medium)} 960w, ${current.src} 1440w`}
-          sizes="(max-width: 720px) 94vw, min(1120px, 92vw)"
           alt={current.alt}
           className="shot--featured-img"
-          width={1440}
-          height={900}
+          width={1920}
+          height={1200}
           decoding="async"
           fetchPriority="high"
         />
@@ -119,8 +117,8 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
               alt=""
               loading="lazy"
               decoding="async"
-              width={480}
-              height={300}
+              width={640}
+              height={400}
             />
           </button>
         ))}
