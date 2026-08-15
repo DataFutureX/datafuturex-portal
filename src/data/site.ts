@@ -32,7 +32,7 @@ export const directions = [
     id: 'iot',
     name: '物联网 IoT',
     summary:
-      'AI 原生物联控制面：设备接入、数据采集/治理、规则决策与行业应用；MQTT/OTA 与应用市场已落地。',
+      'AI 物联控制面：设备管理 · 数据中心 · 规则引擎 · 平台设置；MQTT/OTA、规则告警与应用市场已落地。',
     href: '/products/smart-iot-ai',
   },
   {
@@ -88,7 +88,7 @@ export const designLanguages = [
     id: 'industrial-cyan',
     name: '工业青',
     subject: '数智AI工业物联网平台',
-    summary: '工业物联控制面：设备—数据—规则—应用，工业澄明浅色控制台。',
+    summary: '工业物联控制面：设备—数据—规则—平台设置，工业澄明浅色控制台。',
     hex: '#0F766E',
     rgb: '15, 118, 110',
     href: '/products/smart-iot-ai',

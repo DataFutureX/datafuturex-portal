@@ -125,6 +125,10 @@ export function SupportPage() {
             </a>
           </li>
           <li>暂未开源；基于云起应用平台（yunqi-admin / YQAP）演进，源码不对外托管</li>
+          <li>
+            四大业务域：设备管理 · 数据中心 · 规则引擎 · 平台设置；MQTT 主接入，详见{' '}
+            <Link to="/docs#smart-iot-access">设备接入文档</Link>
+          </li>
           <li>演示账号：租户 platform · demo / demo123</li>
           <li>本地联调账号：租户 platform · admin / admin123</li>
         </ul>

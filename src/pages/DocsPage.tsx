@@ -109,9 +109,13 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
         <section id="smart-iot" className="prose-block">
           <h2>数智AI工业物联网平台 · 概述与演示站</h2>
           <p>
-            AI 原生工业物联网控制面：设备接入 → 数据采集/治理 → 规则决策 → 行业应用。控制台四大业务域为
-            <strong>设备管理 · 数据中心 · 规则引擎 · 平台管理</strong>
-            （另含主页工作台 / 应用市场）。MQTT 接入、数据中心双档存储（PostgreSQL / TDengine）、规则引擎与应用市场已落地。
+            <strong>Smart AI Industrial IoT Platform（v1.0.0）</strong>
+            ，从设备接入到行业应用的 AI 物联控制面。控制台四大业务域为
+            <strong>设备管理 · 数据中心 · 规则引擎 · 平台设置</strong>
+            （另含主页工作台 / 应用市场）。已落地：MQTT 主接入、数据中心双档存储（PostgreSQL
+            默认 / TDengine 可选）、规则告警与通道转发、OTA、应用市场、多租户 RBAC。
+            <strong>AI 分析与数据孪生为规划能力</strong>
+            ，不在当前交付范围。
             <strong>暂未开源</strong>
             ；基于开源底座云起应用平台演进。
           </p>
@@ -124,11 +128,61 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
             >
               https://iot.datafuturex.cn/portal
             </a>
-            。租户 <code>platform</code>，账号 <code>demo / demo123</code>。
+            。租户 <code>platform</code>，账号 <code>demo / demo123</code>
+            。技术栈：Vue 3 · Java 21 · Spring Boot 4 · PostgreSQL 16 · MQTT / EMQX。
           </p>
           <p>
             作品页（含系统截图）：
             <Link to="/products/smart-iot-ai">数智AI工业物联网平台</Link>
+            。设备侧约定见{' '}
+            <a href="#smart-iot-access">设备接入（MQTT）</a>。
+          </p>
+        </section>
+
+        <section id="smart-iot-access" className="prose-block">
+          <h2>数智AI工业物联网平台 · 设备接入（MQTT）</h2>
+          <p>
+            控制台按「型号 → 实例」纳管：
+            <strong>协议 → 产品（物模型 + Topic）→ 设备</strong>
+            。主接入为 MQTT；HTTP 接入已实现但默认关闭；Modbus 为 stub
+            模拟读；TCP / CUSTOM 为占位。无独立语言 SDK，联调可用控制台密钥 + MQTT
+            客户端，或仓库内 <code>iot-simulator</code>（需本地联调环境）。
+          </p>
+          <p>推荐顺序（演示站可点开各菜单对照）：</p>
+          <ol>
+            <li>
+              <strong>协议</strong>：设备管理 → 协议，确认 MQTT 等协议已启用。
+            </li>
+            <li>
+              <strong>产品</strong>：新建产品并绑定协议；产品编码会写入通信 Topic。
+            </li>
+            <li>
+              <strong>物模型与 Topic</strong>
+              ：配置属性 / 事件 / 服务；接入 Topic 可先用系统默认 6 条。
+            </li>
+            <li>
+              <strong>注册设备</strong>
+              ：保存一次性设备密钥（关闭后只能重置）。MQTT 用户名 = 设备编码，密码 =
+              设备密钥。
+            </li>
+            <li>
+              <strong>联调验证</strong>
+              ：上报心跳与属性后看设备在线；再验影子 / 指令，并到数据中心、规则引擎确认。
+            </li>
+          </ol>
+          <p>默认 Topic（将产品编码、设备编码代入）：</p>
+          <CodeBlock>{`心跳：     iot/{产品编码}/{设备编码}/sys/heartbeat
+属性上报： iot/{产品编码}/{设备编码}/thing/property/post
+事件上报： iot/{产品编码}/{设备编码}/thing/event/{事件标识}/post
+影子上报： iot/{产品编码}/{设备编码}/shadow/update
+影子下发： iot/{产品编码}/{设备编码}/shadow/delta          ← 设备需订阅
+服务下发： iot/{产品编码}/{设备编码}/service/{服务标识}/invoke  ← 设备需订阅`}</CodeBlock>
+          <p>属性上报报文示例：</p>
+          <CodeBlock>{`{"temperature": 25.3, "humidity": 61.2}`}</CodeBlock>
+          <p>
+            Broker 默认示例：<code>tcp://127.0.0.1:1883</code>
+            （以实际部署为准）。产品 Topic
+            变更后接入层支持热更新，无需重启。完整交互请打开演示站体验。
           </p>
         </section>
 

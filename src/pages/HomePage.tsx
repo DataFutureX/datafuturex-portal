@@ -19,7 +19,7 @@ const quickStarts = [
   {
     name: '数智AI工业物联网平台',
     action: '演示',
-    hint: 'Mock 演示：设备 → 数据 → 规则 → 应用。',
+    hint: 'Mock 演示：设备管理 → 数据中心 → 规则引擎 → 平台设置。',
     href: 'https://iot.datafuturex.cn/portal',
     external: true,
     palette: 'industrial-cyan',
