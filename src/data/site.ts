@@ -28,32 +28,40 @@ export const site = {
   },
 } as const
 
-/** 工坊主要方向（主页展示） */
+/** 工坊主要方向（主页展示）；palette 对应承载该方向的平台主色 */
 export const directions = [
   {
     id: 'iot',
     name: '物联网 IoT',
+    brief: '设备管理 · 数据中心 · 规则引擎 · MQTT/OTA',
     summary:
       'AI 物联控制面：设备管理 · 数据中心 · 规则引擎 · 平台设置；MQTT/OTA、规则告警与应用市场已落地。',
     href: '/docs#smart-iot',
+    palette: workPalettes['industrial-cyan'],
   },
   {
     id: 'digital-twin',
     name: '数字孪生',
+    brief: '一张图 · 站网态势 · 场景可视化',
     summary: '二维/三维一张图、站网态势与场景可视化——见万象监测平台。',
     href: '/docs#wanxiang',
+    palette: workPalettes['tech-blue'],
   },
   {
     id: 'industry',
     name: '行业应用',
+    brief: '水利 · 灌区 · 农业 · 地质灾害',
     summary: '水利、灌区、农业、水库、地质灾害等场景落地。',
     href: '/docs#lingshu',
+    palette: workPalettes['lingshu-slate'],
   },
   {
     id: 'ai-agent',
     name: 'AI 智能体开发',
+    brief: 'Agent · 知识库 · NL2SQL · 工具编排',
     summary: '面向业务的智能问答、工具调用与 Agent 编排——见万象·数智中枢。',
     href: '/docs#wanxiang-ai',
+    palette: workPalettes['tech-blue'],
   },
 ] as const
 

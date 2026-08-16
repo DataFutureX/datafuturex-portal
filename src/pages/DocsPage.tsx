@@ -5,34 +5,28 @@ import { docChapters } from '../data/docs'
 
 const tryLinks = [
   {
-    title: '云起在线演示',
+    title: '云起应用平台',
     hint: 'yunqi.datafuturex.cn/portal · demo / demo123',
     href: 'https://yunqi.datafuturex.cn/portal',
     external: true,
   },
   {
-    title: '云起本地演示',
-    hint: 'npm run dev:demo · 见下方快速开始',
-    href: '#yunqi-demo',
-    external: false,
-  },
-  {
-    title: '云起系统截图',
-    hint: '登录 · 权限 · 监控等界面图集',
-    href: '/products/yunqi-admin#screenshots',
-    external: false,
-  },
-  {
-    title: '数智AI工业物联网演示',
+    title: '数智AI工业物联网平台',
     hint: 'iot.datafuturex.cn/portal · 租户 platform',
     href: 'https://iot.datafuturex.cn/portal',
     external: true,
   },
   {
-    title: '万象监测演示',
+    title: '万象监测平台',
     hint: 'wanxiang.datafuturex.cn/portal · demo / demo123',
     href: 'https://wanxiang.datafuturex.cn/portal',
     external: true,
+  },
+  {
+    title: '灵枢行业应用市场',
+    hint: '正在开发中 · 暂无演示站',
+    href: '/products/lingshu-market',
+    external: false,
   },
 ] as const
 
@@ -98,7 +92,7 @@ export function DocsPage() {
 
         <section id="try" className="prose-block">
           <h2>体验入口</h2>
-          <p>演示站与本地起步的最短路径。</p>
+          <p>四个平台的演示站入口；灵枢正在开发中，可先查看作品页进展。</p>
           <ul className="docs-try-list">
             {tryLinks.map((item) => {
               const body = (
