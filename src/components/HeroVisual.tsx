@@ -1,99 +1,107 @@
 /**
- * 雷达拓扑 + 工坊色系：
- * 未来紫核心 · 云起极简白 · 万象科技蓝 · AI IoT 工业青 · 灵枢石板灰
+ * 未来 AI 拓扑：轨道环 + 数据粒子流 + 节点呼吸
  */
+import { useNavigate } from 'react-router-dom'
 import { brandPalette, workPalettes } from '../data/palettes'
 
+const platformMeta = [
+  {
+    id: 'yunqi',
+    slug: 'yunqi-admin',
+    name: '云起应用平台',
+    x: 900,
+    y: 300,
+    palette: workPalettes['minimal-white'],
+  },
+  {
+    id: 'wanxiang',
+    slug: 'wanxiang-hydro',
+    name: '万象监测平台',
+    x: 1125,
+    y: 315,
+    palette: workPalettes['tech-blue'],
+  },
+  {
+    id: 'iot',
+    slug: 'smart-iot-ai',
+    name: '数智AI工业物联网平台',
+    x: 1105,
+    y: 470,
+    palette: workPalettes['industrial-cyan'],
+  },
+  {
+    id: 'lingshu',
+    slug: 'lingshu-market',
+    name: '灵枢行业应用市场',
+    x: 880,
+    y: 455,
+    palette: workPalettes['lingshu-slate'],
+  },
+] as const
+
+/** 核心周围的 AI 轨道卫星 */
+const satellites = [
+  { r: 110, angle: 0, dur: '14s' },
+  { r: 110, angle: 120, dur: '14s' },
+  { r: 110, angle: 240, dur: '14s' },
+  { r: 178, angle: 40, dur: '22s' },
+  { r: 178, angle: 160, dur: '22s' },
+  { r: 178, angle: 280, dur: '22s' },
+] as const
+
 export function HeroVisual() {
-  const hub = { x: 1080, y: 320 }
+  const navigate = useNavigate()
+  const hub = { x: 1000, y: 385 }
   const brand = brandPalette.hex
-  const yunqi = workPalettes['minimal-white']
-  const wanxiang = workPalettes['tech-blue']
-  const iot = workPalettes['industrial-cyan']
-  const lingshu = workPalettes['lingshu-slate']
-
-  // 不规则星座排布：距离与方位错开，避免四角正方形
-  const platforms = [
-    { id: 'yunqi', x: 940, y: 155, color: yunqi.hex, soft: yunqi.rgb },
-    { id: 'wanxiang', x: 1325, y: 210, color: wanxiang.hex, soft: wanxiang.rgb },
-    { id: 'iot', x: 1210, y: 530, color: iot.hex, soft: iot.rgb },
-    { id: 'lingshu', x: 820, y: 390, color: lingshu.hex, soft: lingshu.rgb },
-  ] as const
-
-  const ambience = [
-    [990, 255],
-    [1185, 170],
-    [1340, 390],
-    [1005, 480],
-  ] as const
+  const ink = '#17141f'
+  const signal = '#E8B923'
 
   return (
-    <div className="hero-visual" aria-hidden="true">
+    <div className="hero-visual">
       <svg
         className="hero-visual__svg"
-        viewBox="0 0 1440 900"
-        preserveAspectRatio="xMidYMid slice"
+        viewBox="740 220 580 430"
+        preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="45%" stopColor="#F6F3FB" />
-            <stop offset="100%" stopColor="#E8E0F5" />
-          </linearGradient>
-          <radialGradient id="radar" cx="70%" cy="38%" r="45%">
-            <stop offset="0%" stopColor={brand} stopOpacity="0.18" />
-            <stop offset="55%" stopColor="#6D28D9" stopOpacity="0.07" />
+          <radialGradient id="core-field" cx="45%" cy="45%" r="62%">
+            <stop offset="0%" stopColor={brand} stopOpacity="0.028" />
+            <stop offset="55%" stopColor={brand} stopOpacity="0.01" />
             <stop offset="100%" stopColor={brand} stopOpacity="0" />
           </radialGradient>
-          <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor={brand} stopOpacity="0" />
-            <stop offset="30%" stopColor={brand} stopOpacity="0.35" />
-            <stop offset="50%" stopColor={wanxiang.hex} stopOpacity="0.28" />
-            <stop offset="70%" stopColor={iot.hex} stopOpacity="0.22" />
-            <stop offset="100%" stopColor={lingshu.hex} stopOpacity="0" />
+          <linearGradient id="fade-left" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#fff" stopOpacity="1" />
+            <stop offset="12%" stopColor="#fff" stopOpacity="0.7" />
+            <stop offset="30%" stopColor="#fff" stopOpacity="0" />
           </linearGradient>
-          <linearGradient id="ring-spectrum" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor={brand} />
-            <stop offset="25%" stopColor={yunqi.hex} />
-            <stop offset="50%" stopColor={wanxiang.hex} />
-            <stop offset="75%" stopColor={iot.hex} />
-            <stop offset="100%" stopColor={lingshu.hex} />
-          </linearGradient>
-          <linearGradient id="sweep-fan" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#E8B923" stopOpacity="0.35" />
-            <stop offset="55%" stopColor={brand} stopOpacity="0.12" />
-            <stop offset="100%" stopColor={brand} stopOpacity="0" />
-          </linearGradient>
+          <mask id="hero-right-mask">
+            <rect width="1440" height="900" fill="#fff" />
+            <rect width="560" height="900" fill="url(#fade-left)" />
+          </mask>
 
-          {/* 各系统主题色光晕：叠在图标节点背后 */}
           <radialGradient id="glow-hub" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={brand} stopOpacity="0.42" />
-            <stop offset="55%" stopColor={brand} stopOpacity="0.14" />
+            <stop offset="0%" stopColor={brand} stopOpacity="0.36" />
+            <stop offset="55%" stopColor={brand} stopOpacity="0.1" />
             <stop offset="100%" stopColor={brand} stopOpacity="0" />
           </radialGradient>
-          <radialGradient id="glow-yunqi" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={yunqi.hex} stopOpacity="0.38" />
-            <stop offset="55%" stopColor={yunqi.hex} stopOpacity="0.12" />
-            <stop offset="100%" stopColor={yunqi.hex} stopOpacity="0" />
-          </radialGradient>
-          <radialGradient id="glow-wanxiang" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={wanxiang.hex} stopOpacity="0.45" />
-            <stop offset="55%" stopColor={wanxiang.hex} stopOpacity="0.16" />
-            <stop offset="100%" stopColor={wanxiang.hex} stopOpacity="0" />
-          </radialGradient>
-          <radialGradient id="glow-iot" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={iot.hex} stopOpacity="0.45" />
-            <stop offset="55%" stopColor={iot.hex} stopOpacity="0.16" />
-            <stop offset="100%" stopColor={iot.hex} stopOpacity="0" />
-          </radialGradient>
-          <radialGradient id="glow-lingshu" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={lingshu.hex} stopOpacity="0.42" />
-            <stop offset="55%" stopColor={lingshu.hex} stopOpacity="0.14" />
-            <stop offset="100%" stopColor={lingshu.hex} stopOpacity="0" />
-          </radialGradient>
+          {platformMeta.map((p) => (
+            <radialGradient key={`glow-${p.id}`} id={`glow-${p.id}`} cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor={p.palette.hex} stopOpacity="0.32" />
+              <stop offset="60%" stopColor={p.palette.hex} stopOpacity="0.08" />
+              <stop offset="100%" stopColor={p.palette.hex} stopOpacity="0" />
+            </radialGradient>
+          ))}
 
-          {/* 云起：云朵标（极简白 → 墨色） */}
+          {platformMeta.map((p) => (
+            <path
+              key={`edge-${p.id}`}
+              id={`edge-${p.id}`}
+              d={`M${p.x} ${p.y} L${hub.x} ${hub.y}`}
+              fill="none"
+            />
+          ))}
+
           <symbol id="logo-yunqi" viewBox="0 0 40 40">
             <path
               d="M12 18 L20 11 L28 18"
@@ -108,16 +116,12 @@ export function HeroVisual() {
               fill="currentColor"
             />
           </symbol>
-
-          {/* 万象：M 标（字形，底色由节点实心圆提供） */}
           <symbol id="logo-wanxiang" viewBox="0 0 40 40">
             <path
               d="M12 27V13h3.2l4.8 9.6L24.8 13H28v14h-2.8V17.6L21.2 27h-2.4l-4-9.4V27H12z"
               fill="currentColor"
             />
           </symbol>
-
-          {/* AI IoT：物联六边形（工业青） */}
           <symbol id="logo-iot" viewBox="0 0 40 40">
             <g
               fill="none"
@@ -140,8 +144,6 @@ export function HeroVisual() {
             <circle cx="30" cy="20" r="1.6" fill="currentColor" />
             <path d="M20 15.5 L24 17.8 V22.2 L20 24.5 L16 22.2 V17.8 Z" fill="currentColor" />
           </symbol>
-
-          {/* 灵枢：枢纽环 + 应用格（字形，中空露出实心底色） */}
           <symbol id="logo-lingshu" viewBox="0 0 40 40">
             <circle
               cx="20"
@@ -156,127 +158,159 @@ export function HeroVisual() {
             <rect x="9" y="25.5" width="5.5" height="5.5" rx="1.2" fill="currentColor" />
             <rect x="25.5" y="25.5" width="5.5" height="5.5" rx="1.2" fill="currentColor" />
           </symbol>
-
-          {/* 门户：切角品牌标（字形 + 信号金点缀） */}
           <symbol id="logo-portal" viewBox="0 0 40 40">
             <polygon points="8,8 32,8 32,26 26,32 8,32" fill="currentColor" />
             <polygon points="14,14 26,14 26,22 22,26 14,26" fill="#E8B923" />
           </symbol>
         </defs>
 
-        <rect width="1440" height="900" fill="url(#field)" />
-        <rect className="hero-visual__radar-glow" width="1440" height="900" fill="url(#radar)" />
-
-        <g
-          className="hero-visual__contours"
-          fill="none"
-          stroke={brand}
-          strokeOpacity="0.1"
-          strokeWidth="1.2"
-        >
-          <path d="M-40 640 C200 560, 420 700, 680 620 S1100 540, 1480 650" />
-          <path d="M-40 700 C240 620, 460 760, 720 680 S1120 600, 1480 710" />
-          <path d="M-40 760 C220 690, 480 820, 760 740 S1160 670, 1480 770" />
-          <path d="M-40 820 C260 760, 500 880, 800 800 S1200 740, 1480 830" />
-        </g>
-
-        {/* 雷达环 + 扫掠扇：绕核心持续旋转 */}
-        <g transform={`translate(${hub.x} ${hub.y})`}>
-          <g
-            className="hero-visual__rings"
-            fill="none"
-            stroke={brand}
-            strokeOpacity="0.32"
-            strokeWidth="1.25"
-          >
-            <circle className="hero-visual__ring" r="70" />
-            <circle className="hero-visual__ring hero-visual__ring--2" r="140" />
-            <circle className="hero-visual__ring hero-visual__ring--3" r="220" />
-            <circle
-              className="hero-visual__ring hero-visual__ring--4"
-              r="310"
-              stroke="url(#ring-spectrum)"
-              strokeOpacity="0.45"
-            />
-          </g>
-          <g className="hero-visual__sweep">
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              from="0 0 0"
-              to="360 0 0"
-              dur="6s"
-              repeatCount="indefinite"
-            />
-            <path
-              d="M0 0 L260 0 A260 260 0 0 1 183.8 183.8 Z"
-              fill="url(#sweep-fan)"
-            />
-            <path d="M0 0 L260 0" stroke="#E8B923" strokeOpacity="0.85" strokeWidth="1.75" />
-          </g>
-        </g>
-
-        {/* 拓扑连线：核心 ↔ 作品；作品间仅少量非闭合旁路，避免方形轮廓 */}
-        <g className="hero-visual__links" fill="none" strokeWidth="1.15" strokeOpacity="0.28">
-          {platforms.map((p) => (
-            <path
-              key={`${p.id}-link`}
-              className="hero-visual__link"
-              d={`M${hub.x} ${hub.y} L${p.x} ${p.y}`}
-              stroke={p.color}
-            />
-          ))}
-          <path
-            className="hero-visual__link hero-visual__link--soft"
-            d={`M${platforms[0].x} ${platforms[0].y} L${platforms[1].x} ${platforms[1].y}`}
-            stroke={brand}
-            strokeOpacity="0.12"
+        <g mask="url(#hero-right-mask)">
+          <rect
+            className="hero-visual__core-field"
+            x="740"
+            y="220"
+            width="580"
+            height="430"
+            fill="url(#core-field)"
           />
-          <path
-            className="hero-visual__link hero-visual__link--soft"
-            d={`M${platforms[2].x} ${platforms[2].y} L${platforms[3].x} ${platforms[3].y}`}
-            stroke={brand}
-            strokeOpacity="0.1"
-          />
-        </g>
 
-        <rect className="hero-visual__beam" y="318" width="1440" height="1.5" fill="url(#beam)" />
-
-        {/* 氛围小点 */}
-        {ambience.map(([x, y], i) => (
-          <g key={`${x}-${y}`} className={`hero-visual__node hero-visual__node--${i}`}>
-            <circle cx={x} cy={y} r="8" fill={brand} fillOpacity="0.1" />
-            <circle cx={x} cy={y} r="2.5" fill={i === 0 ? '#E8B923' : brand} fillOpacity="0.55" />
-          </g>
-        ))}
-
-        {/* 门户核心 logo：未来紫实心底 */}
-        <g transform={`translate(${hub.x} ${hub.y})`}>
-          <g className="hero-visual__badge hero-visual__badge--hub">
-            <circle r="24" fill="url(#glow-hub)" />
-            <circle r="18" fill={brand} />
-            <g transform="translate(-9 -9)" style={{ color: '#FFFFFF' }}>
-              <use href="#logo-portal" width="18" height="18" />
+          {/* AI 核心：双层反相轨道 */}
+          <g transform={`translate(${hub.x} ${hub.y})`}>
+            <g className="hero-visual__orbit hero-visual__orbit--a" fill="none">
+              <circle r="110" stroke={ink} strokeOpacity="0.12" strokeWidth="1.1" />
+              <circle
+                r="110"
+                stroke={brand}
+                strokeOpacity="0.28"
+                strokeWidth="1.4"
+                strokeDasharray="18 42"
+              />
             </g>
-          </g>
-        </g>
+            <g className="hero-visual__orbit hero-visual__orbit--b" fill="none">
+              <circle r="178" stroke={ink} strokeOpacity="0.08" strokeWidth="1" />
+              <circle
+                r="178"
+                stroke={brand}
+                strokeOpacity="0.18"
+                strokeWidth="1.2"
+                strokeDasharray="10 28"
+              />
+            </g>
+            <circle
+              className="hero-visual__orbit-ring"
+              r="235"
+              fill="none"
+              stroke={ink}
+              strokeOpacity="0.06"
+              strokeWidth="1"
+              strokeDasharray="2 14"
+            />
 
-        {/* 作品 logo 节点：各自主题色实心底 */}
-        {platforms.map((p, i) => (
-          <g key={p.id} transform={`translate(${p.x} ${p.y})`}>
-            <g className={`hero-visual__badge hero-visual__badge--${i}`}>
-              <circle r="22" fill={`url(#glow-${p.id})`} />
-              <circle r="14.5" fill={`rgba(${p.soft}, 0.18)`} />
-              <circle r="13" fill={p.color} />
-              <g transform="translate(-7.5 -7.5)" style={{ color: '#FFFFFF' }}>
-                <use href={`#logo-${p.id}`} width="15" height="15" />
+            {satellites.map((s, i) => (
+              <g key={`sat-${i}`} className="hero-visual__satellite">
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from={`${s.angle} 0 0`}
+                  to={`${s.angle + 360} 0 0`}
+                  dur={s.dur}
+                  repeatCount="indefinite"
+                />
+                <circle
+                  cx={s.r}
+                  cy="0"
+                  r={i < 3 ? 3.2 : 2.4}
+                  fill={i % 2 === 0 ? brand : signal}
+                  fillOpacity={i < 3 ? 0.7 : 0.45}
+                />
+              </g>
+            ))}
+          </g>
+
+          {/* 神经网络连线 */}
+          <g fill="none" strokeWidth="1.05" strokeOpacity="0.22">
+            {platformMeta.map((p) => (
+              <path
+                key={`${p.id}-link`}
+                d={`M${p.x} ${p.y} L${hub.x} ${hub.y}`}
+                stroke={p.palette.hex}
+                strokeDasharray="4 8"
+              />
+            ))}
+          </g>
+
+          {/* 数据粒子：沿链路汇入核心 */}
+          {platformMeta.map((p, i) => (
+            <g key={`flow-${p.id}`} className="hero-visual__packet">
+              <circle r="3.2" fill={p.palette.hex} fillOpacity="0.85">
+                <animateMotion
+                  dur={`${4.8 + i * 0.55}s`}
+                  repeatCount="indefinite"
+                  begin={`${i * 0.7}s`}
+                >
+                  <mpath href={`#edge-${p.id}`} />
+                </animateMotion>
+              </circle>
+              <circle r="1.4" fill={signal} fillOpacity="0.55">
+                <animateMotion
+                  dur={`${4.8 + i * 0.55}s`}
+                  repeatCount="indefinite"
+                  begin={`${i * 0.7 + 1.6}s`}
+                >
+                  <mpath href={`#edge-${p.id}`} />
+                </animateMotion>
+              </circle>
+            </g>
+          ))}
+
+          {/* 核心品牌节点 */}
+          <g transform={`translate(${hub.x} ${hub.y})`}>
+            <g className="hero-visual__badge hero-visual__badge--hub">
+              <circle r="28" fill="url(#glow-hub)" />
+              <circle r="18" fill={brand} />
+              <g transform="translate(-9 -9)" style={{ color: '#FFFFFF' }}>
+                <use href="#logo-portal" width="18" height="18" />
               </g>
             </g>
           </g>
+        </g>
+
+        {/* 四平台节点：放在 mask 外，避免羽化/裁切遮挡 */}
+        {platformMeta.map((p) => (
+          <a
+            key={p.id}
+            className="hero-visual__node-link"
+            href={`/works/${p.slug}`}
+            aria-label={p.name}
+            onClick={(e) => {
+              e.preventDefault()
+              navigate(`/works/${p.slug}`)
+            }}
+          >
+            <g transform={`translate(${p.x} ${p.y})`}>
+              <g className="hero-visual__badge">
+                <circle r="22" fill={`url(#glow-${p.id})`} />
+                <circle r="15" fill="#ffffff" fillOpacity="0.95" />
+                <circle
+                  r="13.5"
+                  fill={p.palette.hex}
+                  stroke="#ffffff"
+                  strokeWidth="1.5"
+                />
+                <g
+                  transform="translate(-6 -6)"
+                  style={{ color: '#FFFFFF' }}
+                  pointerEvents="none"
+                >
+                  <use href={`#logo-${p.id}`} width="12" height="12" />
+                </g>
+              </g>
+            </g>
+          </a>
         ))}
       </svg>
-      <div className="hero-visual__haze" />
-      <div className="hero-visual__grain" />
+
+      <div className="hero-visual__haze" aria-hidden="true" />
     </div>
   )
 }

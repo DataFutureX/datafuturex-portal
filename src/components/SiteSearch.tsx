@@ -125,7 +125,7 @@ export function SiteSearch({ onNavigate }: SiteSearchProps) {
                 ))}
               </div>
               <p className="site-search__hint">
-                也可前往 <Link to="/products" onClick={close}>作品</Link>、{' '}
+                也可前往 <Link to="/works" onClick={close}>作品</Link>、{' '}
                 <Link to="/docs" onClick={close}>文档</Link> 或{' '}
                 <Link to="/support" onClick={close}>支持</Link>。
               </p>
@@ -134,7 +134,7 @@ export function SiteSearch({ onNavigate }: SiteSearchProps) {
             <div className="site-search__empty">
               <p>没有匹配「{query.trim()}」的结果。</p>
               <p className="site-search__hint">
-                返回 <Link to="/products" onClick={close}>作品</Link> ·{' '}
+                返回 <Link to="/works" onClick={close}>作品</Link> ·{' '}
                 <Link to="/docs" onClick={close}>文档</Link> ·{' '}
                 <Link to="/support" onClick={close}>支持</Link>
               </p>

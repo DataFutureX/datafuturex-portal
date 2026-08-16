@@ -19,7 +19,7 @@ export function ProductArchitecture() {
           return (
             <li key={layer.id} className="arch__item">
               <Link
-                to={`/products/${layer.slug}`}
+                to={`/works/${layer.slug}`}
                 className="arch-layer entry-row"
                 data-palette={layer.palette.id}
                 style={
@@ -34,7 +34,10 @@ export function ProductArchitecture() {
                 </span>
                 <span className="arch-layer__body">
                   <span className="arch-layer__role mono">{layer.role}</span>
-                  <strong className="arch-layer__name">{layer.name}</strong>
+                  <strong className="arch-layer__name">
+                    {layer.name}
+                    <span className="arch-layer__en mono">{layer.englishName}</span>
+                  </strong>
                 </span>
                 <span className="arch-layer__modules">
                   {layer.modules.map((mod) => (

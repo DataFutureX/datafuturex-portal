@@ -12,7 +12,7 @@ export function ProductDetailPage() {
       <div className="page">
         <h1>未找到作品</h1>
         <p>
-          <Link to="/products">返回作品列表</Link>
+          <Link to="/works">返回作品列表</Link>
         </p>
       </div>
     )
@@ -27,7 +27,7 @@ export function ProductDetailPage() {
       <nav className="breadcrumb" aria-label="面包屑">
         <Link to="/">主页</Link>
         <span aria-hidden="true">/</span>
-        <Link to="/products">作品</Link>
+        <Link to="/works">作品</Link>
         <span aria-hidden="true">/</span>
         <span>{work.name}</span>
       </nav>

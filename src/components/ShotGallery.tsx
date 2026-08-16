@@ -84,8 +84,6 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
         <img
           key={current.src}
           src={medium}
-          srcSet={`${medium} 1280w, ${current.src} 1920w`}
-          sizes="(max-width: 860px) 92vw, 720px"
           alt={current.alt}
           className="shot--featured-img"
           width={1280}

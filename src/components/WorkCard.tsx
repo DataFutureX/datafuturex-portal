@@ -4,32 +4,32 @@ import { shotMedium, workThemeVars, type Work } from '../data/works'
 
 type WorkCardProps = {
   work: Work
-  index: number
   cta: string
+  /** 仅首屏可见封面使用；折页以下勿开 */
+  priority?: boolean
 }
 
-export function WorkCard({ work, index, cta }: WorkCardProps) {
+export function WorkCard({ work, priority = false, cta }: WorkCardProps) {
   const cover = work.screenshots[0]
+  const medium = cover ? shotMedium(cover.src, cover.medium) : null
 
   return (
     <Link
-      to={`/products/${work.slug}`}
+      to={`/works/${work.slug}`}
       className="work-card"
       data-palette={work.palette.id}
       style={workThemeVars(work.palette) as CSSProperties}
     >
       <div className="work-card__media">
-        {cover ? (
+        {medium ? (
           <img
-            src={shotMedium(cover.src, cover.medium)}
-            srcSet={`${shotMedium(cover.src, cover.medium)} 1280w, ${cover.src} 1920w`}
-            sizes="(max-width: 720px) 92vw, 520px"
+            src={medium}
             alt=""
             width={1280}
             height={800}
-            loading={index === 0 ? 'eager' : 'lazy'}
+            loading={priority ? 'eager' : 'lazy'}
             decoding="async"
-            fetchPriority={index === 0 ? 'high' : 'auto'}
+            fetchPriority={priority ? 'high' : 'auto'}
           />
         ) : (
           <div className="work-card__placeholder" />
@@ -40,7 +40,10 @@ export function WorkCard({ work, index, cta }: WorkCardProps) {
           <span className="work-card__palette mono">{work.palette.label}</span>
           <span className="work-card__tag">{work.tag}</span>
         </p>
-        <h3>{work.name}</h3>
+        <h3>
+          {work.name}
+          <span className="work-card__en mono">{work.englishName}</span>
+        </h3>
         <p>{work.summary}</p>
         <span className="work-card__cta">{cta}</span>
       </div>

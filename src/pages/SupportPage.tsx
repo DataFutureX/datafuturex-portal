@@ -72,7 +72,7 @@ export function SupportPage() {
         <ul>
           <li>
             <strong>想二次开发哪个项目？</strong> — 请使用完全开源的{' '}
-            <Link to="/products/yunqi-admin">云起应用平台</Link>，快速开始见{' '}
+            <Link to="/works/yunqi-admin">云起应用平台</Link>，快速开始见{' '}
             <Link to="/docs#yunqi-demo">文档</Link>。
           </li>
           <li>
@@ -81,7 +81,7 @@ export function SupportPage() {
           </li>
           <li>
             <strong>演示账号在哪看？</strong> — 见对应{' '}
-            <Link to="/products">作品页</Link> 与{' '}
+            <Link to="/works">作品页</Link> 与{' '}
             <Link to="/docs#try">文档 · 体验入口</Link>。
           </li>
           <li>

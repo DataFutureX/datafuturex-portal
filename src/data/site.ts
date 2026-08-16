@@ -28,32 +28,40 @@ export const site = {
   },
 } as const
 
-/** 工坊主要方向（主页展示） */
+/** 工坊主要方向（主页展示）；palette 对应承载该方向的平台主色 */
 export const directions = [
   {
     id: 'iot',
     name: '物联网 IoT',
+    brief: '设备管理 · 数据中心 · 规则引擎 · MQTT/OTA',
     summary:
       'AI 物联控制面：设备管理 · 数据中心 · 规则引擎 · 平台设置；MQTT/OTA、规则告警与应用市场已落地。',
     href: '/docs#smart-iot',
+    palette: workPalettes['industrial-cyan'],
   },
   {
     id: 'digital-twin',
     name: '数字孪生',
+    brief: '一张图 · 站网态势 · 场景可视化',
     summary: '二维/三维一张图、站网态势与场景可视化——见万象监测平台。',
     href: '/docs#wanxiang',
+    palette: workPalettes['tech-blue'],
   },
   {
     id: 'industry',
     name: '行业应用',
+    brief: '水利 · 灌区 · 农业 · 地质灾害',
     summary: '水利、灌区、农业、水库、地质灾害等场景落地。',
     href: '/docs#lingshu',
+    palette: workPalettes['lingshu-slate'],
   },
   {
     id: 'ai-agent',
     name: 'AI 智能体开发',
+    brief: 'Agent · 知识库 · NL2SQL · 工具编排',
     summary: '面向业务的智能问答、工具调用与 Agent 编排——见万象·数智中枢。',
     href: '/docs#wanxiang-ai',
+    palette: workPalettes['tech-blue'],
   },
 ] as const
 
@@ -66,6 +74,7 @@ export const productArchitecture = [
     id: 'yunqi',
     slug: 'yunqi-admin',
     name: '云起应用平台',
+    englishName: 'YunQi Application Platform',
     role: '开发底座',
     modules: ['统一架构', '业务组件', '权限安全', '运维观测', '开箱开发'],
     palette: workPalettes['minimal-white'],
@@ -74,6 +83,7 @@ export const productArchitecture = [
     id: 'smart-iot',
     slug: 'smart-iot-ai',
     name: '数智AI工业物联网平台',
+    englishName: 'Smart AI Industrial IoT Platform',
     role: '物联控制面',
     modules: ['设备管理', '数据中心', '规则引擎', '平台设置', '应用市场'],
     palette: workPalettes['industrial-cyan'],
@@ -82,6 +92,7 @@ export const productArchitecture = [
     id: 'wanxiang',
     slug: 'wanxiang-hydro',
     name: '万象监测平台',
+    englishName: 'WanXiang Monitor Platform',
     role: '监测与孪生',
     modules: ['双规约接入', '监测告警', '一张图', '巡检管理', '数智中枢'],
     palette: workPalettes['tech-blue'],
@@ -90,6 +101,7 @@ export const productArchitecture = [
     id: 'lingshu',
     slug: 'lingshu-market',
     name: '灵枢行业应用市场',
+    englishName: 'Lingshu Industry App Market',
     role: '行业应用层',
     modules: ['应用目录', '分发启停', '场景模板', 'AI Agent 应用', '控制面联动'],
     palette: workPalettes['lingshu-slate'],

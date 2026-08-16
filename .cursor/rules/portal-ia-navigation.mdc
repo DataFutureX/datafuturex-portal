@@ -1,4 +1,4 @@
----
+﻿---
 description: 技术门户信息架构与导航规范——主导航、页脚、面包屑、路由命名
 alwaysApply: false
 globs: "**/layout*.{tsx,jsx,vue},**/nav*.{tsx,jsx,vue,ts},**/Header*.{tsx,jsx,vue},**/Sidebar*.{tsx,jsx,vue},**/routes*.{ts,tsx,js},**/menu*.{ts,tsx,js}"
@@ -25,8 +25,8 @@ globs: "**/layout*.{tsx,jsx,vue},**/nav*.{tsx,jsx,vue,ts},**/Header*.{tsx,jsx,vu
 
 ```
 /                     # 门户首页
-/products             # 能力目录
-/products/[slug]      # 单能力落地页
+/works                # 能力目录
+/works/[slug]         # 单能力落地页
 /docs                 # 文档中心
 /docs/[...slug]       # 文档正文
 /examples             # 示例列表
@@ -40,12 +40,12 @@ globs: "**/layout*.{tsx,jsx,vue},**/nav*.{tsx,jsx,vue,ts},**/Header*.{tsx,jsx,vu
 
 - 当前路由高亮；深页必须有面包屑（首页除外）
 - 侧边栏仅用于文档/多级目录，不替代全局主导航
-- 移动端：折叠菜单保留与桌面相同信息层级，不删关键入口
+- 移动端：折叠菜单保留与行面相同信息层级，不删关键入口
 
 ## 反模式
 
 ```tsx
-// ❌ 一级导航塞满微服务
+// ❌ 一级导航堆满微服务
 const nav = ['用户中心', '订单', '库存', '支付', '消息', '日志', '监控', '配置']
 
 // ✅ 按用户任务聚合

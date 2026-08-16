@@ -14,7 +14,7 @@ export function SiteFooter() {
           <div>
             <h2>探索</h2>
             <Link to="/">主页</Link>
-            <Link to="/products">作品</Link>
+            <Link to="/works">作品</Link>
             <Link to="/docs">文档</Link>
             <Link to="/support">支持</Link>
           </div>
