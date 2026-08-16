@@ -11,7 +11,7 @@ export function ProductArchitecture() {
     <div
       className="arch"
       role="img"
-      aria-label="作品架构框图：云起底座、数智AI工业物联网、万象监测、灵枢行业应用市场"
+      aria-label="架构框图：云起底座、数智AI工业物联网、万象监测、灵枢行业应用市场"
     >
       <ol className="arch__stack">
         {layers.map((layer, index) => {

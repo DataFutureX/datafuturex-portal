@@ -1,6 +1,7 @@
 /**
  * 未来 AI 拓扑：轨道环 + 数据粒子流 + 节点呼吸
  */
+import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { brandPalette, workPalettes } from '../data/palettes'
 
@@ -51,14 +52,38 @@ const satellites = [
 
 export function HeroVisual() {
   const navigate = useNavigate()
+  const rootRef = useRef<HTMLDivElement>(null)
+  const svgRef = useRef<SVGSVGElement>(null)
   const hub = { x: 1000, y: 385 }
   const brand = brandPalette.hex
   const ink = '#17141f'
   const signal = '#E8B923'
 
+  // 滚出首屏后暂停 CSS / SMIL 动画，避免整页滚动时持续合成
+  useEffect(() => {
+    const root = rootRef.current
+    const svg = svgRef.current
+    if (!root) return
+
+    const setPaused = (paused: boolean) => {
+      root.classList.toggle('is-paused', paused)
+      if (!svg) return
+      if (paused) svg.pauseAnimations()
+      else svg.unpauseAnimations()
+    }
+
+    const io = new IntersectionObserver(
+      ([entry]) => setPaused(!entry.isIntersecting),
+      { rootMargin: '40px 0px', threshold: 0.01 },
+    )
+    io.observe(root)
+    return () => io.disconnect()
+  }, [])
+
   return (
-    <div className="hero-visual">
+    <div className="hero-visual" ref={rootRef}>
       <svg
+        ref={svgRef}
         className="hero-visual__svg"
         viewBox="740 220 580 430"
         preserveAspectRatio="xMidYMid meet"

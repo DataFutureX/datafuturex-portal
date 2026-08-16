@@ -174,7 +174,7 @@ export function HomePage() {
         <section className="section" aria-labelledby="arch-heading">
           <div className="section__head">
             <div className="section__head-title">
-              <h2 id="arch-heading">作品架构</h2>
+              <h2 id="arch-heading">架构</h2>
               <span className="section__head-en mono">Architecture</span>
             </div>
             <p>自下而上四层：开发底座 → 物联控制面 → 监测与孪生 → 行业应用。</p>

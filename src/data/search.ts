@@ -86,7 +86,7 @@ const pageItems: SearchItem[] = [
   {
     id: 'page-home',
     title: '主页',
-    description: '工坊品牌入口、方向、作品与作品架构',
+    description: '工坊品牌入口、方向、作品与架构',
     href: '/',
     group: '页面',
     keywords: ['首页', '主页', 'home', '门户', '架构'],
