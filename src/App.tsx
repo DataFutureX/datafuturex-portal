@@ -1,6 +1,11 @@
 import { lazy, Suspense } from 'react'
-import { Navigate, Routes, Route } from 'react-router-dom'
+import { Navigate, Routes, Route, useParams } from 'react-router-dom'
 import { SiteLayout } from './components/SiteLayout'
+
+function LegacyProductsRedirect() {
+  const { slug } = useParams()
+  return <Navigate to={slug ? `/works/${slug}` : '/works'} replace />
+}
 
 const HomePage = lazy(() =>
   import('./pages/HomePage').then((m) => ({ default: m.HomePage })),
@@ -31,8 +36,10 @@ export default function App() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="products" element={<ProductsPage />} />
-          <Route path="products/:slug" element={<ProductDetailPage />} />
+          <Route path="works" element={<ProductsPage />} />
+          <Route path="works/:slug" element={<ProductDetailPage />} />
+          <Route path="products" element={<Navigate to="/works" replace />} />
+          <Route path="products/:slug" element={<LegacyProductsRedirect />} />
           <Route path="docs" element={<DocsPage />} />
           <Route path="examples" element={<Navigate to="/docs#try" replace />} />
           <Route path="support" element={<SupportPage />} />

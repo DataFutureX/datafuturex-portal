@@ -90,7 +90,7 @@ export function HomePage() {
             </div>
             <p className="hero__lede">{site.tagline}</p>
             <div className="hero__cta">
-              <Link className="btn btn--primary" to="/products">
+              <Link className="btn btn--primary" to="/works">
                 查看作品
               </Link>
               <Link className="btn btn--ghost" to="/docs">
@@ -103,7 +103,10 @@ export function HomePage() {
         <section className="section section--fold-dirs" aria-labelledby="focus-heading">
           <div className="fold-dirs__inner">
             <div className="section__head section__head--fold">
-              <h2 id="focus-heading">工坊方向</h2>
+              <div className="section__head-title">
+                <h2 id="focus-heading">工坊方向</h2>
+                <span className="section__head-en mono">Directions</span>
+              </div>
               <p>{site.focus}</p>
             </div>
             <ul className="direction-list direction-list--fold">
@@ -141,17 +144,19 @@ export function HomePage() {
         <div className="band">
           <section className="section" aria-labelledby="works-heading">
             <div className="section__head">
-              <h2 id="works-heading">作品</h2>
+              <div className="section__head-title">
+                <h2 id="works-heading">作品</h2>
+                <span className="section__head-en mono">Works</span>
+              </div>
               <p>
                 云起完全开源；数智AI工业物联网与万象监测可打开演示站；灵枢正在开发中。进入详情获取源码或演示。
               </p>
             </div>
             <ul className="work-cards">
-              {works.map((work, index) => (
+              {works.map((work) => (
                 <li key={work.slug}>
                   <WorkCard
                     work={work}
-                    index={index}
                     cta={
                       work.openSource
                         ? '详情与源码 →'
@@ -167,9 +172,12 @@ export function HomePage() {
         </div>
 
         <section className="section" aria-labelledby="arch-heading">
-          <div className="section__head section__head--row">
-            <h2 id="arch-heading">作品架构</h2>
-            <span className="arch__badge mono">STACK · BOTTOM → TOP</span>
+          <div className="section__head">
+            <div className="section__head-title">
+              <h2 id="arch-heading">作品架构</h2>
+              <span className="section__head-en mono">Architecture</span>
+            </div>
+            <p>自下而上四层：开发底座 → 物联控制面 → 监测与孪生 → 行业应用。</p>
           </div>
           <ProductArchitecture />
         </section>

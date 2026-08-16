@@ -5,7 +5,7 @@ import { SiteSearch } from './SiteSearch'
 
 const navItems = [
   { to: '/', label: '主页', end: true },
-  { to: '/products', label: '作品' },
+  { to: '/works', label: '作品' },
   { to: '/docs', label: '文档' },
   { to: '/support', label: '支持' },
 ]

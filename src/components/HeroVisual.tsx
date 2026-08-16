@@ -280,11 +280,11 @@ export function HeroVisual() {
           <a
             key={p.id}
             className="hero-visual__node-link"
-            href={`/products/${p.slug}`}
+            href={`/works/${p.slug}`}
             aria-label={p.name}
             onClick={(e) => {
               e.preventDefault()
-              navigate(`/products/${p.slug}`)
+              navigate(`/works/${p.slug}`)
             }}
           >
             <g transform={`translate(${p.x} ${p.y})`}>

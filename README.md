@@ -19,10 +19,10 @@
 
 | 作品 | 状态 | 演示 | 源码 |
 |---|---|---|---|
-| [云起应用平台](https://www.datafuturex.cn/products/yunqi-admin) | 完全开源 · MIT · YQAP | [yunqi.datafuturex.cn/portal](https://yunqi.datafuturex.cn/portal) | [GitHub](https://github.com/DataFutureX/yunqi-admin) / [Gitee](https://gitee.com/DataFutureX/yunqi-admin) |
-| [数智AI工业物联网平台](https://www.datafuturex.cn/products/smart-iot-ai) | 暂未开源 | [iot.datafuturex.cn/portal](https://iot.datafuturex.cn/portal) | — |
-| [万象监测平台](https://www.datafuturex.cn/products/wanxiang-hydro) | 开源正在筹备中 | [wanxiang.datafuturex.cn/portal](https://wanxiang.datafuturex.cn/portal) | — |
-| [灵枢行业应用市场](https://www.datafuturex.cn/products/lingshu-market) | 正在开发中 | — | — |
+| [云起应用平台](https://www.datafuturex.cn/works/yunqi-admin) | 完全开源 · MIT · YQAP | [yunqi.datafuturex.cn/portal](https://yunqi.datafuturex.cn/portal) | [GitHub](https://github.com/DataFutureX/yunqi-admin) / [Gitee](https://gitee.com/DataFutureX/yunqi-admin) |
+| [数智AI工业物联网平台](https://www.datafuturex.cn/works/smart-iot-ai) | 暂未开源 | [iot.datafuturex.cn/portal](https://iot.datafuturex.cn/portal) | — |
+| [万象监测平台](https://www.datafuturex.cn/works/wanxiang-hydro) | 开源正在筹备中 | [wanxiang.datafuturex.cn/portal](https://wanxiang.datafuturex.cn/portal) | — |
+| [灵枢行业应用市场](https://www.datafuturex.cn/works/lingshu-market) | 正在开发中 | — | — |
 
 ## 技术栈
 
@@ -93,8 +93,8 @@ scripts/          # 截图采集与图片优化
 | 路径 | 说明 |
 |---|---|
 | `/` | 首页 |
-| `/products` | 作品列表 |
-| `/products/:slug` | 作品详情（含截图图集） |
+| `/works` | 作品列表 |
+| `/works/:slug` | 作品详情（含截图图集） |
 | `/docs` | 快速开始文档 |
 | `/examples` | 示例入口（文档内链，不在主导航） |
 | `/support` | 支持、联系方式与提问入口 |

@@ -8,7 +8,7 @@ export function NotFoundPage() {
         <h1>页面未找到</h1>
         <p>该地址不存在或已移动。可以从作品、文档或主页继续浏览。</p>
         <p className="page-hero__actions">
-          <Link className="btn btn--primary" to="/products">
+          <Link className="btn btn--primary" to="/works">
             查看作品
           </Link>
           <Link className="btn btn--ghost" to="/docs">

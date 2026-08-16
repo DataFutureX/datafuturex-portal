@@ -25,7 +25,7 @@ const tryLinks = [
   {
     title: '灵枢行业应用市场',
     hint: '正在开发中 · 暂无演示站',
-    href: '/products/lingshu-market',
+    href: '/works/lingshu-market',
     external: false,
   },
 ] as const
@@ -157,7 +157,7 @@ export function DocsPage() {
           </p>
           <p>
             作品页（含系统截图）：
-            <Link to="/products/yunqi-admin#screenshots">云起应用平台</Link>
+            <Link to="/works/yunqi-admin#screenshots">云起应用平台</Link>
           </p>        </section>
 
 <section id="yunqi-demo" className="prose-block">
@@ -203,7 +203,7 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
             门户已收录登录、工作台、用户/单位/角色/菜单、系统设置、公告、操作日志、系统监控、接口文档与个人中心等界面截图。完整交互请打开演示站或本地演示体验。
           </p>
           <p>
-            <Link className="btn btn--primary" to="/products/yunqi-admin#screenshots">
+            <Link className="btn btn--primary" to="/works/yunqi-admin#screenshots">
               查看截图图集
             </Link>
           </p>
@@ -236,7 +236,7 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
           </p>
           <p>
             作品页（含系统截图）：
-            <Link to="/products/smart-iot-ai">数智AI工业物联网平台</Link>
+            <Link to="/works/smart-iot-ai">数智AI工业物联网平台</Link>
             。设备侧约定见{' '}
             <a href="#smart-iot-access">设备接入（MQTT）</a>。
           </p>
@@ -295,7 +295,7 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
             门户已收录正式站模块截图：登录、工作台、应用市场、产品/设备、实时数据、规则管理、用户/菜单/系统设置。完整交互请打开演示站体验。
           </p>
           <p>
-            <Link className="btn btn--primary" to="/products/smart-iot-ai#screenshots">
+            <Link className="btn btn--primary" to="/works/smart-iot-ai#screenshots">
               查看截图图集
             </Link>
           </p>
@@ -333,7 +333,7 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
           </p>
           <p>
             作品页（含系统截图）：
-            <Link to="/products/wanxiang-hydro">万象监测平台</Link>
+            <Link to="/works/wanxiang-hydro">万象监测平台</Link>
           </p>
         </section>
 
@@ -355,7 +355,7 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
           </p>
           <p>
             作品页截图含 Agent / 知识库 / 简报等界面：
-            <Link to="/products/wanxiang-hydro#screenshots">万象监测平台</Link>
+            <Link to="/works/wanxiang-hydro#screenshots">万象监测平台</Link>
           </p>
         </section>
 
@@ -366,7 +366,7 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
             34 张）。完整交互请直接打开演示站体验。
           </p>
           <p>
-            <Link className="btn btn--primary" to="/products/wanxiang-hydro#screenshots">
+            <Link className="btn btn--primary" to="/works/wanxiang-hydro#screenshots">
               查看截图图集
             </Link>
           </p>
@@ -381,12 +381,12 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
           </p>
           <p>
             作品页：
-            <Link to="/products/lingshu-market">灵枢行业应用市场</Link>
+            <Link to="/works/lingshu-market">灵枢行业应用市场</Link>
           </p>
         </section>
 
         <p className="section__more">
-          下一步：<Link to="/products">浏览作品</Link> · <Link to="/support">获取支持</Link>
+          下一步：<Link to="/works">浏览作品</Link> · <Link to="/support">获取支持</Link>
         </p>
       </article>
     </div>

@@ -43,7 +43,7 @@ description: 按技术门户最佳实践设计并实现门户页面（首页、�
 ### 3. 对齐导航与路由
 
 - 新页必须能从主导航或首页入口到达
-- 遵循项目路由约定；无约定时用 `/products/[slug]`、`/docs/[...slug]` 等常见结构
+- 遵循项目路由约定；无约定时用 `/works/[slug]`、`/docs/[...slug]` 等常见结构
 - 外链标明并 `target="_blank"` + `rel="noopener noreferrer"`
 
 ### 4. 实现要点
