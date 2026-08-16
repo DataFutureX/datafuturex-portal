@@ -23,6 +23,8 @@ export type Work = {
   summary: string
   /** 已开源可二次开发；筹备中则仅演示展示 */
   openSource: boolean
+  /** 列表卡右上角特别推荐标记 */
+  featured?: boolean
   accessNote: string
   palette: WorkPalette
   stack: string[]
@@ -200,6 +202,7 @@ export const works: Work[] = [
     name: '万象监测平台',
     englishName: 'WanXiang Monitor Platform',
     tag: '开源正在筹备中',
+    featured: true,
     summary:
       '面向遥测站的水文水资源物联监测平台：协议接入、实时监测与告警、地图视频、巡检应用，以及数智中枢（Agent / 知识库 / AI 简报 / NL2SQL）。基于云起后台管理系统迭代；开源正在筹备中，可通过演示站体验。',
     openSource: false,

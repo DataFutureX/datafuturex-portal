@@ -16,10 +16,15 @@ export function WorkCard({ work, priority = false, cta }: WorkCardProps) {
   return (
     <Link
       to={`/works/${work.slug}`}
-      className="work-card"
+      className={`work-card${work.featured ? ' work-card--featured' : ''}`}
       data-palette={work.palette.id}
       style={workThemeVars(work.palette) as CSSProperties}
     >
+      {work.featured ? (
+        <span className="work-card__ribbon" aria-label="特别推荐">
+          <span className="work-card__seal">推荐</span>
+        </span>
+      ) : null}
       <div className="work-card__media">
         {medium ? (
           <img
