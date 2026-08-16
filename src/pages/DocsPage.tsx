@@ -6,25 +6,25 @@ import { docChapters } from '../data/docs'
 const tryLinks = [
   {
     title: '云起应用平台',
-    hint: 'yunqi.datafuturex.cn/portal · demo / demo123',
+    url: 'yunqi.datafuturex.cn/portal',
     href: 'https://yunqi.datafuturex.cn/portal',
     external: true,
   },
   {
     title: '数智AI工业物联网平台',
-    hint: 'iot.datafuturex.cn/portal · 租户 platform',
+    url: 'iot.datafuturex.cn/portal',
     href: 'https://iot.datafuturex.cn/portal',
     external: true,
   },
   {
     title: '万象监测平台',
-    hint: 'wanxiang.datafuturex.cn/portal · demo / demo123',
+    url: 'wanxiang.datafuturex.cn/portal',
     href: 'https://wanxiang.datafuturex.cn/portal',
     external: true,
   },
   {
     title: '灵枢行业应用市场',
-    hint: '正在开发中 · 暂无演示站',
+    url: '暂无演示站',
     href: '/works/lingshu-market',
     external: false,
   },
@@ -92,18 +92,19 @@ export function DocsPage() {
 
         <section id="try" className="prose-block">
           <h2>体验入口</h2>
-          <p>四个平台的演示站入口；灵枢正在开发中，可先查看作品页进展。</p>
           <ul className="docs-try-list">
             {tryLinks.map((item) => {
               const body = (
                 <>
                   <strong>{item.title}</strong>
-                  <span className="mono">{item.hint}</span>
-                  {item.external ? (
-                    <span className="ext" aria-hidden="true">
-                      ↗
-                    </span>
-                  ) : null}
+                  <span className="docs-try-list__meta">
+                    <span className="mono">{item.url}</span>
+                    {item.external ? (
+                      <span className="ext" aria-hidden="true">
+                        ↗
+                      </span>
+                    ) : null}
+                  </span>
                 </>
               )
               return (
@@ -123,42 +124,63 @@ export function DocsPage() {
           </ul>
         </section>
 
-<section id="yunqi" className="prose-block">
+        <section id="yunqi" className="prose-block">
           <h2>云起应用平台 · 概述与开源</h2>
-          <p>
-            <strong>YunQi Application Platform（YQAP）</strong>
-            ，面向企业数字化应用建设的模块化开发基础平台。
-            <strong>完全开源（MIT）</strong>
-            。可在线演示、查看系统截图，并克隆 monorepo 二次开发。仓库：
-            <a
-              href="https://github.com/DataFutureX/yunqi-admin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-            、
-            <a
-              href="https://gitee.com/DataFutureX/yunqi-admin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Gitee
-            </a>
-            。在线演示：
-            <a
-              href="https://yunqi.datafuturex.cn/portal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              yunqi.datafuturex.cn/portal
-            </a>
-            （demo / demo123）。
-          </p>
-          <p>
-            作品页（含系统截图）：
-            <Link to="/works/yunqi-admin#screenshots">云起应用平台</Link>
-          </p>        </section>
+          <dl className="docs-fact-list">
+            <div className="docs-fact">
+              <dt>定位</dt>
+              <dd>
+                <strong>YunQi Application Platform（YQAP）</strong>
+                ：面向企业数字化应用建设的模块化开发基础平台。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>开源</dt>
+              <dd>
+                完全开源，许可证 <strong>MIT</strong>，可商用与二次开发。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>源码</dt>
+              <dd>
+                <a
+                  href="https://github.com/DataFutureX/yunqi-admin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub ↗
+                </a>
+                <span aria-hidden="true"> · </span>
+                <a
+                  href="https://gitee.com/DataFutureX/yunqi-admin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Gitee ↗
+                </a>
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>演示</dt>
+              <dd>
+                <a
+                  href="https://yunqi.datafuturex.cn/portal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  yunqi.datafuturex.cn/portal ↗
+                </a>
+                <span className="mono"> · demo / demo123</span>
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>作品页</dt>
+              <dd>
+                <Link to="/works/yunqi-admin#screenshots">云起应用平台 · 系统截图</Link>
+              </dd>
+            </div>
+          </dl>
+        </section>
 
 <section id="yunqi-demo" className="prose-block">
           <h2>云起 · 本地演示模式</h2>
@@ -209,37 +231,68 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
           </p>
         </section>
 
-<section id="smart-iot" className="prose-block">
+        <section id="smart-iot" className="prose-block">
           <h2>数智AI工业物联网平台 · 概述与演示站</h2>
-          <p>
-            <strong>Smart AI Industrial IoT Platform（v1.0.0）</strong>
-            ，从设备接入到行业应用的 AI 物联控制面。控制台四大业务域为
-            <strong>设备管理 · 数据中心 · 规则引擎 · 平台设置</strong>
-            （另含主页工作台 / 应用市场）。已落地：MQTT 主接入、数据中心双档存储（PostgreSQL
-            默认 / TDengine 可选）、规则告警与通道转发、OTA、应用市场、多租户 RBAC。
-            <strong>AI 分析与数据孪生为规划能力</strong>
-            ，不在当前交付范围。
-            <strong>暂未开源</strong>
-            ；基于开源底座云起应用平台演进。
-          </p>
-          <p>
-            演示门户（纯前端 Mock）：
-            <a
-              href="https://iot.datafuturex.cn/portal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://iot.datafuturex.cn/portal
-            </a>
-            。租户 <code>platform</code>，账号 <code>demo / demo123</code>
-            。技术栈：Vue 3 · Java 21 · Spring Boot 4 · PostgreSQL 16 · MQTT / EMQX。
-          </p>
-          <p>
-            作品页（含系统截图）：
-            <Link to="/works/smart-iot-ai">数智AI工业物联网平台</Link>
-            。设备侧约定见{' '}
-            <a href="#smart-iot-access">设备接入（MQTT）</a>。
-          </p>
+          <dl className="docs-fact-list">
+            <div className="docs-fact">
+              <dt>定位</dt>
+              <dd>
+                <strong>Smart AI Industrial IoT Platform（v1.0.0）</strong>
+                ：从设备接入到行业应用的 AI 物联控制面。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>业务域</dt>
+              <dd>
+                控制台四大域：
+                <strong>设备管理 · 数据中心 · 规则引擎 · 平台设置</strong>
+                （另含主页工作台 / 应用市场）。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>已落地</dt>
+              <dd>
+                MQTT 主接入、数据中心双档存储（PostgreSQL 默认 / TDengine 可选）、规则告警与通道转发、OTA、应用市场、多租户 RBAC。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>开源</dt>
+              <dd>
+                <strong>暂未开源</strong>
+                ；基于开源底座
+                <Link to="/docs#yunqi">云起应用平台</Link>
+                演进。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>演示</dt>
+              <dd>
+                <a
+                  href="https://iot.datafuturex.cn/portal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  iot.datafuturex.cn/portal ↗
+                </a>
+                <span className="mono"> · 租户 platform · demo / demo123</span>
+                （纯前端 Mock）
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>技术栈</dt>
+              <dd className="mono">
+                Vue 3 · Java 21 · Spring Boot 4 · PostgreSQL 16 · MQTT / EMQX
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>作品页</dt>
+              <dd>
+                <Link to="/works/smart-iot-ai">数智AI工业物联网平台</Link>
+                <span aria-hidden="true"> · </span>
+                <a href="#smart-iot-access">设备接入（MQTT）</a>
+              </dd>
+            </div>
+          </dl>
         </section>
 
 <section id="smart-iot-access" className="prose-block">
@@ -301,40 +354,69 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
           </p>
         </section>
 
-<section id="wanxiang" className="prose-block">
+        <section id="wanxiang" className="prose-block">
           <h2>万象监测平台 · 概述与演示站</h2>
-          <p>
-            <strong>WanXiang Monitor Platform</strong>
-            ，面向遥测站的数据采集、存储、分析与可视化平台。基于云起后台管理系统迭代：双规约接入（SL 651 /
-            SL/T 427）、实时监测与阈值告警、二维 / 三维一张图与视频专题、巡检管理，以及
-            <strong>数智中枢</strong>
-            （Agent 会话 / 中心与 Graph 编排、知识库 RAG、NL2SQL、AI 简报）。
-            <strong>开源正在筹备中</strong>
-            ，暂不提供源码下载；当前通过演示站（纯前端 Mock）展示能力与界面。
-          </p>
-          <p>
-            演示门户：
-            <a
-              href="https://wanxiang.datafuturex.cn/portal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://wanxiang.datafuturex.cn/portal
-            </a>
-            ；数智中枢介绍：
-            <a
-              href="https://wanxiang.datafuturex.cn/portal/ai"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              /portal/ai
-            </a>
-            。账号 <code>demo / demo123</code>。
-          </p>
-          <p>
-            作品页（含系统截图）：
-            <Link to="/works/wanxiang-hydro">万象监测平台</Link>
-          </p>
+          <dl className="docs-fact-list">
+            <div className="docs-fact">
+              <dt>定位</dt>
+              <dd>
+                <strong>WanXiang Monitor Platform</strong>
+                ：面向遥测站的数据采集、存储、分析与可视化平台；基于云起后台管理系统迭代。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>能力</dt>
+              <dd>
+                双规约接入（SL 651 / SL/T 427）、实时监测与阈值告警、二维 / 三维一张图与视频专题、巡检管理。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>数智中枢</dt>
+              <dd>
+                Agent 会话 / 中心与 Graph 编排、知识库 RAG、NL2SQL、AI 简报。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>开源</dt>
+              <dd>
+                <strong>开源正在筹备中</strong>
+                ，暂不提供源码下载；当前通过演示站（纯前端 Mock）展示能力与界面。
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>演示</dt>
+              <dd>
+                <a
+                  href="https://wanxiang.datafuturex.cn/portal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  wanxiang.datafuturex.cn/portal ↗
+                </a>
+                <span className="mono"> · demo / demo123</span>
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>数智入口</dt>
+              <dd>
+                <a
+                  href="https://wanxiang.datafuturex.cn/portal/ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  wanxiang.datafuturex.cn/portal/ai ↗
+                </a>
+              </dd>
+            </div>
+            <div className="docs-fact">
+              <dt>作品页</dt>
+              <dd>
+                <Link to="/works/wanxiang-hydro">万象监测平台</Link>
+                <span aria-hidden="true"> · </span>
+                <a href="#wanxiang-ai">数智中枢说明</a>
+              </dd>
+            </div>
+          </dl>
         </section>
 
         <section id="wanxiang-ai" className="prose-block">

@@ -47,11 +47,7 @@ export function SiteFooter() {
               loading="lazy"
               decoding="async"
             />
-            <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-            <a href={site.contact.issues} target="_blank" rel="noopener noreferrer">
-              我要提问 ↗
-            </a>
-            <Link to="/support#contact">查看联系方式</Link>
+            <Link to="/support#contact">联系我 ↗</Link>
           </div>
         </div>
       </div>

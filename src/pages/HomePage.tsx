@@ -116,7 +116,7 @@ export function HomePage() {
                   className={`direction-list__cell direction-list__cell--${index + 1} direction-list__cell--${item.id}`}
                 >
                   <Link
-                    to={item.href}
+                    to={`/#work-${item.workSlug}`}
                     className="direction-item entry-row"
                     data-palette={item.palette.id}
                     style={
@@ -154,7 +154,7 @@ export function HomePage() {
             </div>
             <ul className="work-cards">
               {works.map((work) => (
-                <li key={work.slug}>
+                <li key={work.slug} id={`work-${work.slug}`}>
                   <WorkCard
                     work={work}
                     cta={
