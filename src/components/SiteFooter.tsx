@@ -8,11 +8,7 @@ export function SiteFooter() {
         <div className="site-footer__brand">
           <span className="brand__name">{site.name}</span>
           <p className="brand__en mono">{site.englishName}</p>
-          <p>
-            {site.domain}
-            <br />
-            {site.focus}
-          </p>
+          <p>{site.tagline}</p>
         </div>
         <div className="site-footer__cols">
           <div>
@@ -20,7 +16,6 @@ export function SiteFooter() {
             <Link to="/">主页</Link>
             <Link to="/products">作品</Link>
             <Link to="/docs">文档</Link>
-            <Link to="/examples">示例</Link>
             <Link to="/support">支持</Link>
           </div>
           <div>

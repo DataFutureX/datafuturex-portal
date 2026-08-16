@@ -1,6 +1,16 @@
 /** 文档侧栏与站内搜索共用目录 */
 export const docChapters = [
   {
+    title: '快速开始',
+    items: [
+      {
+        id: 'try',
+        label: '体验入口',
+        keywords: ['演示', '体验', '示例', 'examples', '快速开始', 'clone', 'MQTT'],
+      },
+    ],
+  },
+  {
     title: '云起应用平台',
     items: [
       { id: 'yunqi', label: '概述与开源', keywords: ['云起', 'YQAP', 'yunqi', '开源', 'MIT'] },
@@ -13,6 +23,11 @@ export const docChapters = [
         id: 'yunqi-fullstack',
         label: '前后端联调开发',
         keywords: ['联调', 'JDK', 'MySQL', 'start', '开发'],
+      },
+      {
+        id: 'yunqi-shots',
+        label: '系统截图',
+        keywords: ['截图', '图集', '工作台', '权限', '监控'],
       },
     ],
   },
@@ -69,12 +84,24 @@ export const docChapters = [
           '水文',
           '监测',
           'wanxiang',
+          '一张图',
+          '数字孪生',
+          '巡检',
+          '演示',
+        ],
+      },
+      {
+        id: 'wanxiang-ai',
+        label: '数智中枢与 Agent',
+        keywords: [
           '数智中枢',
           'Agent',
-          '巡检',
-          '简报',
+          '智能体',
+          'RAG',
           'NL2SQL',
-          '演示',
+          '简报',
+          'Graph',
+          'AI',
         ],
       },
       {

@@ -1,3 +1,5 @@
+import { workPalettes } from './palettes'
+
 /** 站点品牌、定位与研究方向 */
 export const site = {
   name: '数智未来·AI工坊',
@@ -33,73 +35,63 @@ export const directions = [
     name: '物联网 IoT',
     summary:
       'AI 物联控制面：设备管理 · 数据中心 · 规则引擎 · 平台设置；MQTT/OTA、规则告警与应用市场已落地。',
-    href: '/products/smart-iot-ai',
+    href: '/docs#smart-iot',
   },
   {
     id: 'digital-twin',
     name: '数字孪生',
-    summary: '二维/三维一张图、站网态势与场景可视化。',
-    href: '/products/wanxiang-hydro',
+    summary: '二维/三维一张图、站网态势与场景可视化——见万象监测平台。',
+    href: '/docs#wanxiang',
   },
   {
     id: 'industry',
     name: '行业应用',
     summary: '水利、灌区、农业、水库、地质灾害等场景落地。',
-    href: '/products/lingshu-market',
+    href: '/docs#lingshu',
   },
   {
     id: 'ai-agent',
     name: 'AI 智能体开发',
-    summary: '面向业务的智能问答、工具调用与 Agent 编排。',
-    href: '/products/wanxiang-hydro',
+    summary: '面向业务的智能问答、工具调用与 Agent 编排——见万象·数智中枢。',
+    href: '/docs#wanxiang-ai',
   },
 ] as const
 
-/** 门户与作品色系：品牌层统一，产品层各有主色 */
-export const designLanguages = [
+/**
+ * 作品架构栈（自下而上）：云起底座 → 物联控制面 → 监测场景 → 行业应用市场
+ * 展示时倒序渲染为框图
+ */
+export const productArchitecture = [
   {
-    id: 'future-purple',
-    name: '未来紫',
-    subject: '门户',
-    summary: '品牌入口与导航壳层：统一识别数智未来·AI工坊。',
-    hex: '#5B21B6',
-    rgb: '91, 33, 182',
-    href: '/',
+    id: 'yunqi',
+    slug: 'yunqi-admin',
+    name: '云起应用平台',
+    role: '开发底座',
+    modules: ['统一架构', '业务组件', '权限安全', '运维观测', '开箱开发'],
+    palette: workPalettes['minimal-white'],
   },
   {
-    id: 'minimal-white',
-    name: '极简白',
-    subject: '云起',
-    summary: '应用开发底座：留白、墨色与清晰层级，突出可扩展与可开发性。',
-    hex: '#171717',
-    rgb: '23, 23, 23',
-    href: '/products/yunqi-admin',
+    id: 'smart-iot',
+    slug: 'smart-iot-ai',
+    name: '数智AI工业物联网平台',
+    role: '物联控制面',
+    modules: ['设备管理', '数据中心', '规则引擎', '平台设置', '应用市场'],
+    palette: workPalettes['industrial-cyan'],
   },
   {
-    id: 'tech-blue',
-    name: '科技蓝',
-    subject: '万象监测平台',
-    summary: '监测、一张图与数智中枢：态势告警、巡检应用与 Agent / 简报研判。',
-    hex: '#2563EB',
-    rgb: '37, 99, 235',
-    href: '/products/wanxiang-hydro',
+    id: 'wanxiang',
+    slug: 'wanxiang-hydro',
+    name: '万象监测平台',
+    role: '监测与孪生',
+    modules: ['双规约接入', '监测告警', '一张图', '巡检管理', '数智中枢'],
+    palette: workPalettes['tech-blue'],
   },
   {
-    id: 'industrial-cyan',
-    name: '工业青',
-    subject: '数智AI工业物联网平台',
-    summary: '工业物联控制面：设备—数据—规则—平台设置，工业澄明浅色控制台。',
-    hex: '#0F766E',
-    rgb: '15, 118, 110',
-    href: '/products/smart-iot-ai',
-  },
-  {
-    id: 'lingshu-slate',
-    name: '石板灰',
-    subject: '灵枢',
-    summary: '行业应用市场：中性石板色，偏通用、稳妥的产品主色。',
-    hex: '#475569',
-    rgb: '71, 85, 105',
-    href: '/products/lingshu-market',
+    id: 'lingshu',
+    slug: 'lingshu-market',
+    name: '灵枢行业应用市场',
+    role: '行业应用层',
+    modules: ['应用目录', '分发启停', '场景模板', 'AI Agent 应用', '控制面联动'],
+    palette: workPalettes['lingshu-slate'],
   },
 ] as const

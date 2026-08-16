@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { shotThumb } from '../data/works'
+import { shotMedium, shotThumb } from '../data/works'
 
 type Shot = { src: string; medium?: string; thumb?: string; alt: string }
 
@@ -32,10 +32,12 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
     return () => window.clearInterval(id)
   }, [autoplay, shots.length])
 
-  // Preload current + next full-size images for smoother playback
+  // 预载当前与下一张的中图，降低带宽
   useEffect(() => {
     if (!current) return
-    const urls = [current.src, next?.src].filter(Boolean) as string[]
+    const urls = [current, next]
+      .filter(Boolean)
+      .map((shot) => shotMedium(shot!.src, shot!.medium))
     const imgs = urls.map((url) => {
       const img = new Image()
       img.decoding = 'async'
@@ -52,6 +54,8 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
   if (!current) {
     return <p className="shot-placeholder">截图采集中，请先通过演示站预览界面。</p>
   }
+
+  const medium = shotMedium(current.src, current.medium)
 
   return (
     <div
@@ -79,13 +83,15 @@ export function ShotGallery({ shots }: { shots: Shot[] }) {
       <figure className="shot shot--featured">
         <img
           key={current.src}
-          src={current.src}
+          src={medium}
+          srcSet={`${medium} 1280w, ${current.src} 1920w`}
+          sizes="(max-width: 860px) 92vw, 720px"
           alt={current.alt}
           className="shot--featured-img"
-          width={1920}
-          height={1200}
+          width={1280}
+          height={800}
           decoding="async"
-          fetchPriority="high"
+          fetchPriority={active === 0 ? 'high' : 'low'}
         />
         <figcaption>{current.alt}</figcaption>
         {autoplay ? (

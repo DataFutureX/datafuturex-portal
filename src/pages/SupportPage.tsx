@@ -7,7 +7,7 @@ export function SupportPage() {
       <header className="page-hero">
         <p className="eyebrow mono">Support</p>
         <h1>支持</h1>
-        <p>开源仓库、演示站、账号说明与联系方式。</p>
+        <p>联系方式、许可证与常见问题。演示与账号说明见作品页与文档。</p>
         <p className="page-hero__actions">
           <a
             className="btn btn--primary"
@@ -63,140 +63,30 @@ export function SupportPage() {
           <a href={site.license.url} target="_blank" rel="noopener noreferrer">
             LICENSE ↗
           </a>
-          。
+          。各作品开源状态以作品页为准。
         </p>
       </section>
 
-      <section className="prose-block">
-        <h2>云起应用平台（完全开源）</h2>
-        <ul>
-          <li>
-            作品页：<Link to="/products/yunqi-admin">云起应用平台</Link>
-          </li>
-          <li>
-            GitHub：
-            <a
-              href="https://github.com/DataFutureX/yunqi-admin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              DataFutureX/yunqi-admin ↗
-            </a>
-          </li>
-          <li>
-            Gitee：
-            <a
-              href="https://gitee.com/DataFutureX/yunqi-admin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              DataFutureX/yunqi-admin ↗
-            </a>
-          </li>
-          <li>
-            在线演示：
-            <a
-              href="https://yunqi.datafuturex.cn/portal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              yunqi.datafuturex.cn/portal ↗
-            </a>
-            （demo / demo123）
-          </li>
-          <li>前后端联调账号：admin / admin123</li>
-        </ul>
-      </section>
-
-      <section className="prose-block">
-        <h2>数智AI工业物联网平台（暂未开源）</h2>
-        <ul>
-          <li>
-            作品页：<Link to="/products/smart-iot-ai">数智AI工业物联网平台</Link>
-          </li>
-          <li>
-            演示站（纯前端 Mock）：
-            <a
-              href="https://iot.datafuturex.cn/portal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              iot.datafuturex.cn/portal ↗
-            </a>
-          </li>
-          <li>暂未开源；基于云起应用平台（yunqi-admin / YQAP）演进，源码不对外托管</li>
-          <li>
-            四大业务域：设备管理 · 数据中心 · 规则引擎 · 平台设置；MQTT 主接入，详见{' '}
-            <Link to="/docs#smart-iot-access">设备接入文档</Link>
-          </li>
-          <li>演示账号：租户 platform · demo / demo123</li>
-          <li>本地联调账号：租户 platform · admin / admin123</li>
-        </ul>
-      </section>
-
-      <section className="prose-block">
-        <h2>万象监测平台（开源正在筹备中）</h2>
-        <ul>
-          <li>
-            作品页：<Link to="/products/wanxiang-hydro">万象监测平台</Link>
-          </li>
-          <li>
-            演示站：
-            <a
-              href="https://wanxiang.datafuturex.cn/portal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              wanxiang.datafuturex.cn/portal ↗
-            </a>
-            （Mock）
-          </li>
-          <li>
-            数智中枢介绍：
-            <a
-              href="https://wanxiang.datafuturex.cn/portal/ai"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              /portal/ai ↗
-            </a>
-          </li>
-          <li>开源正在筹备中，暂不提供源码下载；基于云起后台管理系统迭代</li>
-          <li>演示账号：demo / demo123</li>
-          <li>本地联调账号：admin / admin123</li>
-          <li>
-            能力概览：双规约接入、监测告警、地图视频、巡检管理、数智中枢（Agent / 知识库 / AI 简报 /
-            NL2SQL）
-          </li>
-        </ul>
-      </section>
-
-      <section className="prose-block">
-        <h2>灵枢行业应用市场（正在开发中）</h2>
-        <ul>
-          <li>
-            作品页：<Link to="/products/lingshu-market">灵枢行业应用市场</Link>
-          </li>
-          <li>正在开发中，暂无演示站与源码</li>
-          <li>
-            文档：<Link to="/docs#lingshu">概述与进展</Link>
-          </li>
-        </ul>
-      </section>
-
-      <section className="prose-block">
+      <section className="prose-block" id="faq">
         <h2>常见问题</h2>
         <ul>
           <li>
-            <strong>想二次开发哪个项目？</strong> — 请使用完全开源的云起应用平台（YQAP）。
+            <strong>想二次开发哪个项目？</strong> — 请使用完全开源的{' '}
+            <Link to="/products/yunqi-admin">云起应用平台</Link>，快速开始见{' '}
+            <Link to="/docs#yunqi-demo">文档</Link>。
           </li>
           <li>
-            <strong>数智AI工业物联网平台 / 万象监测平台 / 灵枢能否拿到源码？</strong> —
-            数智AI工业物联网平台暂未开源（演示为纯前端 Mock）；万象监测平台开源正在筹备中；灵枢行业应用市场正在开发中。前两者可通过演示站了解能力。
+            <strong>数智AI工业物联网 / 万象 / 灵枢能否拿到源码？</strong> —
+            数智AI暂未开源；万象开源筹备中；灵枢开发中。可通过各作品页演示站了解能力。
           </li>
           <li>
-            <strong>云起演示打不开</strong> — 确认可访问 yunqi.datafuturex.cn/portal，或本地{' '}
-            <code>npm run dev:demo</code>。
+            <strong>演示账号在哪看？</strong> — 见对应{' '}
+            <Link to="/products">作品页</Link> 与{' '}
+            <Link to="/docs#try">文档 · 体验入口</Link>。
+          </li>
+          <li>
+            <strong>云起演示打不开</strong> — 确认可访问 yunqi.datafuturex.cn/portal，或本地按{' '}
+            <Link to="/docs#yunqi-demo">本地演示</Link> 启动。
           </li>
           <li>
             <strong>还有其他问题？</strong> — 见上方{' '}

@@ -16,7 +16,7 @@ export function SiteSearch({ onNavigate }: SiteSearchProps) {
   const navigate = useNavigate()
 
   const results = searchSite(query)
-  const hot = ['云起', '演示', '物联网', '万象', '源码', '支持']
+  const hot = ['云起', '演示', '快速开始', 'MQTT', '万象', '源码']
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {

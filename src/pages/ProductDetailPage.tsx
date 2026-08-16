@@ -86,7 +86,7 @@ export function ProductDetailPage() {
             </>
           ) : (
             <Link className="btn btn--ghost" to={work.links.docsAnchor}>
-              {work.links.demo ? '演示说明' : '产品说明'}
+              {work.links.demo ? '演示说明' : '作品说明'}
             </Link>
           )}
         </div>

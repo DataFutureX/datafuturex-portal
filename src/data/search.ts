@@ -14,10 +14,10 @@ const pageItems: SearchItem[] = [
   {
     id: 'page-home',
     title: '主页',
-    description: '工坊品牌入口、方向、作品与快速体验',
+    description: '工坊品牌入口、方向、作品与作品架构',
     href: '/',
     group: '页面',
-    keywords: ['首页', '主页', 'home', '门户'],
+    keywords: ['首页', '主页', 'home', '门户', '架构'],
   },
   {
     id: 'page-products',
@@ -25,7 +25,7 @@ const pageItems: SearchItem[] = [
     description: '浏览全部工坊作品',
     href: '/products',
     group: '页面',
-    keywords: ['产品', '作品列表', 'products'],
+    keywords: ['作品', '作品列表', 'products'],
   },
   {
     id: 'page-docs',
@@ -33,23 +33,15 @@ const pageItems: SearchItem[] = [
     description: '快速开始：演示、源码与联调说明',
     href: '/docs',
     group: '页面',
-    keywords: ['文档', '快速开始', 'docs', '教程'],
-  },
-  {
-    id: 'page-examples',
-    title: '示例',
-    description: '演示站、本地开发与截图入口',
-    href: '/examples',
-    group: '页面',
-    keywords: ['示例', 'examples', '演示入口'],
+    keywords: ['文档', '快速开始', 'docs', '教程', 'clone', 'MQTT'],
   },
   {
     id: 'page-support',
     title: '支持',
-    description: '许可证、账号说明与联系方式',
+    description: '联系方式、许可证与常见问题',
     href: '/support',
     group: '页面',
-    keywords: ['支持', '联系', '微信', '提问', 'Issues'],
+    keywords: ['支持', '联系', '微信', '提问', 'Issues', 'FAQ'],
   },
 ]
 

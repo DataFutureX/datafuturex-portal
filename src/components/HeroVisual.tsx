@@ -2,14 +2,22 @@
  * 雷达拓扑 + 工坊色系：
  * 未来紫核心 · 云起极简白 · 万象科技蓝 · AI IoT 工业青 · 灵枢石板灰
  */
+import { brandPalette, workPalettes } from '../data/palettes'
+
 export function HeroVisual() {
   const hub = { x: 1080, y: 320 }
+  const brand = brandPalette.hex
+  const yunqi = workPalettes['minimal-white']
+  const wanxiang = workPalettes['tech-blue']
+  const iot = workPalettes['industrial-cyan']
+  const lingshu = workPalettes['lingshu-slate']
+
   // 不规则星座排布：距离与方位错开，避免四角正方形
   const platforms = [
-    { id: 'yunqi', x: 940, y: 155, color: '#171717', soft: '23, 23, 23' },
-    { id: 'wanxiang', x: 1325, y: 210, color: '#2563EB', soft: '37, 99, 235' },
-    { id: 'iot', x: 1210, y: 530, color: '#0F766E', soft: '15, 118, 110' },
-    { id: 'lingshu', x: 820, y: 390, color: '#475569', soft: '71, 85, 105' },
+    { id: 'yunqi', x: 940, y: 155, color: yunqi.hex, soft: yunqi.rgb },
+    { id: 'wanxiang', x: 1325, y: 210, color: wanxiang.hex, soft: wanxiang.rgb },
+    { id: 'iot', x: 1210, y: 530, color: iot.hex, soft: iot.rgb },
+    { id: 'lingshu', x: 820, y: 390, color: lingshu.hex, soft: lingshu.rgb },
   ] as const
 
   const ambience = [
@@ -34,55 +42,55 @@ export function HeroVisual() {
             <stop offset="100%" stopColor="#E8E0F5" />
           </linearGradient>
           <radialGradient id="radar" cx="70%" cy="38%" r="45%">
-            <stop offset="0%" stopColor="#5B21B6" stopOpacity="0.18" />
+            <stop offset="0%" stopColor={brand} stopOpacity="0.18" />
             <stop offset="55%" stopColor="#6D28D9" stopOpacity="0.07" />
-            <stop offset="100%" stopColor="#5B21B6" stopOpacity="0" />
+            <stop offset="100%" stopColor={brand} stopOpacity="0" />
           </radialGradient>
           <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#5B21B6" stopOpacity="0" />
-            <stop offset="30%" stopColor="#5B21B6" stopOpacity="0.35" />
-            <stop offset="50%" stopColor="#2563EB" stopOpacity="0.28" />
-            <stop offset="70%" stopColor="#0F766E" stopOpacity="0.22" />
-            <stop offset="100%" stopColor="#475569" stopOpacity="0" />
+            <stop offset="0%" stopColor={brand} stopOpacity="0" />
+            <stop offset="30%" stopColor={brand} stopOpacity="0.35" />
+            <stop offset="50%" stopColor={wanxiang.hex} stopOpacity="0.28" />
+            <stop offset="70%" stopColor={iot.hex} stopOpacity="0.22" />
+            <stop offset="100%" stopColor={lingshu.hex} stopOpacity="0" />
           </linearGradient>
           <linearGradient id="ring-spectrum" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#5B21B6" />
-            <stop offset="25%" stopColor="#171717" />
-            <stop offset="50%" stopColor="#2563EB" />
-            <stop offset="75%" stopColor="#0F766E" />
-            <stop offset="100%" stopColor="#475569" />
+            <stop offset="0%" stopColor={brand} />
+            <stop offset="25%" stopColor={yunqi.hex} />
+            <stop offset="50%" stopColor={wanxiang.hex} />
+            <stop offset="75%" stopColor={iot.hex} />
+            <stop offset="100%" stopColor={lingshu.hex} />
           </linearGradient>
           <linearGradient id="sweep-fan" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#E8B923" stopOpacity="0.35" />
-            <stop offset="55%" stopColor="#5B21B6" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#5B21B6" stopOpacity="0" />
+            <stop offset="55%" stopColor={brand} stopOpacity="0.12" />
+            <stop offset="100%" stopColor={brand} stopOpacity="0" />
           </linearGradient>
 
           {/* 各系统主题色光晕：叠在图标节点背后 */}
           <radialGradient id="glow-hub" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#5B21B6" stopOpacity="0.42" />
-            <stop offset="55%" stopColor="#5B21B6" stopOpacity="0.14" />
-            <stop offset="100%" stopColor="#5B21B6" stopOpacity="0" />
+            <stop offset="0%" stopColor={brand} stopOpacity="0.42" />
+            <stop offset="55%" stopColor={brand} stopOpacity="0.14" />
+            <stop offset="100%" stopColor={brand} stopOpacity="0" />
           </radialGradient>
           <radialGradient id="glow-yunqi" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#171717" stopOpacity="0.38" />
-            <stop offset="55%" stopColor="#171717" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#171717" stopOpacity="0" />
+            <stop offset="0%" stopColor={yunqi.hex} stopOpacity="0.38" />
+            <stop offset="55%" stopColor={yunqi.hex} stopOpacity="0.12" />
+            <stop offset="100%" stopColor={yunqi.hex} stopOpacity="0" />
           </radialGradient>
           <radialGradient id="glow-wanxiang" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#2563EB" stopOpacity="0.45" />
-            <stop offset="55%" stopColor="#2563EB" stopOpacity="0.16" />
-            <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
+            <stop offset="0%" stopColor={wanxiang.hex} stopOpacity="0.45" />
+            <stop offset="55%" stopColor={wanxiang.hex} stopOpacity="0.16" />
+            <stop offset="100%" stopColor={wanxiang.hex} stopOpacity="0" />
           </radialGradient>
           <radialGradient id="glow-iot" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#0F766E" stopOpacity="0.45" />
-            <stop offset="55%" stopColor="#0F766E" stopOpacity="0.16" />
-            <stop offset="100%" stopColor="#0F766E" stopOpacity="0" />
+            <stop offset="0%" stopColor={iot.hex} stopOpacity="0.45" />
+            <stop offset="55%" stopColor={iot.hex} stopOpacity="0.16" />
+            <stop offset="100%" stopColor={iot.hex} stopOpacity="0" />
           </radialGradient>
           <radialGradient id="glow-lingshu" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#475569" stopOpacity="0.42" />
-            <stop offset="55%" stopColor="#475569" stopOpacity="0.14" />
-            <stop offset="100%" stopColor="#475569" stopOpacity="0" />
+            <stop offset="0%" stopColor={lingshu.hex} stopOpacity="0.42" />
+            <stop offset="55%" stopColor={lingshu.hex} stopOpacity="0.14" />
+            <stop offset="100%" stopColor={lingshu.hex} stopOpacity="0" />
           </radialGradient>
 
           {/* 云起：云朵标（极简白 → 墨色） */}
@@ -162,7 +170,7 @@ export function HeroVisual() {
         <g
           className="hero-visual__contours"
           fill="none"
-          stroke="#5B21B6"
+          stroke={brand}
           strokeOpacity="0.1"
           strokeWidth="1.2"
         >
@@ -177,7 +185,7 @@ export function HeroVisual() {
           <g
             className="hero-visual__rings"
             fill="none"
-            stroke="#5B21B6"
+            stroke={brand}
             strokeOpacity="0.32"
             strokeWidth="1.25"
           >
@@ -221,13 +229,13 @@ export function HeroVisual() {
           <path
             className="hero-visual__link hero-visual__link--soft"
             d={`M${platforms[0].x} ${platforms[0].y} L${platforms[1].x} ${platforms[1].y}`}
-            stroke="#5B21B6"
+            stroke={brand}
             strokeOpacity="0.12"
           />
           <path
             className="hero-visual__link hero-visual__link--soft"
             d={`M${platforms[2].x} ${platforms[2].y} L${platforms[3].x} ${platforms[3].y}`}
-            stroke="#5B21B6"
+            stroke={brand}
             strokeOpacity="0.1"
           />
         </g>
@@ -237,8 +245,8 @@ export function HeroVisual() {
         {/* 氛围小点 */}
         {ambience.map(([x, y], i) => (
           <g key={`${x}-${y}`} className={`hero-visual__node hero-visual__node--${i}`}>
-            <circle cx={x} cy={y} r="8" fill="#5B21B6" fillOpacity="0.1" />
-            <circle cx={x} cy={y} r="2.5" fill={i === 0 ? '#E8B923' : '#5B21B6'} fillOpacity="0.55" />
+            <circle cx={x} cy={y} r="8" fill={brand} fillOpacity="0.1" />
+            <circle cx={x} cy={y} r="2.5" fill={i === 0 ? '#E8B923' : brand} fillOpacity="0.55" />
           </g>
         ))}
 
@@ -246,7 +254,7 @@ export function HeroVisual() {
         <g transform={`translate(${hub.x} ${hub.y})`}>
           <g className="hero-visual__badge hero-visual__badge--hub">
             <circle r="24" fill="url(#glow-hub)" />
-            <circle r="18" fill="#5B21B6" />
+            <circle r="18" fill={brand} />
             <g transform="translate(-9 -9)" style={{ color: '#FFFFFF' }}>
               <use href="#logo-portal" width="18" height="18" />
             </g>

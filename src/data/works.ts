@@ -1,3 +1,5 @@
+import { paletteThemeVars, workPalettes, type WorkPaletteId } from './palettes'
+
 export type WorkLinks = {
   demo?: string
   github?: string
@@ -5,9 +7,9 @@ export type WorkLinks = {
   docsAnchor: string
 }
 
-/** 作品产品层主色（门户品牌层为未来紫，见 site.designLanguages） */
+/** 作品产品层主色（门户品牌层见 palettes.brandPalette） */
 export type WorkPalette = {
-  id: 'minimal-white' | 'tech-blue' | 'industrial-cyan' | 'lingshu-slate'
+  id: WorkPaletteId
   label: string
   hex: string
   rgb: string
@@ -35,10 +37,7 @@ export type Work = {
 
 /** 作品主题 CSS 变量，供卡片 / 详情页局部换色 */
 export function workThemeVars(palette: WorkPalette): Record<string, string> {
-  return {
-    '--work-accent': palette.hex,
-    '--work-accent-rgb': palette.rgb,
-  }
+  return paletteThemeVars(palette)
 }
 
 /** Derive variant path: /works/x/foo.webp -> /works/x/{dir}/foo.webp */
@@ -69,12 +68,7 @@ export const works: Work[] = [
     openSource: true,
     accessNote:
       'MIT 开源。可在线演示、本地纯前端演示（dev:demo），或克隆 monorepo 前后端联调（根目录一键启动）。',
-    palette: {
-      id: 'minimal-white',
-      label: '极简白',
-      hex: '#171717',
-      rgb: '23, 23, 23',
-    },
+    palette: workPalettes['minimal-white'],
     stack: [
       'Vue 3',
       'TypeScript',
@@ -143,12 +137,7 @@ export const works: Work[] = [
     openSource: false,
     accessNote:
       '暂未开源。在线演示为纯前端 Mock：https://iot.datafuturex.cn/portal 。基于开源底座云起应用平台（yunqi-admin / YQAP）演进。AI 分析与数据孪生为规划能力，未写入当前交付范围。',
-    palette: {
-      id: 'industrial-cyan',
-      label: '工业青',
-      hex: '#0F766E',
-      rgb: '15, 118, 110',
-    },
+    palette: workPalettes['industrial-cyan'],
     stack: [
       'Vue 3',
       'TypeScript',
@@ -216,12 +205,7 @@ export const works: Work[] = [
     openSource: false,
     accessNote:
       '开源正在筹备中，暂不提供源码下载。演示站（纯前端 Mock）：https://wanxiang.datafuturex.cn/portal 。账号 demo / demo123。',
-    palette: {
-      id: 'tech-blue',
-      label: '科技蓝',
-      hex: '#2563EB',
-      rgb: '37, 99, 235',
-    },
+    palette: workPalettes['tech-blue'],
     stack: [
       'Vue 3',
       'TypeScript',
@@ -317,12 +301,7 @@ export const works: Work[] = [
       '行业应用枢纽：汇聚水利、灌区、农业、地质灾害等场景应用，支持发现、分发与启停。正在开发中。',
     openSource: false,
     accessNote: '正在开发中，暂未提供演示站与源码。进展与能力说明见作品页与文档入口。',
-    palette: {
-      id: 'lingshu-slate',
-      label: '石板灰',
-      hex: '#475569',
-      rgb: '71, 85, 105',
-    },
+    palette: workPalettes['lingshu-slate'],
     stack: [
       'Vue 3',
       'TypeScript',

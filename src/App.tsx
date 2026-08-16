@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Navigate, Routes, Route } from 'react-router-dom'
 import { SiteLayout } from './components/SiteLayout'
 
 const HomePage = lazy(() =>
@@ -13,9 +13,6 @@ const ProductDetailPage = lazy(() =>
 )
 const DocsPage = lazy(() =>
   import('./pages/DocsPage').then((m) => ({ default: m.DocsPage })),
-)
-const ExamplesPage = lazy(() =>
-  import('./pages/ExamplesPage').then((m) => ({ default: m.ExamplesPage })),
 )
 const SupportPage = lazy(() =>
   import('./pages/SupportPage').then((m) => ({ default: m.SupportPage })),
@@ -37,7 +34,7 @@ export default function App() {
           <Route path="products" element={<ProductsPage />} />
           <Route path="products/:slug" element={<ProductDetailPage />} />
           <Route path="docs" element={<DocsPage />} />
-          <Route path="examples" element={<ExamplesPage />} />
+          <Route path="examples" element={<Navigate to="/docs#try" replace />} />
           <Route path="support" element={<SupportPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
