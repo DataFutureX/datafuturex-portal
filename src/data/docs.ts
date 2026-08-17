@@ -115,7 +115,7 @@ export const docPages: DocPageMeta[] = [
     title: '万象监测平台',
     eyebrow: 'Docs · WanXiang',
     summary:
-      '面向遥测站的数据采集、存储、分析与可视化；含数智中枢（Agent / 知识库 / 简报）。开源筹备中，可先体验演示站。',
+      '面向遥测站的数据采集、存储、分析与可视化；含数智中枢（Agent / 知识库 / 图谱 / 简报）。开源筹备中，可先体验演示站。',
     sections: [
       {
         id: 'wanxiang',
@@ -139,6 +139,7 @@ export const docPages: DocPageMeta[] = [
           'Agent',
           '智能体',
           'RAG',
+          '图谱',
           'NL2SQL',
           '简报',
           'Graph',
@@ -148,7 +149,7 @@ export const docPages: DocPageMeta[] = [
       {
         id: 'wanxiang-shots',
         label: '系统截图',
-        keywords: ['截图', '地图', '图集', 'Agent', '巡检'],
+        keywords: ['截图', '地图', '图集', 'Agent', '图谱', '巡检'],
       },
     ],
   },

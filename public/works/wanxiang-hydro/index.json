@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-13T16:47:18.688Z",
+  "generatedAt": "2026-08-18T00:43:47.000Z",
   "baseUrl": "http://localhost:3000",
-  "total": 34,
-  "success": 34,
+  "total": 35,
+  "success": 35,
   "failed": [],
   "files": [
     {
@@ -115,7 +115,7 @@
     },
     {
       "title": "巡检管理",
-      "path": "/apps/inspection",
+      "path": "/apps/inspection/manage",
       "file": "19_巡检管理__apps-inspection.png",
       "ok": true
     },
@@ -157,19 +157,19 @@
     },
     {
       "title": "单位管理",
-      "path": "/system/archive/unit",
+      "path": "/apps/archive/unit",
       "file": "26_单位管理__system-archive-unit.png",
       "ok": true
     },
     {
       "title": "工程台账",
-      "path": "/system/archive/project-ledger",
+      "path": "/apps/archive/project-ledger",
       "file": "27_工程台账__system-archive-project-ledger.png",
       "ok": true
     },
     {
       "title": "公告管理",
-      "path": "/system/archive/announcement",
+      "path": "/apps/archive/announcement",
       "file": "28_公告管理__system-archive-announcement.png",
       "ok": true
     },
@@ -208,12 +208,18 @@
       "path": "/ai/agents/1/graph",
       "file": "34_工作流编排__ai-agents-1-graph.png",
       "ok": true
+    },
+    {
+      "title": "图谱",
+      "path": "/ai/knowledge-graph",
+      "file": "35_知识图谱__ai-knowledge-graph.png",
+      "ok": true
     }
   ],
   "recapture": {
-    "at": "2026-08-13T16:47:18.688Z",
+    "at": "2026-08-18T00:43:47.000Z",
     "files": [
-      "30_AI助手接口__system-devtools-ai-api.png"
+      "35_知识图谱__ai-knowledge-graph.png"
     ]
   }
 }

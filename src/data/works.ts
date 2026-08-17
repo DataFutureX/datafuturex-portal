@@ -211,7 +211,7 @@ export const works: Work[] = [
     tag: '开源正在筹备中',
     featured: true,
     summary:
-      '面向遥测站的水文水资源物联监测平台：协议接入、实时监测与告警、地图视频、巡检应用，以及数智中枢（Agent / 知识库 / AI 简报 / NL2SQL）。基于云起后台管理系统迭代；开源正在筹备中，可通过演示站体验。',
+      '面向遥测站的水文水资源物联监测平台：协议接入、实时监测与告警、地图视频、巡检应用，以及数智中枢（Agent / 知识库 / 图谱 / AI 简报 / NL2SQL）。基于云起后台管理系统迭代；开源正在筹备中，可通过演示站体验。',
     openSource: false,
     accessNote:
       '开源正在筹备中，暂不提供源码下载。演示站（纯前端 Mock）：https://wanxiang.datafuturex.cn/portal 。账号 demo / demo123。',
@@ -229,6 +229,7 @@ export const works: Work[] = [
       'Netty',
       'MyBatis-Plus',
       'PostgreSQL',
+      'Neo4j',
       'Spring Security',
       'Spring AI 2',
       'Kotlin / Jetpack Compose',
@@ -240,7 +241,7 @@ export const works: Work[] = [
       '一张图 + 视频：二维 / 三维站网地图、监控专题大屏与视频站管理',
       '遥测站与物模型：站点台账、在线心跳、要素物模型与远程配置',
       '巡检管理：计划 / 任务 / 打卡 / 异常 / 轨迹上报',
-      '数智中枢：可配置 Agent、知识库 RAG、NL2SQL、Tool Calling、Graph 编排、AI 简报定时投递',
+      '数智中枢：可配置 Agent、知识库 RAG、图谱、NL2SQL、Tool Calling、Graph 编排、AI 简报定时投递',
       '多端协同：Vue3 管理台 + Android + 微信小程序，统一 /api/v1',
       '工程权限与系统管理：RBAC、工程台账、公告、系统监控与操作审计',
     ],
@@ -248,7 +249,7 @@ export const works: Work[] = [
       '流域 / 灌区 / 水库遥测站集中监控与超限告警处置',
       '一张图态势研判，联动现场视频复核',
       '外业巡检：Web / App 打卡与异常闭环，管理台用巡检智能体问进度',
-      '自然语言问水位雨量、问知识库，订阅日 / 周 AI 简报辅助值班',
+      '自然语言问水位雨量、问知识库与图谱，订阅日 / 周 AI 简报辅助值班',
     ],
     quickStart: [
       '打开演示门户：https://wanxiang.datafuturex.cn/portal',
@@ -269,6 +270,7 @@ export const works: Work[] = [
       { src: '/works/wanxiang-hydro/ai-chat.webp', alt: 'Agent 会话' },
       { src: '/works/wanxiang-hydro/ai-knowledges.webp', alt: '知识库' },
       { src: '/works/wanxiang-hydro/ai-document-qa.webp', alt: '知识检索' },
+      { src: '/works/wanxiang-hydro/ai-knowledge-graph.webp', alt: '图谱' },
       { src: '/works/wanxiang-hydro/ai-model-config.webp', alt: '模型设置' },
       { src: '/works/wanxiang-hydro/ai-agents.webp', alt: 'Agent 中心' },
       { src: '/works/wanxiang-hydro/ai-agents-1-graph.webp', alt: '工作流编排' },

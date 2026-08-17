@@ -400,7 +400,7 @@ export function WanxiangDoc() {
           </div>
           <div className="docs-fact">
             <dt>数智中枢</dt>
-            <dd>Agent 会话 / 中心与 Graph 编排、知识库 RAG、NL2SQL、AI 简报。</dd>
+            <dd>Agent 会话 / 中心与 Graph 编排、知识库 RAG、图谱、NL2SQL、AI 简报。</dd>
           </div>
           <div className="docs-fact">
             <dt>开源</dt>
@@ -448,8 +448,8 @@ export function WanxiangDoc() {
       <section id="wanxiang-ai" className="prose-block">
         <h2>数智中枢与 Agent</h2>
         <p>
-          数智中枢提供可配置 Agent、知识库 RAG、NL2SQL、Tool Calling、Graph 编排与 AI
-          简报定时投递，面向值班问数、知识检索与研判辅助。
+          数智中枢提供可配置 Agent、知识库 RAG、图谱、NL2SQL、Tool Calling、Graph 编排与 AI
+          简报定时投递，面向值班问数、知识检索、图谱研判与辅助决策。
         </p>
         <p>
           介绍页：
@@ -462,7 +462,7 @@ export function WanxiangDoc() {
           </a>
         </p>
         <p>
-          作品页截图含 Agent / 知识库 / 简报等界面：
+          作品页截图含 Agent / 知识库 / 图谱 / 简报等界面：
           <Link to="/works/wanxiang-hydro#screenshots">万象监测平台</Link>
         </p>
       </section>
@@ -470,8 +470,8 @@ export function WanxiangDoc() {
       <section id="wanxiang-shots" className="prose-block">
         <h2>系统截图</h2>
         <p>
-          门户已收录演示站关键界面截图（产品门户、仪表盘、AI 简报、Agent / 知识库、巡检、地图、实时数据、系统管理等，共
-          34 张）。完整交互请直接打开演示站体验。
+          门户已收录演示站关键界面截图（产品门户、仪表盘、AI 简报、Agent / 知识库 / 图谱、巡检、地图、实时数据、系统管理等，共
+          35 张）。完整交互请直接打开演示站体验。
         </p>
         <p>
           <Link className="btn btn--primary" to="/works/wanxiang-hydro#screenshots">

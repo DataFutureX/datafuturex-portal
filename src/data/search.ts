@@ -55,7 +55,7 @@ const workItems: SearchItem[] = [
     id: 'work-wanxiang-hydro',
     title: '万象监测平台',
     description:
-      '水文水资源物联监测：协议接入、实时监测与告警、地图视频、巡检，以及数智中枢（Agent / 知识库 / NL2SQL）。',
+      '水文水资源物联监测：协议接入、实时监测与告警、地图视频、巡检，以及数智中枢（Agent / 知识库 / 图谱 / NL2SQL）。',
     href: '/works/wanxiang-hydro',
     group: '作品',
     keywords: [
@@ -66,7 +66,9 @@ const workItems: SearchItem[] = [
       '数字孪生',
       'Agent',
       '知识库',
+      '图谱',
       'NL2SQL',
+      'Neo4j',
       'Cesium',
       '巡检',
       '演示',

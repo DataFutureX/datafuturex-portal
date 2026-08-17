@@ -87,6 +87,7 @@ const wanxiangAscii = [
   'profile-password',
   'video-monitor-live',
   'ai-agents-1-graph',
+  'ai-knowledge-graph',
 ]
 
 /** 旧版门户文件名，导入后清理 */

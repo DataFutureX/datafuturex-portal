@@ -65,8 +65,8 @@ export const directions = [
   {
     id: 'ai-agent',
     name: 'AI 智能体开发',
-    brief: 'Agent · 知识库 · NL2SQL · 工具编排',
-    summary: '面向业务的智能问答、工具调用与 Agent 编排——见万象·数智中枢。',
+    brief: 'Agent · 知识库 · 图谱 · NL2SQL',
+    summary: '面向业务的智能问答、图谱、工具调用与 Agent 编排——见万象·数智中枢。',
     workSlug: 'wanxiang-hydro',
     palette: workPalettes['tech-blue'],
   },
