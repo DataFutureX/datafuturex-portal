@@ -20,12 +20,22 @@ export const docPages: DocPageMeta[] = [
     title: '快速开始',
     eyebrow: 'Docs · Getting started',
     summary:
-      '先从体验入口进入各作品演示，再按作品阅读说明。云起可开源开发；数智AI工业物联网与万象监测提供演示站；灵枢正在开发中。',
+      '先本地跑通云起演示（约 5 分钟），再按需打开各作品演示站或深入文档。云起可开源开发；数智AI工业物联网与万象监测提供演示站；灵枢正在开发中。',
     sections: [
+      {
+        id: 'run',
+        label: '本地跑通云起',
+        keywords: ['快速开始', 'clone', 'dev:demo', '本地', '演示', '云起'],
+      },
       {
         id: 'try',
         label: '体验入口',
-        keywords: ['演示', '体验', '示例', 'examples', '快速开始', 'clone', 'MQTT'],
+        keywords: ['演示', '体验', '示例', 'examples', 'MQTT'],
+      },
+      {
+        id: 'api',
+        label: 'API 参考',
+        keywords: ['API', 'Swagger', '接口', '参考'],
       },
     ],
   },
@@ -185,6 +195,8 @@ export function getDocPager(slug: string) {
 /** 旧单页锚点 → 新独立文档路径 */
 export const legacyDocHashRedirects: Record<string, string> = {
   try: '/docs/getting-started#try',
+  run: '/docs/getting-started#run',
+  api: '/docs/getting-started#api',
   yunqi: '/docs/yunqi#yunqi',
   'yunqi-demo': '/docs/yunqi#yunqi-demo',
   'yunqi-fullstack': '/docs/yunqi#yunqi-fullstack',

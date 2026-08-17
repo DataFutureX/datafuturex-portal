@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { HeroVisual } from '../components/HeroVisual'
 import { ProductArchitecture } from '../components/ProductArchitecture'
@@ -81,14 +80,24 @@ export function HomePage() {
   return (
     <>
       <div className="home-fold">
+        <HeroVisual />
         <section className="hero">
-          <HeroVisual />
           <div className="hero__content">
-            <div className="hero__brand-block">
-              <h1 className="hero__title">{site.name}</h1>
-              <p className="hero__brand mono">{site.englishName}</p>
-            </div>
-            <p className="hero__lede">{site.tagline}</p>
+            <p className="hero__brand mono">{site.hero.brand}</p>
+            <h1 className="hero__title">{site.hero.slogan}</h1>
+            <p className="hero__stack mono">
+              {site.hero.stack.map((item, index) => (
+                <span key={item} className="hero__stack-item">
+                  {index > 0 ? (
+                    <span className="hero__stack-x" aria-hidden="true">
+                      ×
+                    </span>
+                  ) : null}
+                  {item}
+                </span>
+              ))}
+            </p>
+            <p className="hero__lede">{site.hero.positioning}</p>
             <div className="hero__cta">
               <Link className="btn btn--primary" to="/works">
                 查看作品
@@ -118,13 +127,6 @@ export function HomePage() {
                   <Link
                     to={`/#work-${item.workSlug}`}
                     className="direction-item entry-row"
-                    data-palette={item.palette.id}
-                    style={
-                      {
-                        '--dir-accent': item.palette.hex,
-                        '--dir-accent-rgb': item.palette.rgb,
-                      } as CSSProperties
-                    }
                   >
                     <DirectionDeco id={item.id} />
                     <span className="direction-item__index mono" aria-hidden="true">

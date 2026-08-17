@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { docChapters, getDocPager } from '../data/docs'
+import { docChapters, getDocPage, getDocPager } from '../data/docs'
 
 export function DocsShell() {
   const location = useLocation()
   const [tocOpen, setTocOpen] = useState(true)
   const slug = location.pathname.replace(/^\/docs\/?/, '').split('/')[0] || 'getting-started'
   const pager = getDocPager(slug)
+  const currentDoc = getDocPage(slug)
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 860px)')
@@ -83,6 +84,15 @@ export function DocsShell() {
       </aside>
 
       <div className="docs__article-wrap">
+        {currentDoc ? (
+          <nav className="breadcrumb" aria-label="面包屑">
+            <Link to="/">主页</Link>
+            <span aria-hidden="true">/</span>
+            <Link to="/docs/getting-started">文档</Link>
+            <span aria-hidden="true">/</span>
+            <span>{currentDoc.title}</span>
+          </nav>
+        ) : null}
         <Outlet />
         {(pager.prev || pager.next) && (
           <nav className="docs-pager" aria-label="相邻文档">

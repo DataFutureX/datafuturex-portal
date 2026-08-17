@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { productArchitecture } from '../data/site'
 
@@ -21,13 +20,6 @@ export function ProductArchitecture() {
               <Link
                 to={`/works/${layer.slug}`}
                 className="arch-layer entry-row"
-                data-palette={layer.palette.id}
-                style={
-                  {
-                    '--layer-accent': layer.palette.hex,
-                    '--layer-accent-rgb': layer.palette.rgb,
-                  } as CSSProperties
-                }
               >
                 <span className="arch-layer__rail" aria-hidden="true">
                   <span className="arch-layer__index mono">L{level}</span>

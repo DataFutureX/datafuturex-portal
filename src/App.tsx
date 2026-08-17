@@ -61,7 +61,7 @@ export default function App() {
           </Route>
           <Route
             path="examples"
-            element={<Navigate to="/docs/getting-started#try" replace />}
+            element={<Navigate to="/docs/getting-started#run" replace />}
           />
           <Route path="support" element={<SupportPage />} />
           <Route path="*" element={<NotFoundPage />} />

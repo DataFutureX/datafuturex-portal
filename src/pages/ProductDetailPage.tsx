@@ -1,7 +1,6 @@
-import type { CSSProperties } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ShotGallery } from '../components/ShotGallery'
-import { getWork, workThemeVars } from '../data/works'
+import { getWork, workStatusLabel } from '../data/works'
 
 export function ProductDetailPage() {
   const { slug = '' } = useParams()
@@ -18,12 +17,10 @@ export function ProductDetailPage() {
     )
   }
 
+  const status = workStatusLabel(work)
+
   return (
-    <div
-      className="page page--wide work-theme"
-      data-palette={work.palette.id}
-      style={workThemeVars(work.palette) as CSSProperties}
-    >
+    <div className="page page--wide work-theme">
       <nav className="breadcrumb" aria-label="面包屑">
         <Link to="/">主页</Link>
         <span aria-hidden="true">/</span>
@@ -38,7 +35,7 @@ export function ProductDetailPage() {
         ) : null}
         <p className="eyebrow">
           <span className="mono">{work.englishName}</span>
-          <span className="work-palette-chip mono">{work.palette.label}</span>
+          <span className="work-tag">{status}</span>
           <span className="work-tag">{work.tag}</span>
         </p>
         <h1>{work.name}</h1>

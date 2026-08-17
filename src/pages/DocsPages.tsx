@@ -1,6 +1,7 @@
 import { Link, Navigate, useLocation } from 'react-router-dom'
 import { CodeBlock } from '../components/CodeBlock'
 import { docsTryLinks, getDocPage, legacyDocHashRedirects } from '../data/docs'
+import { site } from '../data/site'
 
 export function DocsIndexRedirect() {
   const location = useLocation()
@@ -20,6 +21,29 @@ export function GettingStartedDoc() {
         <h1>{meta.title}</h1>
         <p>{meta.summary}</p>
       </header>
+
+      <section id="run" className="prose-block">
+        <h2>本地跑通云起</h2>
+        <p>目标：在浏览器打开云起工作台。需要 Git 与 Node.js 18+。</p>
+        <ol>
+          <li>克隆仓库并进入前端目录。</li>
+          <li>安装依赖并启动纯前端演示。</li>
+          <li>
+            打开 <code>http://localhost:3000</code>，账号 <code>demo / demo123</code>
+            。出现登录页即成功。
+          </li>
+        </ol>
+        <CodeBlock>{`git clone https://github.com/DataFutureX/yunqi-admin.git
+cd yunqi-admin/frontend
+npm install
+npm run dev:demo`}</CodeBlock>
+        <p>
+          下一步：
+          <Link to="/docs/yunqi">云起文档</Link>
+          （联调、权限与截图）·
+          <Link to="/works/yunqi-admin">作品页</Link>
+        </p>
+      </section>
 
       <section id="try" className="prose-block">
         <h2>体验入口</h2>
@@ -60,6 +84,22 @@ export function GettingStartedDoc() {
           <Link to="/docs/wanxiang">万象监测平台</Link>
           <span aria-hidden="true"> · </span>
           <Link to="/docs/lingshu">灵枢行业应用市场</Link>
+        </p>
+      </section>
+
+      <section id="api" className="prose-block">
+        <h2>API 参考</h2>
+        <p>
+          各作品暂无对外公开的稳定 API。云起本地联调可在{' '}
+          <code>/swagger-ui.html</code> 查看内嵌接口文档。问题与建议请到{' '}
+          <a
+            href={site.contact.issues}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gitee Issues ↗
+          </a>
+          。
         </p>
       </section>
     </article>

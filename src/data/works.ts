@@ -37,6 +37,13 @@ export type Work = {
   accounts: { label: string; value: string }[]
 }
 
+/** 列表卡状态：开源 > 可演示 > 开发中 */
+export function workStatusLabel(work: Pick<Work, 'openSource' | 'links'>): '开源' | '可演示' | '开发中' {
+  if (work.openSource) return '开源'
+  if (work.links.demo) return '可演示'
+  return '开发中'
+}
+
 /** 作品主题 CSS 变量，供卡片 / 详情页局部换色 */
 export function workThemeVars(palette: WorkPalette): Record<string, string> {
   return paletteThemeVars(palette)

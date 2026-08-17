@@ -10,8 +10,7 @@ export function ProductsPage() {
           <span className="page-hero__en mono">Works</span>
         </h1>
         <p>
-          云起：完全开源。数智AI工业物联网平台：暂未开源；万象监测平台：开源正在筹备中；灵枢行业应用市场：正在开发中。卡片色条对应各作品主色（极简白
-          / 工业青 / 科技蓝 / 石板灰）。
+          云起完全开源；数智AI工业物联网与万象监测可打开演示站；灵枢正在开发中。进入详情获取源码或演示。
         </p>
       </header>
       <ul className="work-cards">

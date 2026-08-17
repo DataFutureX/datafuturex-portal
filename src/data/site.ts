@@ -6,8 +6,15 @@ export const site = {
   englishName: 'DataFutureX',
   domain: 'www.datafuturex.cn',
   origin: 'https://www.datafuturex.cn',
-  /** 首屏主标题旁的一句定位 */
-  tagline: '展示工坊作品：物联网、数字孪生、行业应用与 AI 智能体。',
+  tagline:
+    '将复杂的数据采集、设备接入、业务流程、人工智能和行业知识，沉淀为人人可用的数字化能力。',
+  /** 首页 Hero Banner */
+  hero: {
+    brand: 'DataFutureX',
+    slogan: '化繁为简，让智能触手可及',
+    stack: ['AI', 'IoT', 'Digital Twin', 'Agent'] as const,
+    positioning: '构建下一代行业数字化与智能化平台',
+  },
   description:
     '数智未来·AI工坊（DataFutureX）— 物联网、数字孪生、行业应用与 AI 智能体作品展示 · www.datafuturex.cn',
   focus:

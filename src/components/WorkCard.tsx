@@ -1,6 +1,5 @@
-import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
-import { shotMedium, workThemeVars, type Work } from '../data/works'
+import { shotMedium, workStatusLabel, type Work } from '../data/works'
 
 type WorkCardProps = {
   work: Work
@@ -12,24 +11,20 @@ type WorkCardProps = {
 export function WorkCard({ work, priority = false, cta }: WorkCardProps) {
   const cover = work.screenshots[0]
   const medium = cover ? shotMedium(cover.src, cover.medium) : null
+  const status = workStatusLabel(work)
+  const coverAlt = cover ? `${work.name} · ${cover.alt}` : ''
 
   return (
     <Link
       to={`/works/${work.slug}`}
       className={`work-card${work.featured ? ' work-card--featured' : ''}`}
-      data-palette={work.palette.id}
-      style={workThemeVars(work.palette) as CSSProperties}
     >
-      {work.featured ? (
-        <span className="work-card__ribbon" aria-label="特别推荐">
-          <span className="work-card__seal">推荐</span>
-        </span>
-      ) : null}
+      {work.featured ? <span className="work-card__badge">推荐</span> : null}
       <div className="work-card__media">
         {medium ? (
           <img
             src={medium}
-            alt=""
+            alt={coverAlt}
             width={1280}
             height={800}
             loading={priority ? 'eager' : 'lazy'}
@@ -42,7 +37,7 @@ export function WorkCard({ work, priority = false, cta }: WorkCardProps) {
       </div>
       <div className="work-card__body">
         <p className="work-card__meta">
-          <span className="work-card__palette mono">{work.palette.label}</span>
+          <span className="work-card__status">{status}</span>
           <span className="work-card__tag">{work.tag}</span>
         </p>
         <h3>
