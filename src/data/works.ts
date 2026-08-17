@@ -106,7 +106,7 @@ export const works: Work[] = [
       demo: 'https://yunqi.datafuturex.cn/portal',
       github: 'https://github.com/DataFutureX/yunqi-admin',
       gitee: 'https://gitee.com/DataFutureX/yunqi-admin',
-      docsAnchor: '/docs#yunqi',
+      docsAnchor: '/docs/yunqi',
     },
     screenshots: [
       { src: '/works/yunqi-admin/02-login.webp', alt: '登录页' },
@@ -177,7 +177,7 @@ export const works: Work[] = [
     ],
     links: {
       demo: 'https://iot.datafuturex.cn/portal',
-      docsAnchor: '/docs#smart-iot',
+      docsAnchor: '/docs/smart-iot',
     },
     screenshots: [
       { src: '/works/smart-iot-ai/01-login.webp', alt: '登录页' },
@@ -251,7 +251,7 @@ export const works: Work[] = [
     ],
     links: {
       demo: 'https://wanxiang.datafuturex.cn/portal',
-      docsAnchor: '/docs#wanxiang',
+      docsAnchor: '/docs/wanxiang',
     },
     screenshots: [
       { src: '/works/wanxiang-hydro/login.webp', alt: '登录页' },
@@ -331,7 +331,7 @@ export const works: Work[] = [
       '进展更新将同步到门户文档与作品页',
     ],
     links: {
-      docsAnchor: '/docs#lingshu',
+      docsAnchor: '/docs/lingshu',
     },
     screenshots: [
       { src: '/works/lingshu-market/00-cover.webp', alt: '封面预览（开发中）' },

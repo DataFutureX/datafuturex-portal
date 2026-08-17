@@ -16,9 +16,20 @@ const ProductsPage = lazy(() =>
 const ProductDetailPage = lazy(() =>
   import('./pages/ProductDetailPage').then((m) => ({ default: m.ProductDetailPage })),
 )
-const DocsPage = lazy(() =>
-  import('./pages/DocsPage').then((m) => ({ default: m.DocsPage })),
+const DocsShell = lazy(() =>
+  import('./components/DocsShell').then((m) => ({ default: m.DocsShell })),
 )
+const docsPages = () => import('./pages/DocsPages')
+const DocsIndexRedirect = lazy(() =>
+  docsPages().then((m) => ({ default: m.DocsIndexRedirect })),
+)
+const GettingStartedDoc = lazy(() =>
+  docsPages().then((m) => ({ default: m.GettingStartedDoc })),
+)
+const YunqiDoc = lazy(() => docsPages().then((m) => ({ default: m.YunqiDoc })))
+const SmartIotDoc = lazy(() => docsPages().then((m) => ({ default: m.SmartIotDoc })))
+const WanxiangDoc = lazy(() => docsPages().then((m) => ({ default: m.WanxiangDoc })))
+const LingshuDoc = lazy(() => docsPages().then((m) => ({ default: m.LingshuDoc })))
 const SupportPage = lazy(() =>
   import('./pages/SupportPage').then((m) => ({ default: m.SupportPage })),
 )
@@ -40,8 +51,18 @@ export default function App() {
           <Route path="works/:slug" element={<ProductDetailPage />} />
           <Route path="products" element={<Navigate to="/works" replace />} />
           <Route path="products/:slug" element={<LegacyProductsRedirect />} />
-          <Route path="docs" element={<DocsPage />} />
-          <Route path="examples" element={<Navigate to="/docs#try" replace />} />
+          <Route path="docs" element={<DocsShell />}>
+            <Route index element={<DocsIndexRedirect />} />
+            <Route path="getting-started" element={<GettingStartedDoc />} />
+            <Route path="yunqi" element={<YunqiDoc />} />
+            <Route path="smart-iot" element={<SmartIotDoc />} />
+            <Route path="wanxiang" element={<WanxiangDoc />} />
+            <Route path="lingshu" element={<LingshuDoc />} />
+          </Route>
+          <Route
+            path="examples"
+            element={<Navigate to="/docs/getting-started#try" replace />}
+          />
           <Route path="support" element={<SupportPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

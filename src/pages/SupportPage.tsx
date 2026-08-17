@@ -73,7 +73,7 @@ export function SupportPage() {
           <li>
             <strong>想二次开发哪个项目？</strong> — 请使用完全开源的{' '}
             <Link to="/works/yunqi-admin">云起应用平台</Link>，快速开始见{' '}
-            <Link to="/docs#yunqi-demo">文档</Link>。
+            <Link to="/docs/yunqi#yunqi-demo">文档</Link>。
           </li>
           <li>
             <strong>数智AI工业物联网 / 万象 / 灵枢能否拿到源码？</strong> —
@@ -82,11 +82,11 @@ export function SupportPage() {
           <li>
             <strong>演示账号在哪看？</strong> — 见对应{' '}
             <Link to="/works">作品页</Link> 与{' '}
-            <Link to="/docs#try">文档 · 体验入口</Link>。
+            <Link to="/docs/getting-started#try">文档 · 体验入口</Link>。
           </li>
           <li>
             <strong>云起演示打不开</strong> — 确认可访问 yunqi.datafuturex.cn/portal，或本地按{' '}
-            <Link to="/docs#yunqi-demo">本地演示</Link> 启动。
+            <Link to="/docs/yunqi#yunqi-demo">本地演示</Link> 启动。
           </li>
           <li>
             <strong>还有其他问题？</strong> — 见上方{' '}
