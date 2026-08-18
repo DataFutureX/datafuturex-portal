@@ -19,7 +19,7 @@
 
 | 作品 | 状态 | 演示 | 源码 |
 |---|---|---|---|
-| [云起应用平台](https://www.datafuturex.cn/works/yunqi-admin) | 完全开源 · MIT · YQAP | [yunqi.datafuturex.cn/portal](https://yunqi.datafuturex.cn/portal) | [GitHub](https://github.com/DataFutureX/yunqi-admin) / [Gitee](https://gitee.com/DataFutureX/yunqi-admin) |
+| [云起应用平台](https://www.datafuturex.cn/works/yunqi-application-platform) | 完全开源 · MIT · YQAP | [yunqi.datafuturex.cn/portal](https://yunqi.datafuturex.cn/portal) | [GitHub](https://github.com/DataFutureX/yunqi-application-platform) / [Gitee](https://gitee.com/DataFutureX/yunqi-application-platform) |
 | [数智AI工业物联网平台](https://www.datafuturex.cn/works/smart-iot-ai) | 暂未开源 | [iot.datafuturex.cn/portal](https://iot.datafuturex.cn/portal) | — |
 | [万象监测平台](https://www.datafuturex.cn/works/wanxiang-hydro) | 开源正在筹备中 | [wanxiang.datafuturex.cn/portal](https://wanxiang.datafuturex.cn/portal) | — |
 | [灵枢行业应用市场](https://www.datafuturex.cn/works/lingshu-market) | 正在开发中 | — | — |

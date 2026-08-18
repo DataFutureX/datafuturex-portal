@@ -79,7 +79,7 @@ export const directions = [
 export const productArchitecture = [
   {
     id: 'yunqi',
-    slug: 'yunqi-admin',
+    slug: 'yunqi-application-platform',
     name: '云起应用平台',
     englishName: 'YunQi Application Platform',
     role: '开发底座',

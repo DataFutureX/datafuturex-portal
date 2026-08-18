@@ -41,7 +41,7 @@ export function ProductDetailPage() {
         <h1>{work.name}</h1>
         <p>{work.summary}</p>
         <p className="access-note">{work.accessNote}</p>
-        <div className="hero__cta">
+        <div className="page-hero__actions">
           {work.links.demo ? (
             <a
               className="btn btn--primary"

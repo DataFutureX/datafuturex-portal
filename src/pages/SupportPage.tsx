@@ -72,7 +72,7 @@ export function SupportPage() {
         <ul>
           <li>
             <strong>想二次开发哪个项目？</strong> — 请使用完全开源的{' '}
-            <Link to="/works/yunqi-admin">云起应用平台</Link>，快速开始见{' '}
+            <Link to="/works/yunqi-application-platform">云起应用平台</Link>，快速开始见{' '}
             <Link to="/docs/yunqi#yunqi-demo">文档</Link>。
           </li>
           <li>

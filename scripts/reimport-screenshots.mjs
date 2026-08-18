@@ -15,8 +15,8 @@ const FULL_QUALITY = 92
 const MEDIUM_QUALITY = 90
 const THUMB_QUALITY = 86
 
-const yunqiSrc = 'E:/workspace-qoder/yunqi-admin/screenshot'
-const yunqiDst = path.resolve('public/works/yunqi-admin')
+const yunqiSrc = 'D:/DataFutureX-Code/yunqi-application-platform/screenshot'
+const yunqiDst = path.resolve('public/works/yunqi-application-platform')
 const yunqiFiles = [
   '02-login.png',
   '03-dashboard.png',

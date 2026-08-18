@@ -48,6 +48,10 @@ export default function App() {
         <Route element={<SiteLayout />}>
           <Route index element={<HomePage />} />
           <Route path="works" element={<ProductsPage />} />
+          <Route
+            path="works/yunqi-admin"
+            element={<Navigate to="/works/yunqi-application-platform" replace />}
+          />
           <Route path="works/:slug" element={<ProductDetailPage />} />
           <Route path="products" element={<Navigate to="/works" replace />} />
           <Route path="products/:slug" element={<LegacyProductsRedirect />} />

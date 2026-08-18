@@ -33,15 +33,15 @@ export function GettingStartedDoc() {
             。出现登录页即成功。
           </li>
         </ol>
-        <CodeBlock>{`git clone https://github.com/DataFutureX/yunqi-admin.git
-cd yunqi-admin/frontend
+        <CodeBlock>{`git clone https://github.com/DataFutureX/yunqi-application-platform.git
+cd yunqi-application-platform/frontend
 npm install
 npm run dev:demo`}</CodeBlock>
         <p>
           下一步：
           <Link to="/docs/yunqi">云起文档</Link>
           （联调、权限与截图）·
-          <Link to="/works/yunqi-admin">作品页</Link>
+          <Link to="/works/yunqi-application-platform">作品页</Link>
         </p>
       </section>
 
@@ -136,7 +136,7 @@ export function YunqiDoc() {
             <dt>源码</dt>
             <dd>
               <a
-                href="https://github.com/DataFutureX/yunqi-admin"
+                href="https://github.com/DataFutureX/yunqi-application-platform"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -144,7 +144,7 @@ export function YunqiDoc() {
               </a>
               <span aria-hidden="true"> · </span>
               <a
-                href="https://gitee.com/DataFutureX/yunqi-admin"
+                href="https://gitee.com/DataFutureX/yunqi-application-platform"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -168,7 +168,7 @@ export function YunqiDoc() {
           <div className="docs-fact">
             <dt>作品页</dt>
             <dd>
-              <Link to="/works/yunqi-admin#screenshots">云起应用平台 · 系统截图</Link>
+              <Link to="/works/yunqi-application-platform#screenshots">云起应用平台 · 系统截图</Link>
             </dd>
           </div>
         </dl>
@@ -177,8 +177,8 @@ export function YunqiDoc() {
       <section id="yunqi-demo" className="prose-block">
         <h2>本地演示模式</h2>
         <p>无需后端，纯前端 Mock，适合快速体验界面与权限流程。</p>
-        <CodeBlock>{`git clone https://github.com/DataFutureX/yunqi-admin.git
-cd yunqi-admin/frontend
+        <CodeBlock>{`git clone https://github.com/DataFutureX/yunqi-application-platform.git
+cd yunqi-application-platform/frontend
 npm install
 npm run dev:demo`}</CodeBlock>
         <p>
@@ -192,12 +192,12 @@ npm run dev:demo`}</CodeBlock>
         <h2>前后端联调开发</h2>
         <p>需要 JDK 21+、Maven 3.9+、MySQL 8+。推荐仓库根目录一键启动。</p>
         <CodeBlock>{`# 初始化数据库
-cd yunqi-admin/backend
+cd yunqi-application-platform/backend
 mysql -u root -p < yqap-core/src/main/resources/db/init.sql
 # 配置 yqap-core/.../application-dev.yml 中 yunqi.datasource.*
 
 # 根目录一键启动（推荐）
-cd yunqi-admin
+cd yunqi-application-platform
 # Windows: start.bat  或  .\\start.ps1
 # Linux / macOS: ./start.sh
 
@@ -217,14 +217,14 @@ cd frontend && npm install && npm run dev`}</CodeBlock>
           门户已收录登录、工作台、用户/单位/角色/菜单、系统设置、公告、操作日志、系统监控、接口文档与个人中心等界面截图。完整交互请打开演示站或本地演示体验。
         </p>
         <p>
-          <Link className="btn btn--primary" to="/works/yunqi-admin#screenshots">
+          <Link className="btn btn--primary" to="/works/yunqi-application-platform#screenshots">
             查看截图图集
           </Link>
         </p>
       </section>
 
       <p className="section__more">
-        下一步：<Link to="/works/yunqi-admin">作品页</Link> ·{' '}
+        下一步：<Link to="/works/yunqi-application-platform">作品页</Link> ·{' '}
         <Link to="/docs/smart-iot">数智AI工业物联网平台文档</Link> ·{' '}
         <Link to="/support">获取支持</Link>
       </p>

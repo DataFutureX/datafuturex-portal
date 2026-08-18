@@ -46,7 +46,7 @@ export const docPages: DocPageMeta[] = [
     summary:
       '面向企业数字化应用建设的模块化开发基础平台（YQAP）。完全开源（MIT），可本地演示或前后端联调。',
     sections: [
-      { id: 'yunqi', label: '概述与开源', keywords: ['云起', 'YQAP', 'yunqi', '开源', 'MIT'] },
+      { id: 'yunqi', label: '概述与开源', keywords: ['云起', 'YQAP', 'yunqi', 'yunqi-application-platform', '开源', 'MIT'] },
       {
         id: 'yunqi-demo',
         label: '本地演示模式',

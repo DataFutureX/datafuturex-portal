@@ -12,16 +12,17 @@ export type SearchItem = {
 /** 作品搜索条目：仅保留可检索字段，避免把截图等全量 works 打进壳层 */
 const workItems: SearchItem[] = [
   {
-    id: 'work-yunqi-admin',
+    id: 'work-yunqi-application-platform',
     title: '云起应用平台',
     description:
       '面向企业数字化应用建设的模块化开发基础平台（YQAP）：统一技术架构、业务组件与权限体系，MIT 开源，可演示与二次开发。',
-    href: '/works/yunqi-admin',
+    href: '/works/yunqi-application-platform',
     group: '作品',
     keywords: [
       '云起',
       'YunQi',
       'YQAP',
+      'yunqi-application-platform',
       'yunqi-admin',
       '开源',
       'MIT',

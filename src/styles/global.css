@@ -762,14 +762,14 @@ ol {
     0 0 28px rgba(var(--accent-rgb), 0.22);
 }
 
-.hero__cta .btn--ghost {
+.home-fold .hero__cta .btn--ghost {
   border-color: rgba(244, 248, 253, 0.38);
   color: #f4f8fd;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: none;
 }
 
-.hero__cta .btn--ghost:hover {
+.home-fold .hero__cta .btn--ghost:hover {
   border-color: rgba(244, 248, 253, 0.62);
   color: #fff;
   background: rgba(255, 255, 255, 0.16);
