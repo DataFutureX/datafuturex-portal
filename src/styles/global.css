@@ -2604,6 +2604,42 @@ ol {
   color: var(--ink);
 }
 
+/* 首页页脚：与顶栏 / 首屏夜空底对齐，避免浅灰块浮在深蓝缝上 */
+.site--home .site-footer {
+  margin-top: 0;
+  border-top-color: var(--night-line);
+  color: var(--night-ink);
+  background:
+    radial-gradient(640px 280px at 10% 120%, rgba(56, 189, 248, 0.16), transparent 62%),
+    radial-gradient(520px 240px at 92% -10%, rgba(125, 211, 252, 0.12), transparent 58%),
+    var(--night-deep);
+}
+
+.site--home .site-footer__brand p,
+.site--home .site-footer__wechat-name {
+  color: var(--night-muted);
+}
+
+.site--home .site-footer__cols h2,
+.site--home .site-footer__cols a,
+.site--home .site-footer__meta,
+.site--home .site-footer__meta a {
+  color: var(--night-muted);
+}
+
+.site--home .site-footer__cols a:hover,
+.site--home .site-footer__meta a:hover {
+  color: var(--night-ink);
+}
+
+.site--home .site-footer__qr {
+  border-color: var(--night-line);
+}
+
+.site--home .site-footer__meta {
+  border-top-color: var(--night-line);
+}
+
 @keyframes rise {
   from {
     opacity: 0;
