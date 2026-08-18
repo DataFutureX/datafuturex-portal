@@ -2086,12 +2086,13 @@ ol {
   border-top: 1px solid var(--line);
 }
 
-.prose-block code {
+.prose-block :not(pre) > code {
   font-family: var(--font-mono);
-  font-size: 0.85em;
-  padding: 0.12em 0.35em;
+  font-size: 0.9em;
+  padding: 0.12em 0.4em;
   border-radius: 4px;
-  background: rgba(175, 184, 193, 0.2);
+  color: var(--ink);
+  background: rgba(175, 184, 193, 0.28);
 }
 
 .capability-row__summary {
@@ -2200,19 +2201,29 @@ ol {
 
 .code-block {
   margin: 0;
-  padding: 1rem 1.1rem;
+  padding: 1.15rem 4rem 1.15rem 1.2rem;
   overflow-x: auto;
-  background: #f6f8fa;
-  color: #1f2328;
-  border: 1px solid var(--line);
+  background: #3a4048;
+  color: #f0f3f6;
+  border: 1px solid #4d5560;
   border-radius: var(--radius);
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  line-height: 1.6;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  tab-size: 2;
+  -moz-tab-size: 2;
 }
 
 .code-block code {
+  display: block;
   font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  white-space: inherit;
 }
 
 .code-block-wrap {
@@ -2222,22 +2233,23 @@ ol {
 
 .code-block__copy {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  padding: 0.22rem 0.55rem;
-  border: 1px solid var(--line);
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 1;
+  padding: 0.28rem 0.6rem;
+  border: 1px solid #4d5560;
   border-radius: var(--radius);
-  background: var(--paper);
-  color: var(--ink);
+  background: #454c55;
+  color: #f0f3f6;
   font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
 }
 
 .code-block__copy:hover {
-  background: var(--paper-deep);
-  border-color: #afb8c1;
-  color: var(--ink);
+  background: #565e68;
+  border-color: #8b949e;
+  color: #fff;
 }
 
 /* Docs layout */
